@@ -125,13 +125,19 @@ title: FAQ
 slug: faq
 template: page
 description: Frequently asked questions.
+# optional nav controls:
+nav: true      # default true — set false to keep it routable but out of the menu
+order: 3       # optional sort key for the header nav (lower first)
 ---
 
 # FAQ
 …
 ```
 
-It is served at `/faq`. No routing changes needed.
+It is served at `/faq` **and is added to the header nav automatically** (the nav
+is built from the `pages` collection, after Home and Catalogue). No routing or
+layout changes needed. Use `nav: false` to hide a page from the menu, and
+`order` to position it (ties fall back to alphabetical by title).
 
 > **Note on `layout` vs `template`:** the brief's example used `layout: page`,
 > but Astro 5 reserves the `layout` frontmatter key for its legacy markdown

@@ -33,6 +33,11 @@ const pages = defineCollection({
       // frontmatter key for its legacy markdown layout feature, so we use
       // `template` here and let `[slug].astro` decide how to render.
       template: z.string().optional(),
+      // Navigation control: pages appear in the header nav by default. Set
+      // `nav: false` to keep a page routable but out of the menu. `order`
+      // sorts nav items (lower first); ties fall back to alphabetical title.
+      nav: z.boolean().default(true),
+      order: z.number().optional(),
     })
     .passthrough(),
 });

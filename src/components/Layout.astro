@@ -2,9 +2,14 @@
 /**
  * Layout — the single site shell: <head>, header nav, main slot, footer.
  * Every page renders inside this so spacing, navigation and metadata stay
- * consistent. Static page links could be made dynamic from the pages
- * collection later; kept explicit here for clarity.
+ * consistent.
+ *
+ * The header nav is built from the fixed app pages (Home, Catalogue) plus every
+ * markdown page in the `pages` collection — so dropping a file into
+ * `src/content/pages/` makes it appear in the nav automatically. A page can opt
+ * out with `nav: false` in its frontmatter, and order with `order: <n>`.
  */
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
 interface Props {
@@ -21,10 +26,26 @@ const fullTitle = title === siteName ? title : `${title} — ${siteName}`;
 // `import.meta.env.BASE_URL` respects any configured `base` (GitHub Pages
 // subpath) so internal links work in every deployment target.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Markdown pages, in nav order: explicit `order` first (ascending), then
+// alphabetical by title. Pages with `nav: false` are excluded.
+const pageLinks = (await getCollection('pages'))
+  .filter((page) => page.data.nav)
+  .sort((a, b) => {
+    const ao = a.data.order ?? Infinity;
+    const bo = b.data.order ?? Infinity;
+    if (ao !== bo) return ao - bo;
+    return a.data.title.localeCompare(b.data.title);
+  })
+  .map((page) => ({
+    href: `${base}/${page.data.slug ?? page.id}`,
+    label: page.data.title,
+  }));
+
 const nav = [
   { href: `${base}/`, label: 'Home' },
   { href: `${base}/catalogue`, label: 'Catalogue' },
-  { href: `${base}/about`, label: 'About' },
+  ...pageLinks,
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
