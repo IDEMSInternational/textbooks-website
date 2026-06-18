@@ -68,6 +68,10 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* Always reserve space for the vertical scrollbar so the centered layout
+     doesn't shift horizontally between short pages (no scrollbar) and tall,
+     scrolling pages. No-op where scrollbars are overlay (0 width). */
+  scrollbar-gutter: stable;
 }
 
 body {
