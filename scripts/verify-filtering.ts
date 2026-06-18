@@ -11,10 +11,10 @@ import {
 } from '../src/lib/filtering.ts';
 
 const books: Textbook[] = [
-  { id: 'a', title: 'Linear Algebra', description: 'matrix and vectors', authors: ['X'], url: '#', language: 'en', variant: 'general', subject: 'math', keywords: ['matrix'] },
-  { id: 'b', title: 'Stats with Python', description: 'regression', authors: ['Y'], url: '#', language: 'en', variant: 'python', subject: 'stats', keywords: ['pandas'] },
-  { id: 'c', title: 'Stats with R', description: 'tidyverse', authors: ['Z'], url: '#', language: 'en', variant: 'r', subject: 'stats' },
-  { id: 'd', title: 'Cálculo', description: 'derivadas', authors: ['W'], url: '#', language: 'es', variant: 'general', subject: 'math' },
+  { id: 'a', title: 'Linear Algebra', description: 'matrix and vectors', authors: ['X'], url: '#', language: 'en', software: 'general', subject: 'math', keywords: ['matrix'] },
+  { id: 'b', title: 'Stats with Python', description: 'regression', authors: ['Y'], url: '#', language: 'en', software: 'python', subject: 'stats', keywords: ['pandas'] },
+  { id: 'c', title: 'Stats with R', description: 'tidyverse', authors: ['Z'], url: '#', language: 'en', software: 'r', subject: 'stats' },
+  { id: 'd', title: 'Cálculo', description: 'derivadas', authors: ['W'], url: '#', language: 'es', software: 'general', subject: 'math' },
   { id: 'e', title: 'No-facets book', description: 'plain', authors: ['Q'], url: '#' }, // missing optional fields
 ];
 
@@ -39,8 +39,8 @@ check('subject=stats', ids(filterTextbooks(books, s)), ['b', 'c']);
 // AND across facets.
 s = emptyState();
 s.facets.subject = ['stats'];
-s.facets.variant = ['python'];
-check('subject=stats AND variant=python', ids(filterTextbooks(books, s)), ['b']);
+s.facets.software = ['python'];
+check('subject=stats AND software=python', ids(filterTextbooks(books, s)), ['b']);
 
 // OR within a facet.
 s = emptyState();
@@ -66,10 +66,10 @@ check('constrained facet excludes book lacking it', ids(filterTextbooks(books, s
 // URL round-trip.
 s = emptyState();
 s.facets.language = ['en', 'es'];
-s.facets.variant = ['python'];
+s.facets.software = ['python'];
 s.search = 'matrix';
 const qs = paramsFromState(s).toString();
-check('paramsFromState encodes', qs, 'language=en%2Ces&variant=python&search=matrix');
+check('paramsFromState encodes', qs, 'language=en%2Ces&software=python&search=matrix');
 check('stateFromParams round-trips', stateFromParams(qs), s);
 
 // Empty constraints are omitted from the URL.

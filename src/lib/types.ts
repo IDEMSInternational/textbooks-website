@@ -19,7 +19,7 @@ export interface Textbook {
   url: string; // external textbook site (e.g. GitHub Pages)
 
   language?: string;
-  variant?: string; // e.g. python, r, general
+  software?: string; // e.g. python, r, general
   subject?: string;
   keywords?: string[];
 
@@ -35,7 +35,7 @@ export interface Textbook {
  * an optional `string` field on `Textbook` — the facet derivation and filter
  * panel pick it up automatically.
  */
-export const FACET_KEYS = ['language', 'variant', 'subject'] as const;
+export const FACET_KEYS = ['language', 'software', 'subject'] as const;
 export type FacetKey = (typeof FACET_KEYS)[number];
 
 /** A facet plus the distinct values present in the dataset, used by the UI. */

@@ -26,7 +26,7 @@ published textbooks **discoverable** — nothing more.
 ## How entries are organised
 
 Each textbook has a small set of guaranteed fields — title, description,
-authors, and a link — plus optional metadata such as language, variant
+authors, and a link — plus optional metadata such as language, software
 (e.g. Python or R) and subject. Optional fields are used only when present, so
 older entries that lack them still display correctly.
 

@@ -20,7 +20,7 @@ import rawTextbooks from '../content/textbooks.json';
 /** Human-readable labels for each facet group, used by the filter panel. */
 const FACET_LABELS: Record<FacetKey, string> = {
   language: 'Language',
-  variant: 'Variant',
+  software: 'Software',
   subject: 'Subject',
 };
 
@@ -51,7 +51,7 @@ function normalise(raw: unknown): Textbook | null {
 
   // Optional, single-value string facets — copied only when valid.
   if (typeof r.language === 'string') book.language = r.language;
-  if (typeof r.variant === 'string') book.variant = r.variant;
+  if (typeof r.software === 'string') book.software = r.software;
   if (typeof r.subject === 'string') book.subject = r.subject;
 
   if (Array.isArray(r.keywords)) {

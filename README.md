@@ -28,12 +28,12 @@ npm run test:logic   # verify the pure filtering/URL logic
 
 - **Home** (`/`) — short description + a live textbook count.
 - **Catalogue** (`/catalogue`) — the primary feature:
-  - Multi-select filters for **language**, **variant**, **subject**, derived
+  - Multi-select filters for **language**, **software**, **subject**, derived
     dynamically from the data (never hardcoded).
   - Case-insensitive **search** across title, description, keywords and authors.
-  - Filters + search combine as `(language AND variant AND subject) AND search`,
+  - Filters + search combine as `(language AND software AND subject) AND search`,
     with **OR within** a facet and **AND across** facets.
-  - All filter/search state lives in the **URL** (`?language=en&variant=python&search=matrix`)
+  - All filter/search state lives in the **URL** (`?language=en&software=python&search=matrix`)
     so views are shareable and browser back/forward works.
 - **Markdown pages** (`/about`, `/contributing`, …) — driven entirely by files
   in `src/content/pages/`. Add a page by dropping in a Markdown file; no routing
@@ -84,7 +84,7 @@ src/
 ### Schema-flexible but UI-stable
 
 Only `id`, `title`, `description`, `authors`, `url` are guaranteed. Everything
-else (`language`, `variant`, `subject`, `keywords`) is optional, and the `meta`
+else (`language`, `software`, `subject`, `keywords`) is optional, and the `meta`
 bag holds arbitrary future fields (`edition`, `license`, `prerequisites`, …).
 Unknown fields are ignored safely and never break rendering — so new metadata
 can be added over time **without schema migrations**.
@@ -105,7 +105,7 @@ Append an object to `src/content/textbooks.json`:
   "authors": ["Author One"],
   "url": "https://author.github.io/book/",
   "language": "en",
-  "variant": "python",
+  "software": "python",
   "subject": "cs",
   "keywords": ["topic", "topic"],
   "meta": { "license": "CC-BY-4.0" }

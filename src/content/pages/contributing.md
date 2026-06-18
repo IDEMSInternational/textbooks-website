@@ -20,7 +20,7 @@ Every entry needs five core fields:
 - **authors** — a list of names
 - **url** — the externally hosted textbook site
 
-Optional fields add structure when available: `language`, `variant`,
+Optional fields add structure when available: `language`, `software`,
 `subject`, and `keywords`. Anything else can live under a free-form `meta`
 object (for example `edition`, `license`, or `prerequisites`) without changing
 the schema.

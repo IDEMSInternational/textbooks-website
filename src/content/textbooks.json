@@ -6,7 +6,7 @@
     "authors": ["Ada Whitfield", "Marcus Lindqvist"],
     "url": "https://example-press.github.io/linear-algebra-foundations/",
     "language": "en",
-    "variant": "general",
+    "software": "general",
     "subject": "math",
     "keywords": ["matrix", "vector space", "eigenvalues", "spectral theorem"],
     "meta": {
@@ -22,7 +22,7 @@
     "authors": ["Priya Nair"],
     "url": "https://example-press.github.io/stats-with-python/",
     "language": "en",
-    "variant": "python",
+    "software": "python",
     "subject": "stats",
     "keywords": ["probability", "hypothesis testing", "regression", "pandas"],
     "meta": {
@@ -38,7 +38,7 @@
     "authors": ["Eleanor Voss", "Tom Bergström"],
     "url": "https://example-press.github.io/applied-statistics-r/",
     "language": "en",
-    "variant": "r",
+    "software": "r",
     "subject": "stats",
     "keywords": ["tidyverse", "regression", "anova", "data analysis"],
     "meta": {
@@ -53,7 +53,7 @@
     "authors": ["Hiroshi Tanaka"],
     "url": "https://example-press.github.io/algorithms-ds/",
     "language": "en",
-    "variant": "general",
+    "software": "general",
     "subject": "cs",
     "keywords": ["sorting", "graphs", "dynamic programming", "complexity"],
     "meta": {
@@ -69,7 +69,7 @@
     "authors": ["Sofía Ramírez", "Diego Herrera"],
     "url": "https://example-press.github.io/calculo-diferencial/",
     "language": "es",
-    "variant": "general",
+    "software": "general",
     "subject": "math",
     "keywords": ["límites", "derivadas", "integrales", "series"],
     "meta": {
@@ -84,7 +84,7 @@
     "authors": ["Wei Chen", "Olúwaséun Adébáyò"],
     "url": "https://example-press.github.io/ml-in-python/",
     "language": "en",
-    "variant": "python",
+    "software": "python",
     "subject": "cs",
     "keywords": ["neural networks", "scikit-learn", "pytorch", "classification"],
     "meta": {
@@ -100,7 +100,7 @@
     "authors": ["Camille Dubois"],
     "url": "https://example-press.github.io/probabilites-statistiques/",
     "language": "fr",
-    "variant": "general",
+    "software": "general",
     "subject": "stats",
     "keywords": ["probabilité", "variables aléatoires", "inférence", "tests"],
     "meta": {
@@ -115,7 +115,7 @@
     "authors": ["Grace Okonkwo"],
     "url": "https://example-press.github.io/discrete-mathematics/",
     "language": "en",
-    "variant": "general",
+    "software": "general",
     "subject": "math",
     "keywords": ["logic", "combinatorics", "graph theory", "proofs"],
     "meta": {
@@ -130,7 +130,7 @@
     "authors": ["Lukas Brandt", "Hannah Vogel"],
     "url": "https://example-press.github.io/datenanalyse-r/",
     "language": "de",
-    "variant": "r",
+    "software": "r",
     "subject": "stats",
     "keywords": ["ggplot2", "visualisierung", "modellierung", "tidyverse"],
     "meta": {
@@ -145,7 +145,7 @@
     "authors": ["Nadia Hassan", "Robert Fielding", "Yuki Sato"],
     "url": "https://example-press.github.io/deep-learning-foundations/",
     "language": "en",
-    "variant": "python",
+    "software": "python",
     "subject": "cs",
     "keywords": ["backpropagation", "transformers", "attention", "optimisation"],
     "meta": {

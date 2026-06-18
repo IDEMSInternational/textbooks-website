@@ -8,7 +8,7 @@
  *
  * COMBINED LOGIC (per the spec):
  *
- *   results = (language AND variant AND subject) AND search
+ *   results = (language AND software AND subject) AND search
  *
  *   - ACROSS facet groups: AND   (must match every constrained facet)
  *   - WITHIN one facet group: OR (e.g. language ∈ {en, es})
@@ -24,7 +24,7 @@ import { FACET_KEYS } from './types';
 /** A blank state: nothing selected, no query. */
 export function emptyState(): CatalogueState {
   return {
-    facets: { language: [], variant: [], subject: [] },
+    facets: { language: [], software: [], subject: [] },
     search: '',
   };
 }
@@ -78,7 +78,7 @@ export function filterTextbooks(
  *
  * State lives in the URL query string so views are shareable and the browser
  * back/forward buttons work. Multi-select facets are comma-separated:
- *   /catalogue?language=en,es&variant=python&search=matrix
+ *   /catalogue?language=en,es&software=python&search=matrix
  * These helpers are the single source of truth for that encoding and are used
  * by both the server (initial render) and the client script.
  * ------------------------------------------------------------------ */
@@ -107,7 +107,7 @@ export function stateFromParams(
 
 /**
  * Serialise a `CatalogueState` back to a `URLSearchParams`. Empty constraints
- * are omitted so shared URLs stay clean (no `?language=&variant=` noise).
+ * are omitted so shared URLs stay clean (no `?language=&software=` noise).
  */
 export function paramsFromState(state: CatalogueState): URLSearchParams {
   const sp = new URLSearchParams();
