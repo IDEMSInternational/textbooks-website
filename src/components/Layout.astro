@@ -48,6 +48,10 @@ const nav = [
   ...pageLinks,
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+// The site root with any base path applied: '/textbooks-website' under a
+// project subpath, or '/' at a domain root. Used to detect the Home link
+// exactly, so its path isn't treated as a prefix of every other route.
+const rootPath = base || '/';
 ---
 
 <!doctype html>
@@ -69,9 +73,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           {
             nav.map((item) => {
               const itemPath = item.href.replace(/\/$/, '') || '/';
+              // The Home/root link must match exactly; otherwise its path would
+              // prefix-match every route. Other links match the page or any
+              // nested sub-route.
               const isCurrent =
-                itemPath === '/'
-                  ? currentPath === '/'
+                itemPath === rootPath
+                  ? currentPath === rootPath
                   : currentPath === itemPath ||
                     currentPath.startsWith(itemPath + '/');
               return (
