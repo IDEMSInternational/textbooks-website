@@ -79,6 +79,14 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Sticky footer: body fills at least the viewport and lays its
+     header / main / footer out as a column. `.site-main` grows to take the
+     slack, so the footer rests at the bottom on short pages but is pushed
+     below the fold (scroll-to-reach) on long ones. */
+  min-height: 100vh;
+  min-height: 100dvh; /* dynamic viewport on mobile, where supported */
+  display: flex;
+  flex-direction: column;
 }
 
 h1,

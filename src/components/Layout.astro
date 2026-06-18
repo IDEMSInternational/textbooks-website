@@ -96,8 +96,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <footer class="site-footer">
       <div class="container site-footer__inner">
         <p>
-          A static catalogue of openly hosted digital textbooks. Each entry
-          links to an externally hosted site.
+          A library of open statistic textbooks, managed by <a target="_blank" href="https://www.idems.international/">IDEMS International<a>
         </p>
       </div>
     </footer>
@@ -161,7 +160,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       }
 
       .site-main {
-        min-height: 60vh;
+        /* Grow to absorb leftover vertical space so the footer sticks to the
+           bottom of the viewport on short pages (see body flex column). */
+        flex: 1 0 auto;
         padding-block: var(--space-8);
       }
       .site-main--narrow {
