@@ -25,7 +25,7 @@ const initialState = stateFromParams(Astro.url.searchParams);
 ---
 
 <Layout
-  title="Catalogue"
+  title="Browse Books"
   description="Browse and filter the catalogue of openly hosted digital textbooks."
 >
   {/* Flash guard: if the URL carries filters, hide results until the client
@@ -39,7 +39,7 @@ const initialState = stateFromParams(Astro.url.searchParams);
 
   <div class="container catalogue" data-catalogue>
     <header class="catalogue__intro">
-      <h1>Catalogue</h1>
+      <h1>Browse Books</h1>
       <p class="catalogue__lede">
         Browse <span data-total-count>{books.length}</span> openly hosted
         digital textbooks. Filter by language, software and subject, or search
