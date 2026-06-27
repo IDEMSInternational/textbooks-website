@@ -20,6 +20,8 @@ npm run build        # static build → dist/
 npm run preview      # serve the built site
 npm run check        # astro + TypeScript type check
 npm run test:logic   # verify the pure filtering/URL logic
+npm run test:data    # validate every textbook JSON against the schema
+npm run test         # both of the above
 ```
 
 ---
@@ -88,7 +90,9 @@ Only `id`, `title`, `description`, `authors`, `url` are guaranteed. Everything
 else (`language`, `software`, `subject`, `keywords`) is optional, and the `meta`
 bag holds arbitrary future fields (`edition`, `license`, `prerequisites`, …).
 Unknown fields are ignored safely and never break rendering — so new metadata
-can be added over time **without schema migrations**.
+can be added over time **without schema migrations**: add it under `meta`, which
+is an open object. (The JSON Schema validates the known fields and steers genuinely
+new data into `meta` rather than new top-level keys, keeping the contract stable.)
 
 ---
 
@@ -116,8 +120,20 @@ after its `id` (e.g. `src/content/textbooks/unique-id.json`):
 
 Only the first five fields are required. The data layer picks the file up
 automatically (no central list to edit), and new facet values appear in the
-filters automatically. Catalogue order is by title, so the filename only needs
-to be unique — by convention it matches the `id`.
+filters automatically. Catalogue order is by title; the filename must match the
+`id` (`<id>.json`).
+
+Each document is validated against a JSON Schema
+([`schemas/textbook.schema.json`](schemas/textbook.schema.json)):
+
+- **In your editor:** `.vscode/settings.json` maps the schema onto
+  `src/content/textbooks/*.json`, so VS Code flags missing/mistyped fields as you
+  type.
+- **In CI / locally:** `npm run test:data` validates every document against the
+  same schema and checks catalogue-wide invariants (unique `id`s; filename ==
+  `id`). The runtime data layer stays lenient and skips malformed records, so
+  this check is what fails loudly on an authoring mistake before a book silently
+  drops out of the catalogue.
 
 ### Add a static page
 
@@ -190,9 +206,11 @@ The architecture is ready for a future GitHub Action without any structural
 rewrite. Intended flow:
 
 1. Each textbook repo carries a small `textbook.yml` metadata file.
-2. An Action reads those files, **validates** them against the `Textbook` schema,
-   and writes one JSON document per textbook into `src/content/textbooks/` (the
-   same folder the data layer already reads).
+2. An Action reads those files, **validates** them against
+   [`schemas/textbook.schema.json`](schemas/textbook.schema.json) — the same
+   language-agnostic contract used by the editor and `npm run test:data` — and
+   writes one JSON document per textbook into `src/content/textbooks/` (the same
+   folder the data layer already reads).
 3. A commit/push triggers a rebuild and redeploy.
 
 Why no code changes are needed when that lands:
