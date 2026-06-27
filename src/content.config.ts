@@ -2,7 +2,8 @@
  * Content collections config.
  *
  * Only the markdown `pages` collection is defined here. Textbook data is NOT a
- * content collection on purpose: it is plain JSON read through the data layer
+ * content collection on purpose: it is a folder of plain per-book JSON documents
+ * (`src/content/textbooks/*.json`) read through the data layer
  * (`src/lib/textbooks.ts`) so the source can be swapped for Action-generated
  * data without touching the UI. Declaring this config also stops Astro from
  * auto-generating (deprecated) collections for folders under `src/content/`.

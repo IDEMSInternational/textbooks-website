@@ -10,6 +10,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "test:logic": "tsx scripts/verify-filtering.ts",
+    "test:data": "tsx scripts/verify-data.ts",
+    "test": "npm run test:logic && npm run test:data",
     "astro": "astro"
   },
   "dependencies": {
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@types/node": "^22.20.0",
     "puppeteer-core": "^25.1.0",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3"

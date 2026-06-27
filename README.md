@@ -20,6 +20,8 @@ npm run build        # static build → dist/
 npm run preview      # serve the built site
 npm run check        # astro + TypeScript type check
 npm run test:logic   # verify the pure filtering/URL logic
+npm run test:data    # validate every textbook JSON against the schema
+npm run test         # both of the above
 ```
 
 ---
@@ -48,7 +50,7 @@ Two-layer content architecture:
 ```
 src/
 ├─ content/
-│  ├─ textbooks.json          # STRUCTURED data layer (the catalogue source)
+│  ├─ textbooks/*.json        # STRUCTURED data layer — one JSON document per textbook
 │  └─ pages/*.md              # CONTENT layer (static markdown pages)
 ├─ content.config.ts          # defines the `pages` collection (+ stops auto-collection)
 ├─ lib/
@@ -72,10 +74,11 @@ src/
 **Clear separation of concerns:**
 
 - **Data layer** (`lib/textbooks.ts`) is the _only_ module that reads the data
-  source. Today it imports `textbooks.json`; tomorrow it can `fetch()` a
-  generated file or read Action-built data — the UI never changes because the
-  returned shape stays `Textbook[]`. It also normalises records defensively and
-  derives facets.
+  source. Today it bundles a folder of per-textbook JSON documents
+  (`src/content/textbooks/*.json`) via `import.meta.glob`; tomorrow it can
+  `fetch()` a remote source or read Action-built data — the UI never changes
+  because the returned shape stays `Textbook[]`. It also normalises records
+  defensively, sorts them by title and derives facets.
 - **Filtering logic** (`lib/filtering.ts`) is pure and framework-free, so the
   same rules are testable (`npm run test:logic`) and mirrored by the client.
 - **UI components** depend only on the five guaranteed fields and render
@@ -87,7 +90,9 @@ Only `id`, `title`, `description`, `authors`, `url` are guaranteed. Everything
 else (`language`, `software`, `subject`, `keywords`) is optional, and the `meta`
 bag holds arbitrary future fields (`edition`, `license`, `prerequisites`, …).
 Unknown fields are ignored safely and never break rendering — so new metadata
-can be added over time **without schema migrations**.
+can be added over time **without schema migrations**: add it under `meta`, which
+is an open object. (The JSON Schema validates the known fields and steers genuinely
+new data into `meta` rather than new top-level keys, keeping the contract stable.)
 
 ---
 
@@ -95,15 +100,19 @@ can be added over time **without schema migrations**.
 
 ### Add a textbook
 
-Append an object to `src/content/textbooks.json`:
+Drop a new JSON document into `src/content/textbooks/`, one file per book. The
+`id` is the textbook's **own GitHub repository** in `<owner>/<repo>` form —
+GitHub guarantees that's globally unique, so no two entries collide. The filename
+is derived from it as `<owner>__<repo>.json` (e.g. id `example-press/ml-in-python`
+→ `src/content/textbooks/example-press__ml-in-python.json`):
 
 ```json
 {
-  "id": "unique-id",
+  "id": "owner/repo",
   "title": "Title",
   "description": "One-paragraph summary.",
   "authors": ["Author One"],
-  "url": "https://author.github.io/book/",
+  "url": "https://owner.github.io/repo/",
   "language": "en",
   "software": "python",
   "subject": "cs",
@@ -112,8 +121,23 @@ Append an object to `src/content/textbooks.json`:
 }
 ```
 
-Only the first five fields are required. New facet values appear in the filters
-automatically.
+Note `id` (the source **repo**, as `owner/repo`) and `url` (where the book is
+**published**, e.g. GitHub Pages) are distinct. Only the first five fields are
+required. The data
+layer picks the file up automatically (no central list to edit), and new facet
+values appear in the filters automatically. Catalogue order is by title.
+
+Each document is validated against a JSON Schema
+([`schemas/textbook.schema.json`](schemas/textbook.schema.json)):
+
+- **In your editor:** `.vscode/settings.json` maps the schema onto
+  `src/content/textbooks/*.json`, so VS Code flags missing/mistyped fields (and an
+  `id` not in `owner/repo` form) as you type.
+- **In CI / locally:** `npm run test:data` validates every document against the
+  same schema and checks catalogue-wide invariants (unique `id`s; filename
+  derived from `id`). The runtime data layer stays lenient and skips malformed
+  records, so this check is what fails loudly on an authoring mistake before a
+  book silently drops out of the catalogue.
 
 ### Add a static page
 
@@ -186,9 +210,11 @@ The architecture is ready for a future GitHub Action without any structural
 rewrite. Intended flow:
 
 1. Each textbook repo carries a small `textbook.yml` metadata file.
-2. An Action reads those files, **validates** them against the `Textbook` schema,
-   and regenerates `src/content/textbooks.json` (or an equivalent file the data
-   layer reads).
+2. An Action reads those files, **validates** them against
+   [`schemas/textbook.schema.json`](schemas/textbook.schema.json) — the same
+   language-agnostic contract used by the editor and `npm run test:data` — and
+   writes one JSON document per textbook into `src/content/textbooks/` (the same
+   folder the data layer already reads).
 3. A commit/push triggers a rebuild and redeploy.
 
 Why no code changes are needed when that lands:

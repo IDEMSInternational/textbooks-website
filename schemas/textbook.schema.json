@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jfmcquade.github.io/textbooks-website/schemas/textbook.schema.json",
+  "title": "Textbook",
+  "description": "One catalogue entry. One JSON document per textbook lives in src/content/textbooks/<owner>__<repo>.json. Only id, title, description, authors and url are required; everything else is optional, and arbitrary future fields go under `meta` rather than at the top level.",
+  "type": "object",
+  "required": ["id", "title", "description", "authors", "url"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional pointer to this schema (editors may use it for inline validation)."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?/[A-Za-z0-9._-]+$",
+      "description": "The textbook's own GitHub repository in <owner>/<repo> form (e.g. example-press/ml-in-python). GitHub guarantees owner/repo is globally unique, so it is the stable id. The filename is derived from it as <owner>__<repo>.json; expand to a link with https://github.com/<owner>/<repo> when needed."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display title of the textbook."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-paragraph summary shown on the catalogue card."
+    },
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "One or more author names."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "minLength": 1,
+      "description": "Absolute URL of the externally hosted textbook site."
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Language code, e.g. en, es, fr, de. Drives the Language facet."
+    },
+    "software": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Associated software, e.g. python, r, general. Drives the Software facet."
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Subject area, e.g. math, stats, cs. Drives the Subject facet."
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Free-text keywords; included in search."
+    },
+    "meta": {
+      "type": "object",
+      "description": "Open bag for arbitrary future fields (edition, license, prerequisites, ...). Ignored by the UI until something opts in to reading it."
+    }
+  }
+}

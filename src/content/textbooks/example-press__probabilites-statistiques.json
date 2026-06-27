@@ -1,0 +1,22 @@
+{
+  "id": "example-press/probabilites-statistiques",
+  "title": "Probabilités et Statistiques",
+  "description": "Une introduction soignée à la théorie des probabilités et à l'inférence statistique, des variables aléatoires aux tests d'hypothèses, avec exercices corrigés.",
+  "authors": [
+    "Camille Dubois"
+  ],
+  "url": "https://example-press.github.io/probabilites-statistiques/",
+  "language": "fr",
+  "software": "general",
+  "subject": "stats",
+  "keywords": [
+    "probabilité",
+    "variables aléatoires",
+    "inférence",
+    "tests"
+  ],
+  "meta": {
+    "license": "CC-BY-4.0",
+    "difficulty": "intermediate"
+  }
+}
