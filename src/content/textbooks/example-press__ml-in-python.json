@@ -1,5 +1,5 @@
 {
-  "id": "machine-learning-python",
+  "id": "example-press/ml-in-python",
   "title": "Machine Learning in Python",
   "description": "From linear models to neural networks, this hands-on text builds intuition for supervised and unsupervised learning using scikit-learn and PyTorch.",
   "authors": [
@@ -20,8 +20,8 @@
     "license": "Apache-2.0",
     "difficulty": "advanced",
     "prerequisites": [
-      "intro-statistics-python",
-      "linear-algebra-foundations"
+      "example-press/stats-with-python",
+      "example-press/linear-algebra-foundations"
     ]
   }
 }

@@ -100,16 +100,19 @@ new data into `meta` rather than new top-level keys, keeping the contract stable
 
 ### Add a textbook
 
-Drop a new JSON document into `src/content/textbooks/`, one file per book, named
-after its `id` (e.g. `src/content/textbooks/unique-id.json`):
+Drop a new JSON document into `src/content/textbooks/`, one file per book. The
+`id` is the textbook's **own GitHub repository** in `<owner>/<repo>` form —
+GitHub guarantees that's globally unique, so no two entries collide. The filename
+is derived from it as `<owner>__<repo>.json` (e.g. id `example-press/ml-in-python`
+→ `src/content/textbooks/example-press__ml-in-python.json`):
 
 ```json
 {
-  "id": "unique-id",
+  "id": "owner/repo",
   "title": "Title",
   "description": "One-paragraph summary.",
   "authors": ["Author One"],
-  "url": "https://author.github.io/book/",
+  "url": "https://owner.github.io/repo/",
   "language": "en",
   "software": "python",
   "subject": "cs",
@@ -118,22 +121,23 @@ after its `id` (e.g. `src/content/textbooks/unique-id.json`):
 }
 ```
 
-Only the first five fields are required. The data layer picks the file up
-automatically (no central list to edit), and new facet values appear in the
-filters automatically. Catalogue order is by title; the filename must match the
-`id` (`<id>.json`).
+Note `id` (the source **repo**, as `owner/repo`) and `url` (where the book is
+**published**, e.g. GitHub Pages) are distinct. Only the first five fields are
+required. The data
+layer picks the file up automatically (no central list to edit), and new facet
+values appear in the filters automatically. Catalogue order is by title.
 
 Each document is validated against a JSON Schema
 ([`schemas/textbook.schema.json`](schemas/textbook.schema.json)):
 
 - **In your editor:** `.vscode/settings.json` maps the schema onto
-  `src/content/textbooks/*.json`, so VS Code flags missing/mistyped fields as you
-  type.
+  `src/content/textbooks/*.json`, so VS Code flags missing/mistyped fields (and an
+  `id` not in `owner/repo` form) as you type.
 - **In CI / locally:** `npm run test:data` validates every document against the
-  same schema and checks catalogue-wide invariants (unique `id`s; filename ==
-  `id`). The runtime data layer stays lenient and skips malformed records, so
-  this check is what fails loudly on an authoring mistake before a book silently
-  drops out of the catalogue.
+  same schema and checks catalogue-wide invariants (unique `id`s; filename
+  derived from `id`). The runtime data layer stays lenient and skips malformed
+  records, so this check is what fails loudly on an authoring mistake before a
+  book silently drops out of the catalogue.
 
 ### Add a static page
 

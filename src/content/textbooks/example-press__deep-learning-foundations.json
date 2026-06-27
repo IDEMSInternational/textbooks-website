@@ -1,5 +1,5 @@
 {
-  "id": "deep-learning-foundations",
+  "id": "example-press/deep-learning-foundations",
   "title": "Foundations of Deep Learning",
   "description": "A mathematically grounded treatment of deep learning: backpropagation, optimisation, convolutional and recurrent architectures, attention and transformers.",
   "authors": [
@@ -22,7 +22,7 @@
     "license": "CC-BY-NC-SA-4.0",
     "difficulty": "advanced",
     "prerequisites": [
-      "machine-learning-python"
+      "example-press/ml-in-python"
     ]
   }
 }

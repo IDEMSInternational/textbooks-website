@@ -1,5 +1,5 @@
 {
-  "id": "datenanalyse-mit-r",
+  "id": "example-press/datenanalyse-r",
   "title": "Datenanalyse mit R",
   "description": "Eine praxisnahe Einführung in die Datenanalyse mit R: Datenaufbereitung, Visualisierung mit ggplot2 und statistische Modellierung anhand realer Datensätze.",
   "authors": [

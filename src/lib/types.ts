@@ -12,6 +12,11 @@
  * migrating existing data. Unknown fields are ignored safely by the UI.
  */
 export interface Textbook {
+  /**
+   * The textbook's own GitHub repository as `<owner>/<repo>` (e.g.
+   * `example-press/ml-in-python`). Used as the stable, globally-unique id —
+   * GitHub guarantees no two repos share the same owner/name.
+   */
   id: string;
   title: string;
   description: string;

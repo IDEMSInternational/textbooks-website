@@ -1,5 +1,5 @@
 {
-  "id": "algorithms-and-data-structures",
+  "id": "example-press/algorithms-ds",
   "title": "Algorithms and Data Structures",
   "description": "Covers asymptotic analysis, sorting and searching, trees, graphs, dynamic programming and complexity theory, with language-agnostic pseudocode throughout.",
   "authors": [

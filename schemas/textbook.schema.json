@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jfmcquade.github.io/textbooks-website/schemas/textbook.schema.json",
   "title": "Textbook",
-  "description": "One catalogue entry. One JSON document per textbook lives in src/content/textbooks/<id>.json. Only id, title, description, authors and url are required; everything else is optional, and arbitrary future fields go under `meta` rather than at the top level.",
+  "description": "One catalogue entry. One JSON document per textbook lives in src/content/textbooks/<owner>__<repo>.json. Only id, title, description, authors and url are required; everything else is optional, and arbitrary future fields go under `meta` rather than at the top level.",
   "type": "object",
   "required": ["id", "title", "description", "authors", "url"],
   "additionalProperties": false,
@@ -13,9 +13,8 @@
     },
     "id": {
       "type": "string",
-      "minLength": 1,
-      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-      "description": "Stable, unique kebab-case slug. Must match the filename, i.e. <id>.json."
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?/[A-Za-z0-9._-]+$",
+      "description": "The textbook's own GitHub repository in <owner>/<repo> form (e.g. example-press/ml-in-python). GitHub guarantees owner/repo is globally unique, so it is the stable id. The filename is derived from it as <owner>__<repo>.json; expand to a link with https://github.com/<owner>/<repo> when needed."
     },
     "title": {
       "type": "string",

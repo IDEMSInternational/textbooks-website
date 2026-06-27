@@ -3,8 +3,8 @@
  *
  *   1. against the shared JSON Schema (`schemas/textbook.schema.json`), and
  *   2. against catalogue-wide invariants a per-file schema can't express:
- *        - every `id` is unique across files, and
- *        - each file is named `<id>.json` (filename matches its `id`).
+ *        - every `id` (an <owner>/<repo> pair) is unique across files, and
+ *        - each file is named `<owner>__<repo>.json`, derived from its `id`.
  *
  * This is the headless / CI counterpart to the live editor validation wired up
  * in `.vscode/settings.json`. Both read the SAME schema, so the field contract
@@ -39,6 +39,16 @@ interface Schema {
 }
 
 const schema: Schema = JSON.parse(readFileSync(schemaPath, 'utf8'));
+
+/**
+ * The filename a document's `id` must live under: an `<owner>/<repo>` pair maps
+ * to `<owner>__<repo>.json`. Returns null when the id isn't in owner/repo form
+ * (the schema check reports that separately).
+ */
+function fileNameForId(id: string): string | null {
+  const m = /^([^/]+)\/([^/]+)$/.exec(id);
+  return m ? `${m[1]}__${m[2]}.json` : null;
+}
 
 /** JSON-Schema-flavoured type name (arrays and null are distinct from object). */
 function typeOf(v: unknown): string {
@@ -141,7 +151,12 @@ for (const file of files) {
   // Cross-file invariants — only meaningful once the document has a usable id.
   const id = (doc as { id?: unknown }).id;
   if (typeof id === 'string' && id.length > 0) {
-    check(`${file}: filename matches id`, file === `${id}.json`, `expected ${id}.json`);
+    const expected = fileNameForId(id);
+    check(
+      `${file}: filename derived from id`,
+      expected !== null && file === expected,
+      expected ? `expected ${expected}` : `id is not in owner/repo form`,
+    );
     const prev = seenIds.get(id);
     check(`${file}: id "${id}" is unique`, prev === undefined, `also used by ${prev}`);
     seenIds.set(id, file);
