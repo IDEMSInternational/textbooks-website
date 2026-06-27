@@ -48,7 +48,7 @@ Two-layer content architecture:
 ```
 src/
 ├─ content/
-│  ├─ textbooks.json          # STRUCTURED data layer (the catalogue source)
+│  ├─ textbooks/*.json        # STRUCTURED data layer — one JSON document per textbook
 │  └─ pages/*.md              # CONTENT layer (static markdown pages)
 ├─ content.config.ts          # defines the `pages` collection (+ stops auto-collection)
 ├─ lib/
@@ -72,10 +72,11 @@ src/
 **Clear separation of concerns:**
 
 - **Data layer** (`lib/textbooks.ts`) is the _only_ module that reads the data
-  source. Today it imports `textbooks.json`; tomorrow it can `fetch()` a
-  generated file or read Action-built data — the UI never changes because the
-  returned shape stays `Textbook[]`. It also normalises records defensively and
-  derives facets.
+  source. Today it bundles a folder of per-textbook JSON documents
+  (`src/content/textbooks/*.json`) via `import.meta.glob`; tomorrow it can
+  `fetch()` a remote source or read Action-built data — the UI never changes
+  because the returned shape stays `Textbook[]`. It also normalises records
+  defensively, sorts them by title and derives facets.
 - **Filtering logic** (`lib/filtering.ts`) is pure and framework-free, so the
   same rules are testable (`npm run test:logic`) and mirrored by the client.
 - **UI components** depend only on the five guaranteed fields and render
@@ -95,7 +96,8 @@ can be added over time **without schema migrations**.
 
 ### Add a textbook
 
-Append an object to `src/content/textbooks.json`:
+Drop a new JSON document into `src/content/textbooks/`, one file per book, named
+after its `id` (e.g. `src/content/textbooks/unique-id.json`):
 
 ```json
 {
@@ -112,8 +114,10 @@ Append an object to `src/content/textbooks.json`:
 }
 ```
 
-Only the first five fields are required. New facet values appear in the filters
-automatically.
+Only the first five fields are required. The data layer picks the file up
+automatically (no central list to edit), and new facet values appear in the
+filters automatically. Catalogue order is by title, so the filename only needs
+to be unique — by convention it matches the `id`.
 
 ### Add a static page
 
@@ -187,8 +191,8 @@ rewrite. Intended flow:
 
 1. Each textbook repo carries a small `textbook.yml` metadata file.
 2. An Action reads those files, **validates** them against the `Textbook` schema,
-   and regenerates `src/content/textbooks.json` (or an equivalent file the data
-   layer reads).
+   and writes one JSON document per textbook into `src/content/textbooks/` (the
+   same folder the data layer already reads).
 3. A commit/push triggers a rebuild and redeploy.
 
 Why no code changes are needed when that lands:

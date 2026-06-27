@@ -1,0 +1,22 @@
+{
+  "id": "discrete-mathematics",
+  "title": "Discrete Mathematics for Computing",
+  "description": "Logic, set theory, combinatorics, graph theory and number theory presented with a computing audience in mind, including proofs and applications to algorithms.",
+  "authors": [
+    "Grace Okonkwo"
+  ],
+  "url": "https://example-press.github.io/discrete-mathematics/",
+  "language": "en",
+  "software": "general",
+  "subject": "math",
+  "keywords": [
+    "logic",
+    "combinatorics",
+    "graph theory",
+    "proofs"
+  ],
+  "meta": {
+    "license": "CC-BY-SA-4.0",
+    "difficulty": "intermediate"
+  }
+}

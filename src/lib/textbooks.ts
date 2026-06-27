@@ -4,18 +4,31 @@
  * This module is the ONLY place that knows where textbook data comes from.
  * UI components and pages import from here, never from the raw JSON.
  *
- * Today it loads a static JSON file bundled with the repo. Later, a GitHub
- * Action can generate that same JSON (from per-repo `textbook.yml` files) and
- * drop it in at the same path — or this function can be swapped to `fetch()` a
- * remote file — WITHOUT any change to UI code, as long as the returned shape
- * stays `Textbook[]`.
+ * The source is a COLLECTION of per-textbook JSON documents — one file per book
+ * under `src/content/textbooks/<id>.json`. They are bundled into the build via
+ * Vite's `import.meta.glob`, so adding, editing or removing a textbook is just a
+ * file change in that folder: no code change here, no central manifest to keep
+ * in sync. Later, a GitHub Action can generate those same per-repo documents
+ * (from each textbook's `textbook.yml`) and drop them in the same folder — or
+ * this function can be swapped to `fetch()` a remote source — WITHOUT any change
+ * to UI code, as long as the returned shape stays `Textbook[]`.
  *
  * Keep this layer thin and explicit: load, normalise, derive facets. No
  * rendering concerns, no filtering concerns (those live in `filtering.ts`).
  */
 import type { Textbook, Facet, FacetKey } from './types';
 import { FACET_KEYS } from './types';
-import rawTextbooks from '../content/textbooks.json';
+
+/**
+ * Eagerly load every per-textbook JSON document. The glob is resolved by Vite at
+ * build time, so each file's parsed contents land on `.default`. The keys are
+ * file paths; we only need the values. Order here is not relied upon — the
+ * catalogue is sorted explicitly below.
+ */
+const textbookModules = import.meta.glob<{ default: unknown }>(
+  '../content/textbooks/*.json',
+  { eager: true },
+);
 
 /** Human-readable labels for each facet group, used by the filter panel. */
 const FACET_LABELS: Record<FacetKey, string> = {
@@ -71,16 +84,20 @@ function normalise(raw: unknown): Textbook | null {
 let cache: Textbook[] | null = null;
 
 /**
- * Returns all textbooks. Synchronous today because the source is a bundled
- * import; declared `async` so a future remote-fetch implementation is a
+ * Returns all textbooks. Synchronous today because the source is a set of
+ * bundled imports; declared `async` so a future remote-fetch implementation is a
  * drop-in replacement that needs no caller changes.
+ *
+ * Records are normalised defensively (malformed/partial files are skipped) and
+ * sorted by title so the catalogue order is deterministic regardless of the
+ * filesystem/glob order.
  */
 export async function getTextbooks(): Promise<Textbook[]> {
   if (cache) return cache;
-  const list = Array.isArray(rawTextbooks) ? rawTextbooks : [];
-  cache = list
-    .map(normalise)
-    .filter((b): b is Textbook => b !== null);
+  cache = Object.values(textbookModules)
+    .map((mod) => normalise(mod.default))
+    .filter((b): b is Textbook => b !== null)
+    .sort((a, b) => a.title.localeCompare(b.title));
   return cache;
 }
 
