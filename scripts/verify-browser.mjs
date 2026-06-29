@@ -1,5 +1,5 @@
 /**
- * End-to-end browser verification of the catalogue's interactive behaviour,
+ * End-to-end browser verification of the library's interactive behaviour,
  * driving the locally-installed Chrome via puppeteer-core (no browser download).
  *
  * Verifies the things static checks can't: that filtered-out cards are actually

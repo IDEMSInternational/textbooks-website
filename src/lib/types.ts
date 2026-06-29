@@ -1,5 +1,5 @@
 /**
- * Core data model for the textbook catalogue.
+ * Core data model for the textbook library.
  *
  * SCHEMA-FLEXIBLE BUT UI-STABLE
  * -----------------------------
@@ -32,7 +32,7 @@ export interface Textbook {
 }
 
 /**
- * The three facets the catalogue filters on. Kept as a const tuple so the
+ * The three facets the library filters on. Kept as a const tuple so the
  * filtering code, the data layer (facet derivation) and the UI all agree on
  * the same set of keys without hardcoding them in multiple places.
  *
@@ -60,7 +60,7 @@ export interface Facet {
  *
  * Each facet maps to a list of selected values (multi-select).
  */
-export interface CatalogueState {
+export interface LibraryState {
   /** Selected values per facet. Empty array (or missing key) = no constraint. */
   facets: Record<FacetKey, string[]>;
   /** Free-text search query (case-insensitive). */

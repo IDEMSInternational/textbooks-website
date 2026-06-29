@@ -1,7 +1,7 @@
 /*
  * GLOBAL STYLES — design tokens + base elements
  * ---------------------------------------------
- * Plain CSS (no framework). Rationale: the catalogue is small, the design is
+ * Plain CSS (no framework). Rationale: the library is small, the design is
  * deliberately minimal, and a handful of tokens + a few component stylesheets
  * are easier to read and audit than a utility framework — and ship near-zero
  * CSS overhead. Everything is driven by the custom properties below, so spacing
@@ -136,13 +136,13 @@ img {
 
 /*
  * Flash guard for shared filtered links: while `is-prefiltering` is set on
- * <html> (by the catalogue's inline script, only when the URL has filters),
+ * <html> (by the library's inline script, only when the URL has filters),
  * hide the whole result grid until the client script applies the real filters
  * and removes the class. Hiding the grid (rather than individual cards) avoids
  * leaving empty grid cells during the brief pre-filter window.
- * See `pages/catalogue.astro` and `scripts/catalogue.ts`.
+ * See `pages/library.astro` and `scripts/library.ts`.
  */
-.is-prefiltering .catalogue__grid {
+.is-prefiltering .library__grid {
   display: none;
 }
 

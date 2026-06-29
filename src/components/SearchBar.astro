@@ -1,6 +1,6 @@
 ---
 /**
- * SearchBar — a single text input. Purely presentational; the catalogue's
+ * SearchBar — a single text input. Purely presentational; the library's
  * client script wires it up (reads/writes `value`, listens for input). The
  * `initialValue` lets the server pre-fill it from the URL so a shared link
  * shows the right query before JS runs.
@@ -12,7 +12,7 @@ const { initialValue = '' } = Astro.props;
 ---
 
 <div class="searchbar">
-  <label class="visually-hidden" for="catalogue-search">
+  <label class="visually-hidden" for="library-search">
     Search textbooks
   </label>
   <svg
@@ -32,7 +32,7 @@ const { initialValue = '' } = Astro.props;
   </svg>
   <input
     type="search"
-    id="catalogue-search"
+    id="library-search"
     name="search"
     class="searchbar__input"
     placeholder="Search by title, description, keyword or author…"

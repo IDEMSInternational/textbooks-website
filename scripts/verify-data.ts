@@ -2,7 +2,7 @@
  * Validates every per-textbook JSON document in `src/content/textbooks/`:
  *
  *   1. against the shared JSON Schema (`schemas/textbook.schema.json`), and
- *   2. against catalogue-wide invariants a per-file schema can't express:
+ *   2. against library-wide invariants a per-file schema can't express:
  *        - every `id` (an <owner>/<repo> pair) is unique across files, and
  *        - each file is named `<owner>__<repo>.json`, derived from its `id`.
  *
@@ -11,7 +11,7 @@
  * has a single source of truth. The data layer (`src/lib/textbooks.ts`) stays
  * deliberately lenient at runtime (it skips malformed records); this script is
  * the strict gate that fails loudly so authoring mistakes are caught before a
- * book silently vanishes from the catalogue.
+ * book silently vanishes from the library.
  *
  * Run with: npm run test:data   (tsx scripts/verify-data.ts)
  */

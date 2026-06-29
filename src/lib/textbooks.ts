@@ -23,7 +23,7 @@ import { FACET_KEYS } from './types';
  * Eagerly load every per-textbook JSON document. The glob is resolved by Vite at
  * build time, so each file's parsed contents land on `.default`. The keys are
  * file paths; we only need the values. Order here is not relied upon — the
- * catalogue is sorted explicitly below.
+ * library is sorted explicitly below.
  */
 const textbookModules = import.meta.glob<{ default: unknown }>(
   '../content/textbooks/*.json',
@@ -89,7 +89,7 @@ let cache: Textbook[] | null = null;
  * drop-in replacement that needs no caller changes.
  *
  * Records are normalised defensively (malformed/partial files are skipped) and
- * sorted by title so the catalogue order is deterministic regardless of the
+ * sorted by title so the library order is deterministic regardless of the
  * filesystem/glob order.
  */
 export async function getTextbooks(): Promise<Textbook[]> {

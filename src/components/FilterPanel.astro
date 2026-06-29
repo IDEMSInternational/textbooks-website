@@ -3,15 +3,15 @@
  * FilterPanel — renders one checkbox group per facet, with values derived
  * dynamically from the dataset (passed in as `facets`; never hardcoded).
  *
- * Presentational only: the catalogue client script reads checkbox state,
+ * Presentational only: the library client script reads checkbox state,
  * applies the AND/OR rules and syncs the URL. The server pre-checks boxes from
  * `selected` (parsed from the URL) so a shared link renders correctly pre-JS.
  */
-import type { Facet, CatalogueState } from '../lib/types';
+import type { Facet, LibraryState } from '../lib/types';
 
 interface Props {
   facets: Facet[];
-  selected: CatalogueState['facets'];
+  selected: LibraryState['facets'];
 }
 const { facets, selected } = Astro.props;
 ---

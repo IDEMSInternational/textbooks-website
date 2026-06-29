@@ -15,7 +15,7 @@
  *   substring over the precomputed `data-search` text. URL (de)serialisation is
  *   imported from the shared module so encoding stays single-sourced.
  */
-import type { CatalogueState, FacetKey } from '../lib/types';
+import type { LibraryState, FacetKey } from '../lib/types';
 import { FACET_KEYS } from '../lib/types';
 import {
   emptyState,
@@ -43,7 +43,7 @@ function init(): void {
   const total = cards.length;
 
   /** Build current state from the form controls. */
-  function readState(): CatalogueState {
+  function readState(): LibraryState {
     const state = emptyState();
     for (const cb of checkboxes) {
       if (!cb.checked) continue;
@@ -55,7 +55,7 @@ function init(): void {
   }
 
   /** Push a state into the form controls (used when restoring from the URL). */
-  function writeControls(state: CatalogueState): void {
+  function writeControls(state: LibraryState): void {
     for (const cb of checkboxes) {
       const facet = cb.dataset.facet as FacetKey | undefined;
       cb.checked = !!facet && state.facets[facet]?.includes(cb.value);
@@ -64,7 +64,7 @@ function init(): void {
   }
 
   /** Does one card satisfy the state? Mirrors filtering.ts rules. */
-  function matches(card: HTMLElement, state: CatalogueState): boolean {
+  function matches(card: HTMLElement, state: LibraryState): boolean {
     for (const key of FACET_KEYS) {
       const selected = state.facets[key];
       if (selected.length === 0) continue;
@@ -80,7 +80,7 @@ function init(): void {
   }
 
   /** Apply the state to the DOM: toggle cards, update count + empty state. */
-  function render(state: CatalogueState): void {
+  function render(state: LibraryState): void {
     let visible = 0;
     for (const card of cards) {
       const show = matches(card, state);
@@ -103,7 +103,7 @@ function init(): void {
   }
 
   /** Write state to the URL. `replace` avoids stacking history while typing. */
-  function syncUrl(state: CatalogueState, replace: boolean): void {
+  function syncUrl(state: LibraryState, replace: boolean): void {
     const params = paramsFromState(state);
     const qs = params.toString();
     const url = qs ? `${location.pathname}?${qs}` : location.pathname;

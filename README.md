@@ -1,6 +1,6 @@
-# Open Textbook Catalogue
+# Open Textbook Library
 
-A minimal, static **catalogue of digital textbooks**. The textbooks themselves
+A minimal, static **library of digital textbooks**. The textbooks themselves
 are **not** hosted here — every entry links out to an externally hosted site
 (e.g. GitHub Pages). This app is purely a discovery / index layer.
 
@@ -125,7 +125,7 @@ Note `id` (the source **repo**, as `owner/repo`) and `url` (where the book is
 **published**, e.g. GitHub Pages) are distinct. Only the first five fields are
 required. The data
 layer picks the file up automatically (no central list to edit), and new facet
-values appear in the filters automatically. Catalogue order is by title.
+values appear in the filters automatically. Library order is by title.
 
 Each document is validated against a JSON Schema
 ([`schemas/textbook.schema.json`](schemas/textbook.schema.json)):
@@ -134,10 +134,10 @@ Each document is validated against a JSON Schema
   `src/content/textbooks/*.json`, so VS Code flags missing/mistyped fields (and an
   `id` not in `owner/repo` form) as you type.
 - **In CI / locally:** `npm run test:data` validates every document against the
-  same schema and checks catalogue-wide invariants (unique `id`s; filename
+  same schema and checks library-wide invariants (unique `id`s; filename
   derived from `id`). The runtime data layer stays lenient and skips malformed
   records, so this check is what fails loudly on an authoring mistake before a
-  book silently drops out of the catalogue.
+  book silently drops out of the library.
 
 ### Add a static page
 
@@ -159,7 +159,7 @@ order: 3       # optional sort key for the header nav (lower first)
 ```
 
 It is served at `/faq` **and is added to the header nav automatically** (the nav
-is built from the `pages` collection, after Home and Catalogue). No routing or
+is built from the `pages` collection, after Home and Library). No routing or
 layout changes needed. Use `nav: false` to hide a page from the menu, and
 `order` to position it (ties fall back to alphabetical by title).
 
@@ -185,7 +185,7 @@ consistent spacing/type rhythm.
 
 Plain **case-insensitive substring** matching over a precomputed searchable
 string (title + description + keywords + authors). It fully meets the
-requirements with **zero dependencies**. The catalogue ships ~2 KB of JS. If the
+requirements with **zero dependencies**. The library ships ~2 KB of JS. If the
 dataset grows large enough to need ranked/fuzzy search, `lib/filtering.ts` is the
 single seam to swap in Fuse.js or FlexSearch (client-side only — no external
 search service).

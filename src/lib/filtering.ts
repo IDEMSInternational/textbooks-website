@@ -18,11 +18,11 @@
  * An empty selection for a facet means "no constraint" for that facet.
  * An empty search string means "no constraint" from search.
  */
-import type { Textbook, CatalogueState } from './types';
+import type { Textbook, LibraryState } from './types';
 import { FACET_KEYS } from './types';
 
 /** A blank state: nothing selected, no query. */
-export function emptyState(): CatalogueState {
+export function emptyState(): LibraryState {
   return {
     facets: { language: [], software: [], subject: [] },
     search: '',
@@ -30,7 +30,7 @@ export function emptyState(): CatalogueState {
 }
 
 /** True when a single book satisfies every constrained facet (AND across, OR within). */
-function matchesFacets(book: Textbook, state: CatalogueState): boolean {
+function matchesFacets(book: Textbook, state: LibraryState): boolean {
   for (const key of FACET_KEYS) {
     const selected = state.facets[key];
     if (!selected || selected.length === 0) continue; // no constraint
@@ -66,7 +66,7 @@ function matchesSearch(book: Textbook, query: string): boolean {
 /** Apply the full combined filter + search to a list of books. */
 export function filterTextbooks(
   books: Textbook[],
-  state: CatalogueState,
+  state: LibraryState,
 ): Textbook[] {
   return books.filter(
     (book) => matchesFacets(book, state) && matchesSearch(book, state.search),
@@ -83,10 +83,10 @@ export function filterTextbooks(
  * by both the server (initial render) and the client script.
  * ------------------------------------------------------------------ */
 
-/** Parse a `URLSearchParams` (or query string) into a `CatalogueState`. */
+/** Parse a `URLSearchParams` (or query string) into a `LibraryState`. */
 export function stateFromParams(
   params: URLSearchParams | string,
-): CatalogueState {
+): LibraryState {
   const sp =
     typeof params === 'string' ? new URLSearchParams(params) : params;
   const state = emptyState();
@@ -106,10 +106,10 @@ export function stateFromParams(
 }
 
 /**
- * Serialise a `CatalogueState` back to a `URLSearchParams`. Empty constraints
+ * Serialise a `LibraryState` back to a `URLSearchParams`. Empty constraints
  * are omitted so shared URLs stay clean (no `?language=&software=` noise).
  */
-export function paramsFromState(state: CatalogueState): URLSearchParams {
+export function paramsFromState(state: LibraryState): URLSearchParams {
   const sp = new URLSearchParams();
   for (const key of FACET_KEYS) {
     const selected = state.facets[key];
