@@ -12,3 +12,5 @@ Intro paragraph
 ## Unlocking pionerring mathematics
 
 - Introduce three layers – interoperability enabling layer, software and resources layer, and AI agents layer
+
+<p><a class="btn btn--primary" href="https://www.idems.international/" target="_blank">Visit idems.international</a></p>
