@@ -286,6 +286,10 @@ img {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+/* Button-styled links in prose shouldn't get the underline above. */
+.prose a.btn {
+  text-decoration: none;
+}
 
 /*
  * ---- Box grid ----

@@ -7,6 +7,12 @@ description: Helping the community trust what it finds.
 
 # Community
 
+An active, highly participatory community of educators and authors.
+
+<p><a class="btn btn--primary" href="/join">Join the community</a></p>
+
+## Accreditation
+
 _Helping the community trust what it finds_
 
 As our library of open statistics books and variants grows, we want a system that helps educators and learners understand the quality and context of what they're reading. We're building that system with the community – and we need your help to shape it.
