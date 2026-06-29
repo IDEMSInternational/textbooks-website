@@ -1,7 +1,7 @@
 /**
- * CATALOGUE CLIENT SCRIPT
- * -----------------------
- * The only client-side JavaScript in the app. It keeps the rendered catalogue
+ * LIBRARY CLIENT SCRIPT
+ * ---------------------
+ * The only client-side JavaScript in the app. It keeps the rendered library
  * in sync with the filter controls AND the URL:
  *
  *   - reads filter/search state from the controls,
@@ -24,7 +24,7 @@ import {
 } from '../lib/filtering';
 
 function init(): void {
-  const root = document.querySelector<HTMLElement>('[data-catalogue]');
+  const root = document.querySelector<HTMLElement>('[data-library]');
   if (!root) return;
 
   const searchInput =

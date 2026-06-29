@@ -4,7 +4,7 @@
  * Every page renders inside this so spacing, navigation and metadata stay
  * consistent.
  *
- * The header nav is built from the fixed app pages (Home, Browse Books) plus every
+ * The header nav is built from the fixed app pages (Home, Library) plus every
  * markdown page in the `pages` collection — so dropping a file into
  * `src/content/pages/` makes it appear in the nav automatically. A page can opt
  * out with `nav: false` in its frontmatter, and order with `order: <n>`.
@@ -44,7 +44,7 @@ const pageLinks = (await getCollection('pages'))
 
 const nav = [
   { href: `${base}/`, label: 'Home' },
-  { href: `${base}/catalogue`, label: 'Browse Books' },
+  { href: `${base}/library`, label: 'Library' },
   ...pageLinks,
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -189,6 +189,7 @@ const rootPath = base || '/';
       }
       .site-footer p {
         margin: 0;
+        text-align: center;
       }
     </style>
   </body>

@@ -29,7 +29,7 @@ npm run test         # both of the above
 ## What it does
 
 - **Home** (`/`) — short description + a live textbook count.
-- **Catalogue** (`/catalogue`) — the primary feature:
+- **Library** (`/library`) — the primary feature:
   - Multi-select filters for **language**, **software**, **subject**, derived
     dynamically from the data (never hardcoded).
   - Case-insensitive **search** across title, description, keywords and authors.
@@ -37,7 +37,7 @@ npm run test         # both of the above
     with **OR within** a facet and **AND across** facets.
   - All filter/search state lives in the **URL** (`?language=en&software=python&search=matrix`)
     so views are shareable and browser back/forward works.
-- **Markdown pages** (`/about`, `/contributing`, …) — driven entirely by files
+- **Markdown pages** (`/idems`, `/community`, …) — driven entirely by files
   in `src/content/pages/`. Add a page by dropping in a Markdown file; no routing
   changes.
 
@@ -63,11 +63,11 @@ src/
 │  ├─ FilterPanel.astro       # renders facets derived from the data
 │  └─ TextbookCard.astro      # depends only on core fields; chips only if present
 ├─ scripts/
-│  └─ catalogue.ts            # the only client JS: filtering + URL state (~2KB)
+│  └─ library.ts              # the only client JS: filtering + URL state (~2KB)
 ├─ styles/global.css          # design tokens + base + prose styles
 └─ pages/
    ├─ index.astro
-   ├─ catalogue.astro
+   ├─ library.astro
    └─ [slug].astro            # generic route for every markdown page
 ```
 

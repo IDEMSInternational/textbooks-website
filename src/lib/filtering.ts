@@ -78,7 +78,7 @@ export function filterTextbooks(
  *
  * State lives in the URL query string so views are shareable and the browser
  * back/forward buttons work. Multi-select facets are comma-separated:
- *   /catalogue?language=en,es&software=python&search=matrix
+ *   /library?language=en,es&software=python&search=matrix
  * These helpers are the single source of truth for that encoding and are used
  * by both the server (initial render) and the client script.
  * ------------------------------------------------------------------ */

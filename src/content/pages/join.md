@@ -1,11 +1,11 @@
 ---
-title: Get Involved
-slug: get-involved
+title: Join the Community
+slug: join
 template: page
 description: Ways to get involved and help shape the project during its alpha stage.
 ---
 
-# Get Involved
+# Join the Community
 
 We are only in the alpha stage, which means that there are many ways you can get involved to shape the future of this project.
 

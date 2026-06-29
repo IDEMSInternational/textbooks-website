@@ -38,7 +38,7 @@ try {
   const page = await browser.newPage();
 
   // 1. Initial load: all 10 visible, count says 10.
-  await page.goto(`${BASE}/catalogue`, { waitUntil: 'networkidle0' });
+  await page.goto(`${BASE}/library`, { waitUntil: 'networkidle0' });
   let vis = await visibleCards(page);
   check('initial: 10 cards visible', vis.length === 10, `got ${vis.length}`);
   check('initial: count = 10', (await countText(page)) === '10');
@@ -85,13 +85,13 @@ try {
   check('clear all: URL has no query', !page.url().includes('?'), page.url());
 
   // 5. Shared deep-link renders pre-filtered with no flash of all cards.
-  await page.goto(`${BASE}/catalogue?software=r`, { waitUntil: 'networkidle0' });
+  await page.goto(`${BASE}/library?software=r`, { waitUntil: 'networkidle0' });
   vis = await visibleCards(page);
   check('deep-link software=r: only R books visible', vis.every((l) => l !== undefined) && vis.length === 2, `got ${vis.length}`);
   check('deep-link: R checkbox is checked', await page.$eval('input[data-facet="software"][value="r"]', (el) => el.checked));
 
   // 6. Back/forward: go to a filtered state, then back restores previous.
-  await page.goto(`${BASE}/catalogue`, { waitUntil: 'networkidle0' });
+  await page.goto(`${BASE}/library`, { waitUntil: 'networkidle0' });
   await page.click('input[data-facet="subject"][value="math"]');
   await page.waitForFunction(() => location.search.includes('subject=math'), { timeout: 3000 });
   await page.goBack({ waitUntil: 'load' });

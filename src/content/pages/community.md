@@ -1,11 +1,11 @@
 ---
-title: Accreditation
-slug: accreditation
+title: Community
+slug: community
 template: page
 description: Helping the community trust what it finds.
 ---
 
-# Accreditation
+# Community
 
 _Helping the community trust what it finds_
 

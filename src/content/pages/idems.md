@@ -1,11 +1,11 @@
 ---
-title: About
-slug: about
+title: About IDEMS
+slug: idems
 template: page
 description: About this project — its story, the role of AI and humans, and the roadmap.
 ---
 
-# About
+# About IDEMS
 
 Intro paragraph
 
