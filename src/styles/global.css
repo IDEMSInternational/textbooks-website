@@ -365,3 +365,98 @@ img {
 .prose th ul {
   margin-left: var(--space-4);
 }
+
+/*
+ * ---- Forms ----
+ * Styling for raw-HTML forms embedded in markdown pages (e.g. the Join page
+ * interest form). Global classes because markdown HTML doesn't receive Astro's
+ * scoped style attributes.
+ */
+.form {
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+/* `display: flex` above would otherwise beat the UA `[hidden]` rule, so the
+   form wouldn't disappear when the success script hides it. */
+.form[hidden] {
+  display: none;
+}
+.form__status {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+}
+.form__row {
+  display: grid;
+  gap: var(--space-4);
+}
+@media (min-width: 30rem) {
+  .form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.form__field > label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+.form input[type='text'],
+.form input[type='email'] {
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  transition: border-color 0.12s ease;
+}
+.form input::placeholder {
+  color: var(--color-text-subtle);
+}
+.form input:focus {
+  outline: none;
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px rgba(243, 112, 33, 0.15);
+}
+.form__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.form__fieldset legend {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  padding: 0;
+}
+.form__check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+}
+.form__check + .form__check {
+  margin-top: var(--space-1);
+}
+.form__check input {
+  width: auto;
+}
+.form__other {
+  margin-top: var(--space-2);
+}
+.form button[type='submit'] {
+  align-self: flex-start;
+}
