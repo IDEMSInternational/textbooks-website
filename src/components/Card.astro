@@ -1,0 +1,51 @@
+---
+/**
+ * Card — a titled content block, intended for use inside a `CardGrid` but fine
+ * standalone. The heading text is a prop; the body is the default slot so
+ * callers can pass a paragraph, a list, links, etc.
+ *
+ * The title renders as an <h3>, matching the card-title level used elsewhere
+ * (see TextbookCard) and sitting correctly under a typical section <h2>.
+ */
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="card">
+  <h3 class="card__title">{title}</h3>
+  <div class="card__body">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .card {
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    padding: var(--space-5);
+    transition:
+      border-color 0.12s ease,
+      box-shadow 0.12s ease;
+  }
+  .card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: 0 1px 3px rgba(24, 24, 27, 0.06);
+  }
+  .card__title {
+    font-size: var(--text-lg);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-2);
+  }
+  .card__body {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+  }
+  .card__body > :global(* + *) {
+    margin-top: var(--space-3);
+  }
+</style>

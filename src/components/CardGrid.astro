@@ -1,0 +1,29 @@
+---
+/**
+ * CardGrid — responsive grid wrapper for `Card` blocks (or any equal-width
+ * children). One column on small screens; `columns` across once there's room.
+ * Grid items stretch to equal height by default, so cards in a row line up.
+ */
+interface Props {
+  /** Number of columns on wide screens. */
+  columns?: number;
+}
+
+const { columns = 3 } = Astro.props;
+---
+
+<div class="card-grid" style={`--card-grid-columns: ${columns}`}>
+  <slot />
+</div>
+
+<style>
+  .card-grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+  @media (min-width: 48rem) {
+    .card-grid {
+      grid-template-columns: repeat(var(--card-grid-columns, 3), 1fr);
+    }
+  }
+</style>

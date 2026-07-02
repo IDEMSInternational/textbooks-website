@@ -1,0 +1,80 @@
+---
+/**
+ * Section — a page section with an optional head (eyebrow/title/subtitle) over
+ * a body (the default slot). Owns the divider and vertical rhythm between page
+ * sections, so callers just drop content into the slot.
+ *
+ * The head is capped at reading width for legibility. The body spans the full
+ * container by default so it can hold wide content such as a `CardGrid`; pass
+ * `narrow` to cap it at reading width for running text. Omit the title (and
+ * eyebrow/subtitle) for a headless band, e.g. a bare feature grid.
+ *
+ * For a plain title pass the `title` prop; for a rich one (emphasis, line
+ * breaks) pass a `title` slot instead, which takes precedence.
+ */
+interface Props {
+  title?: string;
+  eyebrow?: string;
+  subtitle?: string;
+  narrow?: boolean;
+}
+
+const { title, eyebrow, subtitle, narrow = false } = Astro.props;
+const hasTitleSlot = Astro.slots.has('title');
+const hasTitle = hasTitleSlot || Boolean(title);
+const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
+---
+
+<section class="section">
+  {
+    hasHead && (
+      <div class="section__head">
+        {eyebrow && <p class="section__eyebrow">{eyebrow}</p>}
+        {hasTitle && (
+          <h2 class="section__title">
+            {hasTitleSlot ? <slot name="title" /> : title}
+          </h2>
+        )}
+        {subtitle && <p class="section__subtitle">{subtitle}</p>}
+      </div>
+    )
+  }
+  <div class:list={['section__body', { 'section__body--narrow': narrow }]}>
+    <slot />
+  </div>
+</section>
+
+<style>
+  /* Divider rhythm: a top border with equal space above and below the content,
+     so sections read as evenly separated bands down the page. */
+  .section {
+    padding-block: var(--space-10);
+    border-top: var(--border);
+  }
+  .section__head {
+    max-width: var(--reading-width);
+    margin-bottom: var(--space-6);
+  }
+  .section__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+  .section__title {
+    font-size: var(--text-2xl);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-4);
+  }
+  .section__subtitle {
+    font-size: var(--text-lg);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .section__body--narrow {
+    max-width: var(--reading-width);
+  }
+</style>
