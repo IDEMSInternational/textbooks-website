@@ -20,9 +20,9 @@ const pages = defineCollection({
   // loader would consume a frontmatter `slug` as the id and warn when it equals
   // the filename — here `slug` stays plain data that `[slug].astro` reads.
   loader: glob({
-    pattern: '*.md',
+    pattern: '*.{md,mdx}',
     base: './src/content/pages',
-    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+    generateId: ({ entry }) => entry.replace(/\.mdx?$/, ''),
   }),
   schema: z
     .object({

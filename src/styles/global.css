@@ -466,3 +466,61 @@ img {
 .form button[type='submit'] {
   align-self: flex-start;
 }
+
+/*
+ * ---- Component-driven content pages (MDX, `template: sections`) ----
+ * These pages are a stack of <Section> blocks. Authors write plain markdown
+ * inside a section body; the rules below give that loose prose the muted,
+ * reading-width rhythm — while wide blocks like <CardGrid> (not matched by the
+ * child selectors) still span the full section. Section chrome (title/eyebrow/
+ * subtitle) lives in `.section__head` and is styled by the component, so it's
+ * untouched here. Global (not scoped) because markdown HTML is generated at
+ * render time and doesn't receive Astro's scoped attributes.
+ */
+/* The first section sits directly under the header — no leading divider. */
+.content-sections .section:first-child {
+  border-top: none;
+}
+.content-sections .section__body > * + * {
+  margin-top: var(--space-4);
+}
+.content-sections .section__body > :where(p, ul, ol, blockquote, h3, h4) {
+  max-width: var(--reading-width);
+}
+.content-sections .section__body > :where(p, ul, ol) {
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+.content-sections .section__body > :where(ul, ol) {
+  padding-left: var(--space-5);
+}
+.content-sections .section__body > :where(ul, ol) > li + li {
+  margin-top: var(--space-2);
+}
+.content-sections .section__body > :where(h3) {
+  font-size: var(--text-lg);
+  margin-top: var(--space-6);
+}
+.content-sections .section__body > :where(blockquote) {
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-border-strong);
+  color: var(--color-text-subtle);
+  font-style: italic;
+}
+/* Inline emphasis and links, wherever they appear in a section. */
+.content-sections .section__body :where(strong) {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.content-sections .section__body :where(a) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+/* Lists authored inside a Card: tighter than the browser default. */
+.content-sections .card__body :where(ul, ol) {
+  margin: 0;
+  padding-left: var(--space-5);
+}
+.content-sections .card__body :where(li + li) {
+  margin-top: var(--space-1);
+}
