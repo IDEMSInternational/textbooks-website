@@ -1,23 +1,36 @@
 ---
 /**
- * GENERIC MARKDOWN PAGE ROUTE
- * ---------------------------
- * Renders any Markdown file in the `pages` content collection
- * (`src/content/pages/*.md`) at the URL given by its frontmatter `slug`
- * (falling back to the filename). There is NO per-page route file: adding a new
- * static page means dropping a `.md` file into that folder — no routing changes.
+ * GENERIC CONTENT PAGE ROUTE
+ * --------------------------
+ * Renders any `.md`/`.mdx` file in the `pages` content collection
+ * (`src/content/pages/*`) at the URL given by its frontmatter `slug` (falling
+ * back to the filename). There is NO per-page route file: adding a new static
+ * page means dropping a file into that folder — no routing changes.
  *
  *   ---
  *   title: About IDEMS
  *   slug: idems
- *   template: page   # optional layout hint (Astro reserves `layout`)
+ *   template: page       # reading-width prose (default)
  *   ---
+ *
+ * `template: sections` switches to a full-width, component-driven layout: the
+ * design-system blocks (Section, Card, CardGrid) are put in scope for the MDX,
+ * so authors use `<Section>` / `<Card>` without importing anything, and the
+ * page isn't wrapped in `.prose`. Any other value renders reading-width prose.
  *
  * `getStaticPaths` enumerates the collection at build time and emits one static
  * page per entry.
  */
 import { getCollection, render } from 'astro:content';
 import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import CardGrid from '../components/CardGrid.astro';
+import Button from '../components/Button.astro';
+import ButtonGroup from '../components/ButtonGroup.astro';
+import Rows from '../components/Rows.astro';
+import Row from '../components/Row.astro';
+import InterestForm from '../components/InterestForm.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -34,10 +47,36 @@ type Props = {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
+
+const isSections = page.data.template === 'sections';
+// Provided to every content page so the MDX resolves `<Section>`, `<Button>`,
+// `<InterestForm>` etc. without the author writing import statements.
+const contentComponents = {
+  Section,
+  Card,
+  CardGrid,
+  Button,
+  ButtonGroup,
+  Rows,
+  Row,
+  InterestForm,
+};
 ---
 
-<Layout title={page.data.title} description={page.data.description} narrow>
-  <article class="container prose">
-    <Content />
-  </article>
+<Layout
+  title={page.data.title}
+  description={page.data.description}
+  narrow={!isSections}
+>
+  {
+    isSections ? (
+      <div class="container content-sections">
+        <Content components={contentComponents} />
+      </div>
+    ) : (
+      <article class="container prose">
+        <Content components={contentComponents} />
+      </article>
+    )
+  }
 </Layout>

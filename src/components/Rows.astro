@@ -1,0 +1,17 @@
+---
+/**
+ * Rows — a vertical list of two-column rows, each rendered by `Row`: a heading
+ * (plus optional blurb/CTA) on the left and a block of content on the right,
+ * stacking on narrow screens. Rows are separated by hairline dividers.
+ */
+---
+
+<div class="rows">
+  <slot />
+</div>
+
+<style>
+  .rows {
+    max-width: 52rem;
+  }
+</style>

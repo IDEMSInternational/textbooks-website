@@ -1,0 +1,31 @@
+---
+/**
+ * Button — a link styled as a button, for use on content pages. Prefixes the
+ * deployment base onto root-absolute internal hrefs (so `/join` resolves under
+ * the GitHub Pages subpath, the way `import.meta.env.BASE_URL` does elsewhere);
+ * external URLs (http/https, protocol-relative, mailto) open in a new tab.
+ *
+ * Provided to MDX pages via `[slug].astro`, so authors write base-safe CTAs
+ * without importing anything: `<Button href="/join">Join the Community</Button>`.
+ */
+interface Props {
+  href: string;
+  variant?: 'primary' | 'default';
+}
+
+const { href, variant = 'primary' } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const isExternal = /^(https?:)?\/\//.test(href) || href.startsWith('mailto:');
+const isInternalPath = href.startsWith('/') && !href.startsWith('//');
+const resolvedHref = isInternalPath ? `${base}${href}` : href;
+---
+
+<a
+  class:list={['btn', { 'btn--primary': variant === 'primary' }]}
+  href={resolvedHref}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noopener noreferrer' : undefined}
+>
+  <slot />
+</a>

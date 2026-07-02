@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
 // Deployment subpath (GitHub Pages project site). Defined as a const so both
 // Astro's `base` and the markdown link plugin below stay in sync.
@@ -59,6 +60,9 @@ export default defineConfig({
     remarkPlugins: [remarkBaseLinks],
   },
 
-  // No integrations needed: plain CSS + a tiny island of vanilla JS keeps the
-  // JS footprint well under target. See README for the styling rationale.
+  // MDX powers component-driven content pages (e.g. Product): authors write
+  // markdown prose and drop in design-system components (Section, Card, …).
+  // It extends the markdown config above by default, so `remarkBaseLinks`
+  // applies to `.mdx` prose links too. Plain `.md` pages are unaffected.
+  integrations: [mdx()],
 });
