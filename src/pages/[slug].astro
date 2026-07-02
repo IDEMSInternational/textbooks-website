@@ -26,6 +26,11 @@ import Layout from '../components/Layout.astro';
 import Section from '../components/Section.astro';
 import Card from '../components/Card.astro';
 import CardGrid from '../components/CardGrid.astro';
+import Button from '../components/Button.astro';
+import ButtonGroup from '../components/ButtonGroup.astro';
+import Rows from '../components/Rows.astro';
+import Row from '../components/Row.astro';
+import InterestForm from '../components/InterestForm.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -44,9 +49,18 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 
 const isSections = page.data.template === 'sections';
-// Provided to the MDX so `<Section>`, `<Card>`, `<CardGrid>` resolve without the
-// author writing import statements.
-const contentComponents = { Section, Card, CardGrid };
+// Provided to every content page so the MDX resolves `<Section>`, `<Button>`,
+// `<InterestForm>` etc. without the author writing import statements.
+const contentComponents = {
+  Section,
+  Card,
+  CardGrid,
+  Button,
+  ButtonGroup,
+  Rows,
+  Row,
+  InterestForm,
+};
 ---
 
 <Layout
@@ -61,7 +75,7 @@ const contentComponents = { Section, Card, CardGrid };
       </div>
     ) : (
       <article class="container prose">
-        <Content />
+        <Content components={contentComponents} />
       </article>
     )
   }

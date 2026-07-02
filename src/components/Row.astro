@@ -1,0 +1,74 @@
+---
+/**
+ * Row — one item in a `Rows` list. The left column is the `title` heading plus
+ * an optional `aside` slot (a blurb, a CTA, …); the right column is the default
+ * slot. Columns sit side by side on wider screens and stack on narrow ones.
+ */
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const hasAside = Astro.slots.has('aside');
+---
+
+<div class="row">
+  <div class="row__head">
+    <h3 class="row__title">{title}</h3>
+    {
+      hasAside && (
+        <div class="row__aside">
+          <slot name="aside" />
+        </div>
+      )
+    }
+  </div>
+  <div class="row__body">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .row {
+    display: grid;
+    gap: var(--space-3);
+    padding-block: var(--space-6);
+    border-top: var(--border);
+  }
+  /* First row sits flush; the border acts as a divider between the rest. */
+  .row:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+  .row__title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    color: var(--color-text);
+  }
+  .row__aside {
+    margin-top: var(--space-4);
+  }
+  .row__aside > :global(* + *) {
+    margin-top: var(--space-5);
+  }
+  /* Left-column and right-column prose share the muted body treatment; cards
+     placed in the body keep their own colours (their titles stay dark). */
+  .row__aside > :global(p),
+  .row__body > :global(p) {
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+  .row__body > :global(* + *) {
+    margin-top: var(--space-3);
+  }
+
+  @media (min-width: 44rem) {
+    .row {
+      grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+      gap: var(--space-6);
+      align-items: start;
+      padding-block: var(--space-8);
+    }
+  }
+</style>

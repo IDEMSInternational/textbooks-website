@@ -199,6 +199,12 @@ img {
   border-color: var(--color-accent-hover);
 }
 
+/* On a dark band the accent becomes the pale mint, so a filled primary button
+   needs dark (not white) text to stay legible. */
+.section--dark .btn--primary {
+  color: #1f2a2e;
+}
+
 .btn--ghost {
   border-color: transparent;
   background: transparent;
@@ -477,12 +483,21 @@ img {
  * untouched here. Global (not scoped) because markdown HTML is generated at
  * render time and doesn't receive Astro's scoped attributes.
  */
-/* The first section sits directly under the header — no leading divider. */
+/* The first section acts as the page hero: no leading divider, and its intro
+   paragraphs read as a larger lede. */
 .content-sections .section:first-child {
   border-top: none;
 }
+.content-sections .section:first-child .section__body > p {
+  font-size: var(--text-lg);
+}
 .content-sections .section__body > * + * {
   margin-top: var(--space-4);
+}
+/* A Rows list gets more breathing room from the intro above it than the
+   default block gap. */
+.content-sections .section__body > .rows {
+  margin-top: var(--space-8);
 }
 .content-sections .section__body > :where(p, ul, ol, blockquote, h3, h4) {
   max-width: var(--reading-width);
@@ -512,7 +527,7 @@ img {
   color: var(--color-text);
   font-weight: 600;
 }
-.content-sections .section__body :where(a) {
+.content-sections .section__body :where(a:not(.btn)) {
   text-decoration: underline;
   text-underline-offset: 2px;
 }

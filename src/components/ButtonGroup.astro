@@ -1,0 +1,19 @@
+---
+/**
+ * ButtonGroup — lays out its `Button` children in a wrapping row with
+ * consistent spacing. For CTA pairs on content pages.
+ */
+---
+
+<div class="button-group">
+  <slot />
+</div>
+
+<style>
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+  }
+</style>
