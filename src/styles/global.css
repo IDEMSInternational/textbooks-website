@@ -91,6 +91,12 @@ body {
   min-height: 100dvh; /* dynamic viewport on mobile, where supported */
   display: flex;
   flex-direction: column;
+  /* Guard against horizontal overflow from full-bleed sections (which extend to
+     100vw): on platforms with a persistent scrollbar, 100vw is wider than the
+     content area, so clip the few px of x-axis overflow rather than scroll.
+     `clip` (not hidden) doesn't create a scroll container, so it won't affect
+     sticky positioning or vertical scrolling. */
+  overflow-x: clip;
 }
 
 h1,

@@ -1,0 +1,135 @@
+---
+/**
+ * Section — a page section with an optional head (eyebrow/title/subtitle) over
+ * a body (the default slot). Owns the divider and vertical rhythm between page
+ * sections, so callers just drop content into the slot.
+ *
+ * The head is capped at reading width for legibility. The body spans the full
+ * container by default so it can hold wide content such as a `CardGrid`; pass
+ * `narrow` to cap it at reading width for running text. Omit the title (and
+ * eyebrow/subtitle) for a headless band, e.g. a bare feature grid.
+ *
+ * For a plain title pass the `title` prop; for a rich one (emphasis, line
+ * breaks) pass a `title` slot instead, which takes precedence.
+ *
+ * `tone` renders a full-bleed colour band with no per-element styling needed:
+ * "dark" re-declares the colour tokens so descendant text and cards invert
+ * automatically (with a mint highlight); "tinted" is a pale grey-blue band that
+ * keeps the default orange highlight.
+ */
+interface Props {
+  title?: string;
+  eyebrow?: string;
+  subtitle?: string;
+  narrow?: boolean;
+  tone?: 'default' | 'dark' | 'tinted';
+}
+
+const { title, eyebrow, subtitle, narrow = false, tone = 'default' } =
+  Astro.props;
+const hasTitleSlot = Astro.slots.has('title');
+const hasTitle = hasTitleSlot || Boolean(title);
+const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
+---
+
+<section
+  class:list={[
+    'section',
+    { 'section--dark': tone === 'dark', 'section--tinted': tone === 'tinted' },
+  ]}
+>
+  {
+    hasHead && (
+      <div class="section__head">
+        {eyebrow && <p class="section__eyebrow">{eyebrow}</p>}
+        {hasTitle && (
+          <h2 class="section__title">
+            {hasTitleSlot ? <slot name="title" /> : title}
+          </h2>
+        )}
+        {subtitle && <p class="section__subtitle">{subtitle}</p>}
+      </div>
+    )
+  }
+  <div class:list={['section__body', { 'section__body--narrow': narrow }]}>
+    <slot />
+  </div>
+</section>
+
+<style>
+  /* Divider rhythm: a top border with equal space above and below the content,
+     so sections read as evenly separated bands down the page. */
+  .section {
+    padding-block: var(--space-10);
+    border-top: var(--border);
+  }
+
+  /*
+   * Coloured variants render as full-bleed bands: `margin-inline: calc(50% -
+   * 50vw)` pulls them out to the viewport edges and the matching `padding-inline`
+   * re-aligns content with the container. (The body clips the resulting few px
+   * of x-axis overflow — see global.css.)
+   */
+  .section--dark,
+  .section--tinted {
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+    border-top: none;
+  }
+
+  /*
+   * Dark band — re-declaring the colour tokens means every descendant that reads
+   * them (text, cards, borders) inverts on its own. The highlight shifts to the
+   * pale mint brand colour, which reads brightly against the slate.
+   */
+  .section--dark {
+    background: #44575e;
+    color: var(--color-text);
+    --color-text: #f4f6f6;
+    --color-text-muted: #c6d0d2;
+    --color-text-subtle: #9fabad;
+    --color-bg: rgba(255, 255, 255, 0.08);
+    --color-surface: rgba(255, 255, 255, 0.08);
+    --color-surface-hover: rgba(255, 255, 255, 0.12);
+    --color-border: rgba(255, 255, 255, 0.18);
+    --color-border-strong: rgba(255, 255, 255, 0.32);
+    --color-accent: #c1fde8;
+    --color-accent-hover: #a5f0d7;
+    --color-focus: #c1fde8;
+  }
+
+  /*
+   * Tinted band — a pale grey-blue surface. Text, the orange highlight and the
+   * white cards are unchanged, so cards lift subtly off the tint.
+   */
+  .section--tinted {
+    background: #f2f7f9;
+  }
+
+  .section__head {
+    max-width: var(--reading-width);
+    margin-bottom: var(--space-6);
+  }
+  .section__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+  .section__title {
+    font-size: var(--text-2xl);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-4);
+  }
+  .section__subtitle {
+    font-size: var(--text-lg);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .section__body--narrow {
+    max-width: var(--reading-width);
+  }
+</style>

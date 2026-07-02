@@ -3,104 +3,185 @@
  * Home — short project description, a headline stat, and a link to the
  * library. 
  */
+import { Image } from 'astro:assets';
 import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import CardGrid from '../components/CardGrid.astro';
+import Card from '../components/Card.astro';
+import davidStern from '../assets/team/david-stern.jpg';
+import jamesMusyoka from '../assets/team/james-musyoka.jpeg';
+import lily from '../assets/team/lily.jpeg';
+import roger from '../assets/team/roger.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Names are derived from the supplied image filenames; roles and bios are
+// placeholders for now.
+const team = [
+  {
+    name: 'David Stern',
+    role: 'Placeholder role',
+    photo: davidStern,
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+  },
+  {
+    name: 'James Musyoka',
+    role: 'Placeholder role',
+    photo: jamesMusyoka,
+    bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
+  },
+  {
+    name: 'Lily',
+    role: 'Placeholder role',
+    photo: lily,
+    bio: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  },
+  {
+    name: 'Roger',
+    role: 'Placeholder role',
+    photo: roger,
+    bio: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.',
+  },
+];
 ---
 
 <Layout
-  title="Open Textbook Library"
+  title="Open, Adaptive Digital Textbooks"
   description="A minimal, static library of openly hosted digital textbooks."
 >
   <div class="container home">
     <section class="hero">
-      <p class="hero__eyebrow">Adaptive Open Textbooks</p>
-      <h1 class="hero__title">
-        The high quality, timely, affordable, open resources you need for your course and your students.
-      </h1>
-      <p class="hero__lede">
-        Some intro text here about the project.
-      </p>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Open, Adaptive Statistics
+          <br>
+          & Data Science Textbooks
+        </h1>
+        <p class="hero__lede">
+          High-quality, up-to-date, relevant teaching and learning resources
+          <br>for your course and your students.
+        </p>
 
-      <div class="hero__actions">
-        <a class="btn btn--primary" href={`${base}/library`}>
-          Browse the library
-        </a>
-        <a class="btn" href={`${base}/join`}>
-          Join the community
-        </a>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href={`${base}/product`}>
+            Explore the product
+          </a>
+          <a class="btn" href={`${base}/join`}>
+            Join the community
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img
+          class="hero__image"
+          src={`${base}/images/colour-explosion.gif`}
+          alt=""
+          width="700"
+          height="700"
+        />
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature">
-        <h2 class="feature__title">For Educators</h2>
-        <p class="feature__tagline">
-          <em>Is this “Browse and adapt” — something for your own students?</em>
-        </p>
-        <p class="feature__lead">
-          Easily develop up-to-date, course-relevant textbooks — and include your own work!
-        </p>
-        <ul class="feature__list">
-          <li>Current leading pain point</li>
-          <li>Short features list?</li>
-          <li>Educators can do x, y, z</li>
-          <li>Why it matters — benefits for the user / problems solved / acute pain point(s) addressed</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h2 class="feature__title">For Educator-Authors</h2>
-        <p class="feature__tagline">
-          <em>Something for your students, and others.</em>
-        </p>
-        <p class="feature__lead">
-          Adapt existing materials to fit your course.
-        </p>
-        <ul class="feature__list">
-          <li>Writing a new book isn’t realistic — but here you can get there</li>
-          <li>Short features list?</li>
-          <li>Why it matters — benefits for the user / problems solved / acute pain point(s) addressed</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h2 class="feature__title">For Authors</h2>
-        <p class="feature__lead">
-          Extend the value of your work (?) — see how your work is used, and where and how it gets adapted.
-        </p>
-        <ul class="feature__list">
-          <li>Short features list?</li>
-          <li>Why it matters — benefits for the user / problems solved / acute pain point(s) addressed</li>
-        </ul>
-      </div>
-    </section>
+    <Section
+      tone="dark"
+      eyebrow="The problem"
+      title="Existing textbooks aren’t a match for a complex, rapidly changing world."
+      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    >
+      <CardGrid>
+        <Card title="An outdated textbooks model">
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam.
+          </p>
+        </Card>
+        <Card title="One size fits none">
+          <p>
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+            fugit, sed quia consequuntur magni dolores eos.
+          </p>
+        </Card>
+        <Card title="Marginalised educators & authors">
+          <p>
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+            consectetur, adipisci velit, sed quia non numquam eius modi.
+          </p>
+        </Card>
+      </CardGrid>
+    </Section>
 
-    <section class="home-section">
-      <h2 class="home-section__title">A great leap forward for teaching and learning</h2>
-      <div class="home-section__body">
-        <p>
-          Existing textbooks are one-size-fits-all and quickly out of date.
-          <em>[problems with the textbook and other resources market]</em>
-        </p>
-        <p>
-          New and emerging tech fail to recognise educators’ essential role in
-          understanding their specific courses, student needs and contexts.
-        </p>
-        <p>
-          What this means for students, and why this benefits education and outcomes.
-        </p>
-        <p class="home-note">
-          Can we add a bit of research / data on how educator-led customisation and
-          context-relevant adaptation improve student outcomes?
-        </p>
-        <p>
-          Educator-centred (not direct-to-student), recognising that educators know
-          their students and contexts best.
-        </p>
-      </div>
-    </section>
+    <Section
+    eyebrow="The solution">
+      <Fragment slot="title">
+        Open, <em>adaptive</em> educational resources:
+        <br />
+        A great leap forward for teaching and learning
+      </Fragment>
 
-    <section class="home-section">
-      <h2 class="home-section__title">Use cases</h2>
+      <div class="section-lead">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.
+        </p>
+        <ul class="section-lead__list">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+          <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+          <li>Duis aute irure dolor in reprehenderit in voluptate velit</li>
+        </ul>
+        <a class="btn" href={`${base}/product`}>Learn more about the product</a>
+      </div>
+
+      <CardGrid>
+        <Card title="For Educators">
+          <p class="feature__tagline">
+            <em>Is this “Browse and adapt” — something for your own students?</em>
+          </p>
+          <p class="feature__lead">
+            Easily develop up-to-date, course-relevant textbooks — and include your own work!
+          </p>
+          <ul class="feature__list">
+            <li>Current leading pain point</li>
+            <li>Short features list?</li>
+            <li>Educators can do x, y, z</li>
+            <li>Why it matters — benefits for the user / problems solved / acute pain point(s) addressed</li>
+          </ul>
+        </Card>
+        <Card title="For Educator-Authors">
+          <p class="feature__tagline">
+            <em>Something for your students, and others.</em>
+          </p>
+          <p class="feature__lead">
+            Adapt existing materials to fit your course.
+          </p>
+          <ul class="feature__list">
+            <li>Writing a new book isn’t realistic — but here you can get there</li>
+            <li>Short features list?</li>
+            <li>Why it matters — benefits for the user / problems solved / acute pain point(s) addressed</li>
+          </ul>
+        </Card>
+        <Card title="For Authors">
+          <p class="feature__lead">
+            Extend the value of your work (?) — see how your work is used, and where and how it gets adapted.
+          </p>
+          <ul class="feature__list">
+            <li>Short features list?</li>
+            <li>Why it matters — benefits for the user / problems solved / acute pain point(s) addressed</li>
+          </ul>
+        </Card>
+      </CardGrid>
+    </Section>
+
+    <Section
+      tone="tinted"
+      eyebrow="Use cases"
+      title="Open, adaptive textbooks transform authoring, teaching and learning"
+      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      narrow
+    >
       <ul class="usecases">
         <li>
           Multiple textbooks for a single course, to address the strengths and
@@ -113,46 +194,99 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           with links built in.
         </li>
       </ul>
-    </section>
+    </Section>
 
-    <section class="home-section">
-      <h2 class="home-section__title">Why IDEMS?</h2>
-      <p class="home-section__lede">Expertise, trust and social-proof signals.</p>
-      <div class="home-section__body">
+    <Section title="What people are saying">
+      <div class="testimonials">
+        <figure class="testimonial">
+          <blockquote>Testimonial from an existing author.</blockquote>
+          <figcaption>— Author <em>(placeholder)</em></figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>
+            Testimonial from an educator — e.g. Roger’s comment on how powerful this
+            is for context-relevant customisation.
+          </blockquote>
+          <figcaption>— Educator <em>(placeholder)</em></figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>Testimonial from a student?</blockquote>
+          <figcaption>— Student <em>(placeholder)</em></figcaption>
+        </figure>
+      </div>
+    </Section>
+
+    <Section
+      title="Built by a team that blends data science education with mathematics and tech"
+      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    >
+      <div class="section-lead">
         <p>
-          Why we’re the people to do this.
-          <em>[but not getting into About IDEMS — that will be its own page]</em>
-        </p>
-        <div class="testimonials">
-          <figure class="testimonial">
-            <blockquote>Testimonial from an existing author.</blockquote>
-            <figcaption>— Author <em>(placeholder)</em></figcaption>
-          </figure>
-          <figure class="testimonial">
-            <blockquote>
-              Testimonial from an educator — e.g. Roger’s comment on how powerful this
-              is for context-relevant customisation.
-            </blockquote>
-            <figcaption>— Educator <em>(placeholder)</em></figcaption>
-          </figure>
-          <figure class="testimonial">
-            <blockquote>Testimonial from a student?</blockquote>
-            <figcaption>— Student <em>(placeholder)</em></figcaption>
-          </figure>
-        </div>
-        <p>
-          <a class="btn" href={`${base}/idems`}>Learn more about IDEMS</a>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
       </div>
-    </section>
+
+      <ul class="team" role="list">
+        {
+          team.map((member) => (
+            <li class="team__member">
+              <Image
+                class="team__photo"
+                src={member.photo}
+                alt={member.name}
+                width={256}
+              />
+              <p class="team__name">{member.name}</p>
+              <p class="team__role">{member.role}</p>
+              <p class="team__bio">{member.bio}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="team__more">
+        <a class="btn" href={`${base}/idems`}>Learn more about IDEMS</a>
+      </p>
+    </Section>
   </div>
 </Layout>
 
 <style>
   .hero {
-    max-width: var(--reading-width);
-    padding-block: var(--space-6) var(--space-8);
+    padding-block: var(--space-8) var(--space-10);
   }
+  .hero__content {
+    max-width: var(--reading-width);
+  }
+  .hero__media {
+    margin-top: var(--space-6);
+  }
+  .hero__image {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    height: auto;
+    border-radius: var(--radius);
+  }
+
+  /* Two columns once there's room: content left, animated media right. Below
+     this the media stacks under the content (see .hero__media margin above). */
+  @media (min-width: 50rem) {
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: var(--space-8);
+    }
+    .hero__content {
+      max-width: none;
+    }
+    .hero__media {
+      margin-top: 0;
+      width: 24rem;
+    }
+  }
+
   .hero__eyebrow {
     font-size: var(--text-sm);
     font-weight: 600;
@@ -187,26 +321,37 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     font-weight: 600;
   }
 
-  .features {
-    display: grid;
-    gap: var(--space-6);
-    padding-top: var(--space-8);
-    border-top: var(--border);
+  /* Reading-width intro (text + bullets + button) above a full-width CardGrid. */
+  .section-lead {
+    max-width: var(--reading-width);
+    margin-bottom: var(--space-8);
   }
-  .feature__title {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-2);
+  .section-lead > * + * {
+    margin-top: var(--space-4);
   }
+  .section-lead p {
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+  .section-lead__list {
+    margin: 0;
+    padding-left: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  /* Audience cards (rendered inside <Card>): italic prompt, bold lead, list. */
   .feature__tagline {
     font-size: var(--text-sm);
     font-style: italic;
     color: var(--color-text-subtle);
-    margin-bottom: var(--space-3);
   }
   .feature__lead {
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: var(--space-3);
   }
   .feature__list {
     margin: 0;
@@ -219,39 +364,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     color: var(--color-text-muted);
   }
 
-  @media (min-width: 48rem) {
-    .features {
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-8);
-    }
-  }
-
-  .home-section {
-    max-width: var(--reading-width);
-    margin-top: var(--space-8);
-    padding-top: var(--space-8);
-    border-top: var(--border);
-  }
-  .home-section__title {
-    font-size: var(--text-2xl);
-    letter-spacing: -0.01em;
-    margin-bottom: var(--space-4);
-  }
-  .home-section__lede {
-    font-size: var(--text-lg);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-5);
-  }
-  .home-section__body > * + * {
+  /* Running-text body for narrow Sections (paragraphs, lists, testimonials). */
+  .home-body > * + * {
     margin-top: var(--space-4);
   }
-  .home-section p {
+  .home-body p {
     color: var(--color-text-muted);
     line-height: var(--leading-normal);
-  }
-  .home-section .home-note {
-    font-style: italic;
-    color: var(--color-text-subtle);
   }
   .usecases {
     margin: 0;
@@ -264,23 +383,93 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .testimonials {
     display: grid;
-    gap: var(--space-4);
+    gap: var(--space-5);
+  }
+  @media (min-width: 48rem) {
+    .testimonials {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   .testimonial {
     margin: 0;
-    padding: var(--space-4) var(--space-5);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5);
     border: var(--border);
     border-radius: var(--radius);
     background: var(--color-surface);
   }
   .testimonial blockquote {
     margin: 0;
+    /* Push the attribution to the card bottom so rows line up. */
+    flex: 1 1 auto;
     color: var(--color-text);
     line-height: var(--leading-normal);
   }
+  /* Oversized accent quotation mark as a decorative lead-in. */
+  .testimonial blockquote::before {
+    content: '\201C';
+    display: block;
+    margin-bottom: var(--space-1);
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    line-height: 1;
+    color: var(--color-accent);
+  }
   .testimonial figcaption {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: var(--border);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* Team bios: centred round avatar above name, role and short bio. */
+  .team {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-6);
+  }
+  @media (min-width: 40rem) {
+    .team {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 60rem) {
+    .team {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .team__member {
+    text-align: center;
+  }
+  .team__photo {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto var(--space-3);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .team__name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .team__role {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+  }
+  .team__bio {
     margin-top: var(--space-2);
     font-size: var(--text-sm);
+    line-height: var(--leading-normal);
     color: var(--color-text-muted);
+  }
+  .team__more {
+    margin-top: var(--space-8);
+    text-align: center;
   }
 </style>
