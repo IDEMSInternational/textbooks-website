@@ -11,21 +11,33 @@
  *
  * For a plain title pass the `title` prop; for a rich one (emphasis, line
  * breaks) pass a `title` slot instead, which takes precedence.
+ *
+ * `tone` renders a full-bleed colour band with no per-element styling needed:
+ * "dark" re-declares the colour tokens so descendant text and cards invert
+ * automatically (with a mint highlight); "tinted" is a pale grey-blue band that
+ * keeps the default orange highlight.
  */
 interface Props {
   title?: string;
   eyebrow?: string;
   subtitle?: string;
   narrow?: boolean;
+  tone?: 'default' | 'dark' | 'tinted';
 }
 
-const { title, eyebrow, subtitle, narrow = false } = Astro.props;
+const { title, eyebrow, subtitle, narrow = false, tone = 'default' } =
+  Astro.props;
 const hasTitleSlot = Astro.slots.has('title');
 const hasTitle = hasTitleSlot || Boolean(title);
 const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
 ---
 
-<section class="section">
+<section
+  class:list={[
+    'section',
+    { 'section--dark': tone === 'dark', 'section--tinted': tone === 'tinted' },
+  ]}
+>
   {
     hasHead && (
       <div class="section__head">
@@ -51,6 +63,49 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     padding-block: var(--space-10);
     border-top: var(--border);
   }
+
+  /*
+   * Coloured variants render as full-bleed bands: `margin-inline: calc(50% -
+   * 50vw)` pulls them out to the viewport edges and the matching `padding-inline`
+   * re-aligns content with the container. (The body clips the resulting few px
+   * of x-axis overflow — see global.css.)
+   */
+  .section--dark,
+  .section--tinted {
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+    border-top: none;
+  }
+
+  /*
+   * Dark band — re-declaring the colour tokens means every descendant that reads
+   * them (text, cards, borders) inverts on its own. The highlight shifts to the
+   * pale mint brand colour, which reads brightly against the slate.
+   */
+  .section--dark {
+    background: #44575e;
+    color: var(--color-text);
+    --color-text: #f4f6f6;
+    --color-text-muted: #c6d0d2;
+    --color-text-subtle: #9fabad;
+    --color-bg: rgba(255, 255, 255, 0.08);
+    --color-surface: rgba(255, 255, 255, 0.08);
+    --color-surface-hover: rgba(255, 255, 255, 0.12);
+    --color-border: rgba(255, 255, 255, 0.18);
+    --color-border-strong: rgba(255, 255, 255, 0.32);
+    --color-accent: #c1fde8;
+    --color-accent-hover: #a5f0d7;
+    --color-focus: #c1fde8;
+  }
+
+  /*
+   * Tinted band — a pale grey-blue surface. Text, the orange highlight and the
+   * white cards are unchanged, so cards lift subtly off the tint.
+   */
+  .section--tinted {
+    background: #f2f7f9;
+  }
+
   .section__head {
     max-width: var(--reading-width);
     margin-bottom: var(--space-6);
