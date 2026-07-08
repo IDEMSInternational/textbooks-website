@@ -24,8 +24,8 @@ export interface Textbook {
   url: string; // external textbook site (e.g. GitHub Pages)
 
   language?: string;
-  software?: string; // e.g. python, r, general
-  subject?: string;
+  software?: string[]; // e.g. ["Python"], ["R"], ["general", "R"]
+  subject?: string[]; // e.g. ["general"], ["social science", "general"]
   keywords?: string[];
 
   meta?: Record<string, unknown>; // arbitrary future expansion
@@ -65,4 +65,19 @@ export interface LibraryState {
   facets: Record<FacetKey, string[]>;
   /** Free-text search query (case-insensitive). */
   search: string;
+}
+
+/**
+ * Reads a facet field off a book as a flat array of strings, regardless of
+ * whether the underlying field is a single string (`language`) or a list
+ * (`software`, `subject`). Centralised here so the data layer, the pure
+ * filtering logic and the UI all treat multi-valued facets the same way.
+ */
+export function facetValues(book: Textbook, key: FacetKey): string[] {
+  const value = book[key];
+  if (typeof value === 'string') return value.length > 0 ? [value] : [];
+  if (Array.isArray(value)) {
+    return value.filter((v): v is string => typeof v === 'string' && v.length > 0);
+  }
+  return [];
 }

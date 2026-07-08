@@ -10,8 +10,12 @@
   ],
   "url": "https://pretextbooks.github.io/Doing-Meta-Analysis-in-R/",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "meta-analysis",
     "R programming",

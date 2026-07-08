@@ -9,8 +9,12 @@
   ],
   "url": "https://pretextbooks.github.io/statistics/frontmatter.html",
   "language": "en",
-  "software": "R",
-  "subject": "psychology",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "psychology"
+  ],
   "keywords": [
     "introductory statistics",
     "psychology",

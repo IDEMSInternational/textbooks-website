@@ -44,14 +44,16 @@
       "description": "Language code, e.g. en, es, fr, de. Drives the Language facet."
     },
     "software": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Associated software, e.g. python, r, general. Drives the Software facet."
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Associated software, e.g. [\"Python\"], [\"R\"], [\"general\", \"R\"]. Drives the Software facet; a book may list more than one value."
     },
     "subject": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Subject area, e.g. math, stats, cs. Drives the Subject facet."
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Subject area(s), e.g. [\"math\"], [\"stats\", \"cs\"]. Drives the Subject facet; a book may list more than one value."
     },
     "keywords": {
       "type": "array",

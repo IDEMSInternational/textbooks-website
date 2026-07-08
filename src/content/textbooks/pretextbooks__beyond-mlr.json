@@ -8,8 +8,12 @@
   ],
   "url": "https://pretextbooks.github.io/BeyondMLR/",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "generalised linear models",
     "multilevel models",

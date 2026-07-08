@@ -19,7 +19,7 @@
  * An empty search string means "no constraint" from search.
  */
 import type { Textbook, LibraryState } from './types';
-import { FACET_KEYS } from './types';
+import { FACET_KEYS, facetValues } from './types';
 
 /** A blank state: nothing selected, no query. */
 export function emptyState(): LibraryState {
@@ -34,9 +34,10 @@ function matchesFacets(book: Textbook, state: LibraryState): boolean {
   for (const key of FACET_KEYS) {
     const selected = state.facets[key];
     if (!selected || selected.length === 0) continue; // no constraint
-    const value = book[key];
-    // Constrained facet but the book has no/unmatched value → excluded.
-    if (typeof value !== 'string' || !selected.includes(value)) return false;
+    const values = facetValues(book, key);
+    // Constrained facet but none of the book's values (it may have several,
+    // e.g. software: ["general", "R"]) match any selected value → excluded.
+    if (!values.some((v) => selected.includes(v))) return false;
   }
   return true;
 }

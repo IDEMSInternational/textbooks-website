@@ -9,8 +9,12 @@
   ],
   "url": "https://pretextbooks.github.io/JASPbook/",
   "language": "en",
-  "software": "JASP",
-  "subject": "general",
+  "software": [
+    "JASP"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "introductory statistics",
     "psychology",

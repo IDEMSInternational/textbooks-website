@@ -9,8 +9,12 @@
   ],
   "url": "https://pretextbooks.github.io/ModernDive_book/meta-front.html",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "tatistical inference",
     "data science",

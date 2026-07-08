@@ -8,8 +8,12 @@
   ],
   "url": "https://pretextbooks.github.io/tidy-text-mining/",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "text mining",
     "natural language processing",

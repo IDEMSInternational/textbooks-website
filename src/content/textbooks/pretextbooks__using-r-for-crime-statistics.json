@@ -7,8 +7,12 @@
   ],
   "url": "https://pretextbooks.github.io/using-r-for-crime-analysis/frontmatter.html",
   "language": "en",
-  "software": "R",
-  "subject": "crime",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "crime"
+  ],
   "keywords": [
     "crime analysis",
     "introductory statistics",

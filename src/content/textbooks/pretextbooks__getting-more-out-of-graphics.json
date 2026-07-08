@@ -7,8 +7,12 @@
   ],
   "url": "https://pretextbooks.github.io/GmooG/",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "data visualisation",
     "graphics",

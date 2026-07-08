@@ -8,7 +8,7 @@
  * client-side filter script uses to show/hide it without re-rendering.
  */
 import type { Textbook } from '../lib/types';
-import { FACET_KEYS } from '../lib/types';
+import { FACET_KEYS, facetValues } from '../lib/types';
 import { searchableText } from '../lib/filtering';
 
 interface Props {
@@ -17,17 +17,18 @@ interface Props {
 
 const { book } = Astro.props;
 
-// Chips: only the facet values that actually exist on this book.
-const chips = FACET_KEYS.map((key) => ({ key, value: book[key] })).filter(
-  (c): c is { key: (typeof FACET_KEYS)[number]; value: string } =>
-    typeof c.value === 'string' && c.value.length > 0,
+// Chips: one per facet value the book has (a book can carry more than one
+// software/subject value, e.g. software: ["general", "R"]).
+const chips = FACET_KEYS.flatMap((key) =>
+  facetValues(book, key).map((value) => ({ key, value })),
 );
 
-// Per-facet data attributes consumed by the client filter script.
+// Per-facet data attributes consumed by the client filter script. Multiple
+// values are comma-joined; the client script splits on the same separator.
 const facetData: Record<string, string> = {};
 for (const key of FACET_KEYS) {
-  const value = book[key];
-  if (typeof value === 'string') facetData[`data-${key}`] = value;
+  const values = facetValues(book, key);
+  if (values.length > 0) facetData[`data-${key}`] = values.join(',');
 }
 
 const authorList = book.authors.join(', ');

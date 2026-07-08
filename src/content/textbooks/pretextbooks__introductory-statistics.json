@@ -9,8 +9,12 @@
   ],
   "url": "https://pretextbooks.github.io/introductory-statistics/frontmatter.html",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "introductory statistics",
     "applied statistics",

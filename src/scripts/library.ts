@@ -68,8 +68,10 @@ function init(): void {
     for (const key of FACET_KEYS) {
       const selected = state.facets[key];
       if (selected.length === 0) continue;
-      const value = card.dataset[key];
-      if (!value || !selected.includes(value)) return false;
+      // Multi-valued facets are comma-joined in the data attribute (see
+      // TextbookCard.astro); split back out before comparing.
+      const values = card.dataset[key]?.split(',') ?? [];
+      if (!values.some((v) => selected.includes(v))) return false;
     }
     const q = state.search.trim().toLowerCase();
     if (q !== '') {
