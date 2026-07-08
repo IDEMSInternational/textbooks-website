@@ -20,6 +20,14 @@
  * `titleEmphasis` is for the rare section that needs to outrank its neighbours
  * (e.g. a "solution" following a "problem" section) — centers the title,
  * bumps it a step larger, and colours it with the accent.
+ *
+ * `eyebrowBadge` renders the eyebrow as a filled pill instead of plain
+ * uppercase text — for a status-style label (e.g. "Now in Early Prototype")
+ * that needs to read as more assertive than a normal section eyebrow.
+ *
+ * `centeredHead` is the light-touch version of `titleEmphasis`: just centers
+ * the eyebrow/title/subtitle, with no size or colour change, for a section
+ * that wants a bit of visual variety without competing for attention.
  */
 interface Props {
   title?: string;
@@ -28,6 +36,8 @@ interface Props {
   narrow?: boolean;
   tone?: 'default' | 'dark' | 'tinted';
   titleEmphasis?: boolean;
+  eyebrowBadge?: boolean;
+  centeredHead?: boolean;
 }
 
 const {
@@ -37,6 +47,8 @@ const {
   narrow = false,
   tone = 'default',
   titleEmphasis = false,
+  eyebrowBadge = false,
+  centeredHead = false,
 } = Astro.props;
 const hasTitleSlot = Astro.slots.has('title');
 const hasTitle = hasTitleSlot || Boolean(title);
@@ -54,10 +66,22 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
       <div
         class:list={[
           'section__head',
-          { 'section__head--emphasis': titleEmphasis },
+          {
+            'section__head--emphasis': titleEmphasis,
+            'section__head--centered': centeredHead,
+          },
         ]}
       >
-        {eyebrow && <p class="section__eyebrow">{eyebrow}</p>}
+        {eyebrow && (
+          <p
+            class:list={[
+              'section__eyebrow',
+              { 'section__eyebrow--badge': eyebrowBadge },
+            ]}
+          >
+            {eyebrow}
+          </p>
+        )}
         {hasTitle && (
           <h2
             class:list={[
@@ -139,6 +163,13 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     color: var(--color-accent);
     margin-bottom: var(--space-3);
   }
+  .section__eyebrow--badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #ffffff;
+  }
   .section__title {
     /* Matches the pre-hero-bump hero size, per the doc's request that every
        section headline read at the size the hero used to be. */
@@ -169,5 +200,15 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
   .section__title--emphasis {
     font-size: var(--text-4xl);
     color: var(--color-accent);
+  }
+
+  /* Light-touch variant: centered only, no size/colour change. */
+  .section__head--centered {
+    max-width: none;
+    text-align: center;
+  }
+  .section__head--centered .section__subtitle {
+    max-width: var(--reading-width);
+    margin-inline: auto;
   }
 </style>
