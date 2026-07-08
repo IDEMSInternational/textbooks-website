@@ -10,8 +10,12 @@
   ],
   "url": "https://pretextbooks.github.io/tidyversecourse/frontmatter.html",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "Tidyverse",
     "R programming",

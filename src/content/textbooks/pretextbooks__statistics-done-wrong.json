@@ -7,8 +7,12 @@
   ],
   "url": "https://pretextbooks.github.io/statisticsdonewrong/",
   "language": "en",
-  "software": "general",
-  "subject": "general",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "statistical errors",
     "p-values",

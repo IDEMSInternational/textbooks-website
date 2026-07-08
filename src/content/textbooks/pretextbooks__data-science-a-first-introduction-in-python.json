@@ -11,8 +11,12 @@
   ],
   "url": "https://pretextbooks.github.io/introduction-to-datascience-python/",
   "language": "en",
-  "software": "Python",
-  "subject": "general",
+  "software": [
+    "Python"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "data science",
     "Python",

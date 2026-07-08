@@ -7,8 +7,13 @@
   ],
   "url": "https://pretextbooks.github.io/lsc/",
   "language": "en",
-  "software": "CogStat",
-  "subject": "social science, general",
+  "software": [
+    "CogStat"
+  ],
+  "subject": [
+    "social science",
+    "general"
+  ],
   "keywords": [
     "introductory statistics",
     "psychology",

@@ -7,8 +7,13 @@
   ],
   "url": "https://pretextbooks.github.io/lsj-book/",
   "language": "en",
-  "software": "jamovi",
-  "subject": "social science, general",
+  "software": [
+    "jamovi"
+  ],
+  "subject": [
+    "social science",
+    "general"
+  ],
   "keywords": [
     "introductory statistics",
     "psychology",

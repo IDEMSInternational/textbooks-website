@@ -9,8 +9,12 @@
   ],
   "url": "https://pretextbooks.github.io/rmarkdown-cookbook/meta-front.html",
   "language": "en",
-  "software": "R",
-  "subject": "general",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "R Markdown",
     "knitr",

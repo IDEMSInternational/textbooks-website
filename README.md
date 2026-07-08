@@ -114,8 +114,8 @@ is derived from it as `<owner>__<repo>.json` (e.g. id `example-press/ml-in-pytho
   "authors": ["Author One"],
   "url": "https://owner.github.io/repo/",
   "language": "en",
-  "software": "python",
-  "subject": "cs",
+  "software": ["Python"],
+  "subject": ["cs"],
   "keywords": ["topic", "topic"],
   "meta": { "license": "CC-BY-4.0" }
 }

@@ -7,8 +7,12 @@
   ],
   "url": "https://pretextbooks.github.io/ThinkBayes2/meta_frontmatter.html",
   "language": "en",
-  "software": "python",
-  "subject": "general",
+  "software": [
+    "Python"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "Bayesian statistics",
     "Python",

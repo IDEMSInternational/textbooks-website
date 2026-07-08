@@ -17,7 +17,7 @@
  * rendering concerns, no filtering concerns (those live in `filtering.ts`).
  */
 import type { Textbook, Facet, FacetKey } from './types';
-import { FACET_KEYS } from './types';
+import { FACET_KEYS, facetValues } from './types';
 
 /**
  * Eagerly load every per-textbook JSON document. The glob is resolved by Vite at
@@ -62,10 +62,16 @@ function normalise(raw: unknown): Textbook | null {
     url: r.url,
   };
 
-  // Optional, single-value string facets — copied only when valid.
+  // Optional facets — `language` is single-valued, `software`/`subject` are
+  // lists (a book can be taught with more than one piece of software, or span
+  // more than one subject area).
   if (typeof r.language === 'string') book.language = r.language;
-  if (typeof r.software === 'string') book.software = r.software;
-  if (typeof r.subject === 'string') book.subject = r.subject;
+  if (Array.isArray(r.software)) {
+    book.software = r.software.filter((s): s is string => typeof s === 'string');
+  }
+  if (Array.isArray(r.subject)) {
+    book.subject = r.subject.filter((s): s is string => typeof s === 'string');
+  }
 
   if (Array.isArray(r.keywords)) {
     book.keywords = r.keywords.filter((k): k is string => typeof k === 'string');
@@ -119,8 +125,7 @@ export async function getFacets(): Promise<Facet[]> {
   for (const key of FACET_KEYS) {
     const values = new Set<string>();
     for (const book of books) {
-      const value = book[key];
-      if (typeof value === 'string' && value.length > 0) values.add(value);
+      for (const value of facetValues(book, key)) values.add(value);
     }
     if (values.size === 0) continue;
     facets.push({

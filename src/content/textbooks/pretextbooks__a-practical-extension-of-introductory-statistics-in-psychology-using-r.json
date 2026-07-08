@@ -9,8 +9,12 @@
   ],
   "url": "https://pretextbooks.github.io/practical-ext-of-intro-stats-in-psy-using-R/meta-front.html",
   "language": "en",
-  "software": "R",
-  "subject": "social science",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "social science"
+  ],
   "keywords": [
     "general linear model",
     "GLM",

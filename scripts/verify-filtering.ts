@@ -11,10 +11,10 @@ import {
 } from '../src/lib/filtering.ts';
 
 const books: Textbook[] = [
-  { id: 'a', title: 'Linear Algebra', description: 'matrix and vectors', authors: ['X'], url: '#', language: 'en', software: 'general', subject: 'math', keywords: ['matrix'] },
-  { id: 'b', title: 'Stats with Python', description: 'regression', authors: ['Y'], url: '#', language: 'en', software: 'python', subject: 'stats', keywords: ['pandas'] },
-  { id: 'c', title: 'Stats with R', description: 'tidyverse', authors: ['Z'], url: '#', language: 'en', software: 'r', subject: 'stats' },
-  { id: 'd', title: 'Cálculo', description: 'derivadas', authors: ['W'], url: '#', language: 'es', software: 'general', subject: 'math' },
+  { id: 'a', title: 'Linear Algebra', description: 'matrix and vectors', authors: ['X'], url: '#', language: 'en', software: ['general'], subject: ['math'], keywords: ['matrix'] },
+  { id: 'b', title: 'Stats with Python', description: 'regression', authors: ['Y'], url: '#', language: 'en', software: ['python'], subject: ['stats'], keywords: ['pandas'] },
+  { id: 'c', title: 'Stats with R', description: 'tidyverse', authors: ['Z'], url: '#', language: 'en', software: ['general', 'r'], subject: ['stats'] },
+  { id: 'd', title: 'Cálculo', description: 'derivadas', authors: ['W'], url: '#', language: 'es', software: ['general'], subject: ['math'] },
   { id: 'e', title: 'No-facets book', description: 'plain', authors: ['Q'], url: '#' }, // missing optional fields
 ];
 
@@ -41,6 +41,11 @@ s = emptyState();
 s.facets.subject = ['stats'];
 s.facets.software = ['python'];
 check('subject=stats AND software=python', ids(filterTextbooks(books, s)), ['b']);
+
+// Multi-valued facet on the book: matches if ANY of its values is selected.
+s = emptyState();
+s.facets.software = ['general'];
+check('software=general matches multi-value book', ids(filterTextbooks(books, s)), ['a', 'c', 'd']);
 
 // OR within a facet.
 s = emptyState();

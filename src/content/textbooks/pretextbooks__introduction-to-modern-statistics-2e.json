@@ -8,8 +8,13 @@
   ],
   "url": "https://pretextbooks.github.io/ims/welcome.html",
   "language": "en",
-  "software": "general, R",
-  "subject": "general",
+  "software": [
+    "general",
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
   "keywords": [
     "exploratory data analysis",
     "simulation-based inference",
