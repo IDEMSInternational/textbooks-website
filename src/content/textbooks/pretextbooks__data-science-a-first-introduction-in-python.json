@@ -1,0 +1,37 @@
+{
+  "id": "pretextbooks/data-science-a-first-introduction-in-python",
+  "title": "Data Science: A First Introduction in Python",
+  "description": "The Python version of Data Science: A First Introduction, covering the same comprehensive curriculum - data wrangling, visualisation, classification, regression, clustering, and statistical inference - using Python and Pandas. Also includes chapters on reproducible workflows with Jupyter and version control with Git and GitHub.",
+  "authors": [
+    "Tiffany Timbers",
+    "Trevor Campbell",
+    "Melissa Lee",
+    "Joel Ostblom",
+    "Lindsey Heagy"
+  ],
+  "url": "https://pretextbooks.github.io/introduction-to-datascience-python/",
+  "language": "en",
+  "software": "Python",
+  "subject": "general",
+  "keywords": [
+    "data science",
+    "Python",
+    "Pandas",
+    "data wrangling",
+    "data visualisation",
+    "K-nearest neighbours",
+    "classification",
+    "linear regression",
+    "clustering",
+    "K-means",
+    "statistical inference",
+    "bootstrapping",
+    "Jupyter",
+    "version control",
+    "GitHub"
+  ],
+  "meta": {
+    "license": "CC-NC-SA",
+    "difficulty": "introductory"
+  }
+}

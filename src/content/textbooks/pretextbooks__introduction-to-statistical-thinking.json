@@ -1,0 +1,31 @@
+{
+  "id": "pretextbooks/introduction-to-statistical-thinking",
+  "title": "Introduction to Statistical Thinking",
+  "description": "An introductory statistics textbook for college students with little mathematical background, integrating R through a deliberately limited set of commands to support rather than distract from statistical learning. Covers core topics from descriptive statistics and probability through inference, regression, and logistic modelling, with a focus on understanding over computation.",
+  "authors": [
+    "Benjamin Yakir"
+  ],
+  "url": "https://pretextbooks.github.io/statthink/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "introductory statistics",
+    "R programming",
+    "statistical inference",
+    "descriptive statistics",
+    "probability",
+    "confidence intervals",
+    "hypothesis testing",
+    "linear regression",
+    "logistic regression",
+    "sampling",
+    "normal distribution",
+    "random variables",
+    "undergraduate course"
+  ],
+  "meta": {
+    "license": "CC-BY",
+    "difficulty": "introductory"
+  }
+}

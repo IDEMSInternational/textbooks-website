@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/think-stats",
+  "title": "Think Stats",
+  "description": "A practical introduction to probability and statistics for Python programmers, using real datasets and short programs to explore distributions, estimation, hypothesis testing, regression, time series, and survival analysis. Emphasises hands-on exploration over mathematical formalism.",
+  "authors": [
+    "Allen B. Downey"
+  ],
+  "url": "https://pretextbooks.github.io/ThinkStats/meta_frontmatter.html",
+  "language": "en",
+  "software": "python",
+  "subject": "general",
+  "keywords": [
+    "probability",
+    "statistics",
+    "Python",
+    "exploratory data analysis",
+    "distributions",
+    "probability mass functions",
+    "cumulative distribution functions",
+    "hypothesis testing",
+    "linear regression",
+    "time series analysis",
+    "survival analysis",
+    "estimation",
+    "real data",
+    "programming-based learning"
+  ],
+  "meta": {
+    "edition": "third",
+    "license": "CC BY-NC-SA",
+    "difficulty": "intermediate"
+  }
+}

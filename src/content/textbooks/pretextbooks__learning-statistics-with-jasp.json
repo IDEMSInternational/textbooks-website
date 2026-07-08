@@ -1,0 +1,36 @@
+{
+  "id": "pretextbooks/learning-statistics-with-jasp",
+  "title": "Learning Statistics with JASP",
+  "description": "An adaptation of Learning Statistics with R for undergraduate psychology students and beginners, using the free JASP software. Covers research design, descriptive statistics, probability, hypothesis testing, t-tests, ANOVA, correlation, regression, categorical data analysis, and Bayesian statistics in a conversational, accessible style.",
+  "authors": [
+    "Danielle Navarro",
+    "David Foxcroft",
+    "Thomas J. Faulkenberry"
+  ],
+  "url": "https://pretextbooks.github.io/JASPbook/",
+  "language": "en",
+  "software": "JASP",
+  "subject": "general",
+  "keywords": [
+    "introductory statistics",
+    "psychology",
+    "JASP",
+    "descriptive statistics",
+    "hypothesis testing",
+    "t-tests",
+    "ANOVA",
+    "factorial ANOVA",
+    "correlation",
+    "linear regression",
+    "Bayesian statistics",
+    "categorical data analysis",
+    "probability",
+    "research design",
+    "undergraduate statistics"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate"
+  }
+}

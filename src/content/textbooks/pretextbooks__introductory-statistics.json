@@ -1,0 +1,31 @@
+{
+  "id": "pretextbooks/introductory-statistics",
+  "title": "Introductory Statistics",
+  "description": "A rigorous yet accessible introduction to applied statistics for undergraduate level and beyond, emphasising practical applications and real data. Designed to build statistical thinking without requiring advanced mathematics.",
+  "authors": [
+    "David M. Diez",
+    "Christopher D. Barr",
+    "Mine Cetinkaya-Rundel"
+  ],
+  "url": "https://pretextbooks.github.io/introductory-statistics/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "introductory statistics",
+    "applied statistics",
+    "statistical thinking",
+    "undergraduate statistics",
+    "hypothesis testing",
+    "data analysis",
+    "accessible statistics",
+    "probability",
+    "statistical inference",
+    "regression"
+  ],
+  "meta": {
+    "edition": "fourth",
+    "license": "CC-BY-SA",
+    "difficulty": "introductory"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/a-practical-extension-of-introductory-statistics-in-psychology-using-r",
+  "title": "A Practical Extension of Introductory Statistics in Psychology using R",
+  "description": "A practical extension of introductory psychology statistics that reframes common analyses as special cases of the general linear model (GLM) using R. Each analysis is covered in a consistent five-step format including hypotheses, R code, statistical decisions, APA reporting, and visualisation.",
+  "authors": [
+    "Ekarin E. Pongpipat, Ph.D.",
+    "Giuseppe G. Miranda, Ph.D.",
+    "Matthew J. Kmiecik, Ph.D."
+  ],
+  "url": "https://pretextbooks.github.io/practical-ext-of-intro-stats-in-psy-using-R/meta-front.html",
+  "language": "en",
+  "software": "R",
+  "subject": "social science",
+  "keywords": [
+    "general linear model",
+    "GLM",
+    "introductory statistics",
+    "psychology",
+    "R programming",
+    "t-tests",
+    "ANOVA",
+    "factorial ANOVA",
+    "correlation",
+    "linear regression",
+    "OLS regression",
+    "APA reporting",
+    "reproducible analysis"
+  ],
+  "meta": {
+    "license": "CC BY-NC-SA",
+    "difficulty": "introductory"
+  }
+}

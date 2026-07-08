@@ -1,0 +1,32 @@
+{
+  "id": "pretextbooks/think-bayes-bayesian-statistics-made-simple",
+  "title": "Think Bayes: Bayesian Statistics Made Simple",
+  "description": "A computational introduction to Bayesian statistics using Python, replacing mathematical notation with code and discrete approximations. Designed for readers with programming experience, it covers Bayes's theorem, estimation, prediction, hypothesis testing, hierarchical models, and simulation through a hands-on, code-first approach.",
+  "authors": [
+    "Allen B. Downey"
+  ],
+  "url": "https://pretextbooks.github.io/ThinkBayes2/meta_frontmatter.html",
+  "language": "en",
+  "software": "python",
+  "subject": "general",
+  "keywords": [
+    "Bayesian statistics",
+    "Python",
+    "computational statistics",
+    "Bayes's theorem",
+    "estimation",
+    "hypothesis testing",
+    "simulation",
+    "hierarchical models",
+    "approximate Bayesian computation",
+    "decision analysis",
+    "prediction",
+    "discrete approximations",
+    "programming-based learning"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC BY-NC-SA",
+    "difficulty": "intermediate"
+  }
+}

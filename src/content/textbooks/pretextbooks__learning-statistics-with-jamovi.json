@@ -1,0 +1,35 @@
+{
+  "id": "pretextbooks/learning-statistics-with-jamovi",
+  "title": "Learning Statistics with jamovi",
+  "description": "An adaptation of Learning Statistics with R for undergraduate psychology students, replacing R with the beginner-friendly jamovi software. Covers descriptive statistics, probability, hypothesis testing, t-tests, ANOVA, regression, correlation, contingency tables, and factor analysis in an accessible, free open-source format.",
+  "authors": [
+    "Danielle Navarro"
+  ],
+  "url": "https://pretextbooks.github.io/lsj-book/",
+  "language": "en",
+  "software": "jamovi",
+  "subject": "social science, general",
+  "keywords": [
+    "introductory statistics",
+    "psychology",
+    "jamovi",
+    "descriptive statistics",
+    "hypothesis testing",
+    "t-tests",
+    "ANOVA",
+    "linear regression",
+    "correlation",
+    "factorial ANOVA",
+    "factor analysis",
+    "contingency tables",
+    "probability",
+    "sampling",
+    "undergraduate statistics",
+    "effect size"
+  ],
+  "meta": {
+    "edition": "0.75",
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate"
+  }
+}

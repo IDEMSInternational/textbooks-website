@@ -1,0 +1,32 @@
+{
+  "id": "pretextbooks/beyond-mlr",
+  "title": "Beyond MLR",
+  "description": "An applied intermediate statistics textbook extending multiple linear regression to generalised linear models (GLMs) and multilevel models using R, with real case studies throughout. Covers Poisson and logistic regression, likelihood theory, correlated data, longitudinal analysis, and multilevel generalised linear models. Designed for undergraduates who have completed a first regression course.",
+  "authors": [
+    "Paul Roback",
+    "Julie Legler"
+  ],
+  "url": "https://pretextbooks.github.io/BeyondMLR/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "generalised linear models",
+    "multilevel models",
+    "Poisson regression",
+    "logistic regression",
+    "mixed effects models",
+    "longitudinal data",
+    "likelihood theory",
+    "bootstrapping",
+    "correlated data",
+    "R programming",
+    "applied statistics",
+    "intermediate statistics",
+    "case studies"
+  ],
+  "meta": {
+    "license": "CC-NC-SA",
+    "difficulty": "intermediate"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/learning-statistics-with-cogstat",
+  "title": "Learning Statistics with CogStat",
+  "description": "An adaptation of Learning Statistics with R for undergraduate psychology students, replacing R with CogStat — a free software tool designed around automatic statistical analysis. Covers descriptive statistics, probability, hypothesis testing, t-tests, ANOVA, linear regression, categorical data analysis, and Bayesian statistics, with CogStat-specific guidance throughout.",
+  "authors": [
+    "Danielle Navarro"
+  ],
+  "url": "https://pretextbooks.github.io/lsc/",
+  "language": "en",
+  "software": "CogStat",
+  "subject": "social science, general",
+  "keywords": [
+    "introductory statistics",
+    "psychology",
+    "CogStat",
+    "automatic statistical analysis",
+    "descriptive statistics",
+    "hypothesis testing",
+    "t-tests",
+    "ANOVA",
+    "factorial ANOVA",
+    "linear regression",
+    "Bayesian statistics",
+    "categorical data analysis",
+    "effect size",
+    "undergraduate statistics"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate"
+  }
+}
