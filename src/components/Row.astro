@@ -1,19 +1,22 @@
 ---
 /**
- * Row — one item in a `Rows` list. The left column is the `title` heading plus
- * an optional `aside` slot (a blurb, a CTA, …); the right column is the default
- * slot. Columns sit side by side on wider screens and stack on narrow ones.
+ * Row — one item in a `Rows` list. The left column is an optional `eyebrow`
+ * label over the `title` heading, plus an optional `aside` slot (a blurb, a
+ * CTA, …); the right column is the default slot. Columns sit side by side on
+ * wider screens and stack on narrow ones.
  */
 interface Props {
   title: string;
+  eyebrow?: string;
 }
 
-const { title } = Astro.props;
+const { title, eyebrow } = Astro.props;
 const hasAside = Astro.slots.has('aside');
 ---
 
 <div class="row">
   <div class="row__head">
+    {eyebrow && <p class="row__eyebrow">{eyebrow}</p>}
     <h3 class="row__title">{title}</h3>
     {
       hasAside && (
@@ -39,6 +42,14 @@ const hasAside = Astro.slots.has('aside');
   .row:first-child {
     padding-top: 0;
     border-top: none;
+  }
+  .row__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
   }
   .row__title {
     font-size: var(--text-xl);
