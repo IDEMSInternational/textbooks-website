@@ -1,0 +1,28 @@
+{
+  "id": "pretextbooks/an-introduction-to-data-science",
+  "title": "An Introduction to Data Science",
+  "description": "A  gentle introduction to data science for both technical and non-technical readers, using R for hands-on examples across data manipulation, visualisation, statistics, and data mining. Suitable as a standalone introductory course text or supplement to an advanced analytics course, and freely adaptable for non-commercial use.",
+  "authors": [
+    "Jeffrey Stanton"
+  ],
+  "url": "https://pretextbooks.github.io/data-science-r/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "introductory data science",
+    "R programming",
+    "data manipulation",
+    "data visualisation",
+    "statistical computing",
+    "data mining",
+    "support vector machines",
+    "non-technical introduction",
+    "analytics"
+  ],
+  "meta": {
+    "edition": "third",
+    "license": "CC BY-NC-SA",
+    "difficulty": "introductory"
+  }
+}

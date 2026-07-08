@@ -1,0 +1,31 @@
+{
+  "id": "pretextbooks/using-r-for-crime-statistics",
+  "title": "Using R for Crime Statistics",
+  "description": "A practical introduction to statistics for aspiring crime analysts using R, covering descriptive statistics, chi-squared tests, t-tests, ANOVA, correlation, and linear regression applied to crime data. Designed to be accessible beyond university by using free, open-source software rather than subscription-based tools like SPSS or Stata",
+  "authors": [
+    "Jaeyoung Choi"
+  ],
+  "url": "https://pretextbooks.github.io/using-r-for-crime-analysis/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "crime",
+  "keywords": [
+    "crime analysis",
+    "introductory statistics",
+    "R programming",
+    "chi-squared test",
+    "t-tests",
+    "ANOVA",
+    "correlation",
+    "linear regression",
+    "descriptive statistics",
+    "criminology",
+    "open-source software",
+    "applied statistics",
+    "undergraduate statistics"
+  ],
+  "meta": {
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "pretextbooks/modern-dive",
+  "title": "Modern Dive",
+  "description": "A gentle, computation-first introduction to statistical inference and data science using R and the Tidyverse, requiring no prior algebra, calculus, or programming experience. Covers data visualisation, wrangling, and importing with tidyverse, regression modelling with moderndive, and statistical inference via simulation-based methods using the infer package. Emphasises reproducibility and conceptual understanding over mathematical formulas throughout.",
+  "authors": [
+    "Chester Ismay",
+    "Albert Y. Kim",
+    "Arturo Valdivia"
+  ],
+  "url": "https://pretextbooks.github.io/ModernDive_book/meta-front.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "tatistical inference",
+    "data science",
+    "R programming",
+    "tidyverse",
+    "ggplot2",
+    "dplyr",
+    "tidyr",
+    "linear regression",
+    "multiple regression",
+    "bootstrapping",
+    "hypothesis testing",
+    "confidence intervals",
+    "simulation-based inference",
+    "reproducible research",
+    "introductory statistics"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC-NC-SA",
+    "difficulty": "intermediate"
+  }
+}

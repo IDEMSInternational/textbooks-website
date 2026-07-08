@@ -1,0 +1,36 @@
+{
+  "id": "pretextbooks/doing-meta-analysis-in-r",
+  "title": "Doing Meta-Analysis in R",
+  "description": "An accessible hands-on guide to conducting meta-analyses in R, covering effect sizes, pooling, heterogeneity, forest plots, subgroup analyses, meta-regression, and publication bias. Also includes advanced methods such as multilevel, network, Bayesian, and SEM meta-analysis, alongside practical tools for power analysis, risk of bias plots, and reporting. Requires no expert-level programming or statistical background.",
+  "authors": [
+    "Mathias Harrer",
+    "Pim Cuijpers",
+    "Toshi A. Furukawa",
+    "David D. Ebert"
+  ],
+  "url": "https://pretextbooks.github.io/Doing-Meta-Analysis-in-R/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "meta-analysis",
+    "R programming",
+    "effect sizes",
+    "heterogeneity",
+    "forest plots",
+    "subgroup analysis",
+    "meta-regression",
+    "publication bias",
+    "network meta-analysis",
+    "Bayesian meta-analysis",
+    "multilevel meta-analysis",
+    "SEM meta-analysis",
+    "risk of bias",
+    "power analysis",
+    "systematic review"
+  ],
+  "meta": {
+    "license": "CC-NC-SA, HTML only",
+    "difficulty": "intermediate"
+  }
+}

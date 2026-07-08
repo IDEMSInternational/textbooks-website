@@ -1,0 +1,34 @@
+{
+  "id": "pretextbooks/introduction-to-data-science-statistics-and-prediction-algorithms-through-case-studies",
+  "title": "Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies",
+  "description": "The second book of the Introduction to Data Science series, covering probability, statistical inference, regression, and machine learning through real-world case studies in R. Teaches students to think statistically — reasoning about uncertainty, model assumptions, and prediction — rather than just applying computational tools. Suitable for an advanced one-semester data science course.",
+  "authors": [
+    "Rafael A. Irizarry"
+  ],
+  "url": "https://pretextbooks.github.io/dataskills-part-2/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "probability",
+    "statistical inference",
+    "regression",
+    "machine learning",
+    "high-dimensional data analysis",
+    "prediction algorithms",
+    "uncertainty quantification",
+    "tidyverse",
+    "data.table",
+    "base R",
+    "reproducible research",
+    "polling",
+    "genomics",
+    "recommendation systems",
+    "advanced data science",
+    "case studies"
+  ],
+  "meta": {
+    "license": "CC BY-NC-SA 4.0",
+    "difficulty": "introductory"
+  }
+}

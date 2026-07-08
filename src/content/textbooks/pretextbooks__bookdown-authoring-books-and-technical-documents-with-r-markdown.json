@@ -1,0 +1,30 @@
+{
+  "id": "pretextbooks/bookdown-authoring-books-and-technical-documents-with-r-markdown",
+  "title": "Bookdown: Authoring Books and Technical Documents with R Markdown",
+  "description": "A concise guide to the bookdown R package for authoring books, technical documents, theses, and course notes using R Markdown. Covers Markdown syntax, figures, tables, cross-references, theorems, output formats (HTML, PDF, EPUB), customisation, and publishing to platforms like GitHub and Netlify. Suitable for anyone wanting to produce professional multi-page documents from R Markdown source files.",
+  "authors": [
+    "Yihui Xie"
+  ],
+  "url": "https://pretextbooks.github.io/bookdown/meta-front.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "bookdown",
+    "R Markdown",
+    "technical writing",
+    "book authoring",
+    "reproducible documents",
+    "HTML output",
+    "PDF output",
+    "LaTeX",
+    "GitBook",
+    "cross-references",
+    "knitr",
+    "Pandoc"
+  ],
+  "meta": {
+    "license": "GPL-3 licensed, which means you are allowed to: study, modify, redistribute it",
+    "difficulty": "intermediate"
+  }
+}

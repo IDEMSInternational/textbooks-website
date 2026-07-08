@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/tidy-text-mining-with-r",
+  "title": "Tidy Text Mining with R",
+  "description": "A practical introduction to text mining in R using the tidytext package and tidy data principles, covering sentiment analysis, tf-idf, n-grams, topic modelling, and document-term matrices. Demonstrates how familiar data wrangling tools like dplyr and tidyr can be applied to natural language, with real-world case studies using Twitter, NASA datasets, and Usenet archives.",
+  "authors": [
+    "Julia Silge",
+    "David Robinson"
+  ],
+  "url": "https://pretextbooks.github.io/tidy-text-mining/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "text mining",
+    "natural language processing",
+    "tidytext",
+    "R programming",
+    "sentiment analysis",
+    "tf-idf",
+    "topic modelling",
+    "n-grams",
+    "tidy data",
+    "dplyr",
+    "tidyr",
+    "document-term matrix",
+    "word networks",
+    "case studies"
+  ],
+  "meta": {
+    "license": "CC-NC-SA",
+    "difficulty": "intermediate"
+  }
+}

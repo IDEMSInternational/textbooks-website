@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/learning-statistics-with-r",
+  "title": "Learning Statistics with R",
+  "description": "A comprehensive introductory statistics textbook for undergraduate psychology students using R, covering research design, descriptive statistics, probability, hypothesis testing, regression, ANOVA, categorical data analysis, and Bayesian statistics. Originally developed as lecture notes at the University of Adelaide, it combines statistical theory with practical R programming throughout.",
+  "authors": [
+    "Danielle Navarro"
+  ],
+  "url": "https://pretextbooks.github.io/rbook/meta_frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "introductory statistics",
+    "psychology",
+    "R programming",
+    "descriptive statistics",
+    "hypothesis testing",
+    "t-tests",
+    "ANOVA",
+    "factorial ANOVA",
+    "linear regression",
+    "Bayesian statistics",
+    "categorical data analysis",
+    "probability",
+    "data manipulation",
+    "undergraduate statistics"
+  ],
+  "meta": {
+    "edition": "0.6",
+    "license": "CC BY-SA 4.0",
+    "difficulty": "intermediate"
+  }
+}

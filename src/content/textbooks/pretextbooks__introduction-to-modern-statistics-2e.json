@@ -1,0 +1,29 @@
+{
+  "id": "pretextbooks/introduction-to-modern-statistics-2e",
+  "title": "Introduction to Modern Statistics (2e)",
+  "description": "A modern introduction to statistics emphasising exploratory data analysis, multivariate relationships, and simulation-based inference. Covers regression modelling, bootstrapping, randomization, and classical inference through the Central Limit Theorem, with updated datasets and exercises throughout.",
+  "authors": [
+    "Mine Çetinkaya-Rundel",
+    "Johanna Hardin"
+  ],
+  "url": "https://pretextbooks.github.io/ims/welcome.html",
+  "language": "en",
+  "software": "general, R",
+  "subject": "general",
+  "keywords": [
+    "exploratory data analysis",
+    "simulation-based inference",
+    "bootstrapping",
+    "randomization",
+    "regression modelling",
+    "Central Limit Theorem",
+    "statistical inference",
+    "multivariate analysis",
+    "introductory statistics"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC-SA",
+    "difficulty": "introductory"
+  }
+}

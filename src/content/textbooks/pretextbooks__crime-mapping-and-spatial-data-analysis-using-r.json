@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/crime-mapping-and-spatial-data-analysis-using-r",
+  "title": "Crime Mapping and Spatial Data Analysis using R",
+  "description": "A practical introduction to crime mapping and spatial data analysis using R. Developed from teaching materials for upper-level undergraduate and graduate courses, and equally useful for crime analysts and law enforcement practitioners.",
+  "authors": [
+    "Juanjo Medina",
+    "Reka Solymosi"
+  ],
+  "url": "https://pretextbooks.github.io/crime_mapping/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "crime",
+  "keywords": [
+    "crime mapping",
+    "spatial data analysis",
+    "R programming",
+    "GIS",
+    "geospatial visualisation",
+    "choropleth maps",
+    "kernel density estimation",
+    "hot spots",
+    "spatial autocorrelation",
+    "Moran's I",
+    "spatial regression",
+    "geographically weighted regression",
+    "environmental criminology",
+    "crime analysis"
+  ],
+  "meta": {
+    "license": "CC0 1.0 Universal",
+    "difficulty": "intermediate"
+  }
+}

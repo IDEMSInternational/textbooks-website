@@ -1,0 +1,35 @@
+{
+  "id": "pretextbooks/r-markdown-the-definitive-guide",
+  "title": "R Markdown: The Definitive Guide",
+  "description": "The definitive guide to R Markdown, covering the full ecosystem from basic document compilation through presentations, dashboards, books, websites, journal articles, interactive tutorials, and Shiny applications. Explains the underlying knitr and Pandoc architecture and covers advanced topics including parameterised reports, HTML widgets, custom templates, and new output formats",
+  "authors": [
+    "Yihui Xie",
+    "J. J. Allaire",
+    "Garrett Grolemund"
+  ],
+  "url": "https://pretextbooks.github.io/rmarkdown-book/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "R Markdown",
+    "knitr",
+    "Pandoc",
+    "reproducible documents",
+    "HTML output",
+    "PDF output",
+    "presentations",
+    "dashboards",
+    "Shiny",
+    "bookdown",
+    "websites",
+    "parameterised reports",
+    "HTML widgets",
+    "document templates",
+    "technical writing"
+  ],
+  "meta": {
+    "license": "CC-NC-SA",
+    "difficulty": "intermediate"
+  }
+}

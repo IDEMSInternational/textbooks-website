@@ -1,0 +1,33 @@
+{
+  "id": "pretextbooks/reproducible-research-in-r",
+  "title": "Reproducible Research in R",
+  "description": "A practical, workflow-focused introduction to R for researchers and students who want to conduct and communicate reproducible research, treating reproducibility as a default practice rather than an advanced topic. Requires no prior programming experience.",
+  "authors": [
+    "Christian Martinez"
+  ],
+  "url": "https://pretextbooks.github.io/Reproducible-Research-Using-R/meta-front.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "reproducible research",
+    "R programming",
+    "RStudio",
+    "tidyverse",
+    "ggplot2",
+    "R Markdown",
+    "data visualisation",
+    "data wrangling",
+    "t-tests",
+    "ANOVA",
+    "correlation",
+    "linear regression",
+    "logistic regression",
+    "categorical data analysis"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY",
+    "difficulty": "intermediate"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "pretextbooks/answering-questions-with-data-textbook-introductory-statistics-for-psychology-students",
+  "title": "Answering Questions with Data (Textbook): Introductory Statistics for Psychology Students",
+  "description": "An introductory statistics textbook for undergraduate psychology students, covering core methods from descriptive statistics and correlation through t-tests, ANOVA, factorial designs, and simulation. Part of a larger open course package including a lab manual and course website.",
+  "authors": [
+    "Crump, M. J. C.",
+    "Navarro, D. J.",
+    "Suzuki, J."
+  ],
+  "url": "https://pretextbooks.github.io/statistics/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "psychology",
+  "keywords": [
+    "introductory statistics",
+    "psychology",
+    "t-tests",
+    "ANOVA",
+    "repeated measures",
+    "factorial design",
+    "correlation",
+    "probability",
+    "sampling",
+    "simulation",
+    "undergraduate statistics"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY-SA",
+    "difficulty": "introductory"
+  }
+}

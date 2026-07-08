@@ -1,0 +1,25 @@
+{
+  "id": "pretextbooks/lies-damned-lies-or-statistics",
+  "title": "Lies, Damned Lies, or Statistics",
+  "description": "An introductory statistics textbook covering descriptive statistics, bivariate analysis, linear regression, probability, and basic inference. Written for a one-semester undergraduate course and first used at Colorado State University–Pueblo.",
+  "authors": [
+    "Jonathan A. Poritz"
+  ],
+  "url": "https://pretextbooks.github.io/lies-damned-statistics/frontmatter.html",
+  "language": "en",
+  "software": "general",
+  "subject": "general",
+  "keywords": [
+    "introductory statistics",
+    "descriptive statistics",
+    "bivariate statistics",
+    "linear regression",
+    "probability theory",
+    "statistical inference",
+    "undergraduate statistics"
+  ],
+  "meta": {
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate"
+  }
+}

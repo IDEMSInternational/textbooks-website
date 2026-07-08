@@ -1,0 +1,30 @@
+{
+  "id": "pretextbooks/getting-more-out-of-graphics",
+  "title": "Getting (more out of) Graphics",
+  "description": "A practical guide to data visualisation built around real-world case studies spanning sport, science, politics, health, and society. Covers not just how to create graphics but how to understand, evaluate, and improve them, with guidance on colour, ordering, wrangling, and interpretation. Suitable for anyone working with data who wants to communicate findings effectively through graphics.",
+  "authors": [
+    "Antony Urwin"
+  ],
+  "url": "https://pretextbooks.github.io/GmooG/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "data visualisation",
+    "graphics",
+    "R programming",
+    "ggplot2",
+    "exploratory data analysis",
+    "case studies",
+    "colour theory",
+    "data wrangling",
+    "chart design",
+    "statistical graphics",
+    "real-world data"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.",
+    "difficulty": "intermediate"
+  }
+}

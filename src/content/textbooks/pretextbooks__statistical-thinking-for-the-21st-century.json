@@ -1,0 +1,35 @@
+{
+  "id": "pretextbooks/statistical-thinking-for-the-21st-century",
+  "title": "Statistical Thinking for the 21st Century",
+  "description": "A comprehensive introduction to statistical thinking that is grounded in mathematics and statistics but draws on computer science and psychology. The book treats statistics as a way of understanding a complex world - not just a set of computational procedures. Covers both classical and modern approaches including resampling, simulation, and the general linear model.",
+  "authors": [
+    "Russell A. Poldrack"
+  ],
+  "url": "https://pretextbooks.github.io/statsthinking21-core/frontmatter.html",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "statistical thinking",
+    "probability",
+    "data visualisation",
+    "hypothesis testing",
+    "Bayesian statistics",
+    "confidence intervals",
+    "effect sizes",
+    "statistical power",
+    "regression",
+    "general linear model",
+    "categorical modelling",
+    "resampling",
+    "simulation",
+    "reproducible research",
+    "introductory statistics",
+    "R programming"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY-NC",
+    "difficulty": "intermediate"
+  }
+}

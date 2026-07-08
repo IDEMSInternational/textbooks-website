@@ -1,0 +1,32 @@
+{
+  "id": "pretextbooks/introduction-to-data-science-data-wrangling-and-visualisation-with-r",
+  "title": "Introduction to Data Science: Data Wrangling and Visualisation with R",
+  "description": "The first book of the second edition of Introduction to Data Science, covering R programming, data wrangling, visualization, and productivity tools through real-world case studies. No prior R experience required - ideal as a first course in data science.",
+  "authors": [
+    "Rafael A. Irizarry"
+  ],
+  "url": "https://pretextbooks.github.io/dataskills-part-1/",
+  "language": "en",
+  "software": "R",
+  "subject": "general",
+  "keywords": [
+    "R programming",
+    "data wrangling",
+    "data visualization",
+    "ggplot2",
+    "dplyr",
+    "UNIX",
+    "Git",
+    "GitHub",
+    "Quarto",
+    "knitr",
+    "data.table",
+    "reproducible research",
+    "introductory data science",
+    "case studies"
+  ],
+  "meta": {
+    "license": "CC BY-NC-SA 4.0",
+    "difficulty": "introductory"
+  }
+}
