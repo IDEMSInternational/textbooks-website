@@ -152,7 +152,7 @@ const team = [
           <a class="btn btn--primary" href={`${base}/product`}>
             Explore the product
           </a>
-          <a class="btn" href={`${base}/join`}>
+          <a class="btn btn--secondary" href={`${base}/join`}>
             Join the community
           </a>
         </div>
@@ -593,7 +593,9 @@ const team = [
     margin-bottom: var(--space-3);
   }
   .hero__title {
-    font-size: var(--text-3xl);
+    /* Bigger than the section-title scale below, so the hero clearly reads
+       as the page's lead statement. */
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl));
     letter-spacing: -0.02em;
     margin-bottom: var(--space-4);
   }

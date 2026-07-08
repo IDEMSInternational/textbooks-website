@@ -10,7 +10,7 @@
  */
 interface Props {
   href: string;
-  variant?: 'primary' | 'default';
+  variant?: 'primary' | 'secondary' | 'default';
 }
 
 const { href, variant = 'primary' } = Astro.props;
@@ -22,7 +22,10 @@ const resolvedHref = isInternalPath ? `${base}${href}` : href;
 ---
 
 <a
-  class:list={['btn', { 'btn--primary': variant === 'primary' }]}
+  class:list={[
+    'btn',
+    { 'btn--primary': variant === 'primary', 'btn--secondary': variant === 'secondary' },
+  ]}
   href={resolvedHref}
   target={isExternal ? '_blank' : undefined}
   rel={isExternal ? 'noopener noreferrer' : undefined}
