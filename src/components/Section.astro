@@ -16,6 +16,10 @@
  * "dark" re-declares the colour tokens so descendant text and cards invert
  * automatically (with a mint highlight); "tinted" is a pale grey-blue band that
  * keeps the default orange highlight.
+ *
+ * `titleEmphasis` is for the rare section that needs to outrank its neighbours
+ * (e.g. a "solution" following a "problem" section) — centers the title,
+ * bumps it a step larger, and colours it with the accent.
  */
 interface Props {
   title?: string;
@@ -23,10 +27,17 @@ interface Props {
   subtitle?: string;
   narrow?: boolean;
   tone?: 'default' | 'dark' | 'tinted';
+  titleEmphasis?: boolean;
 }
 
-const { title, eyebrow, subtitle, narrow = false, tone = 'default' } =
-  Astro.props;
+const {
+  title,
+  eyebrow,
+  subtitle,
+  narrow = false,
+  tone = 'default',
+  titleEmphasis = false,
+} = Astro.props;
 const hasTitleSlot = Astro.slots.has('title');
 const hasTitle = hasTitleSlot || Boolean(title);
 const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
@@ -40,10 +51,20 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
 >
   {
     hasHead && (
-      <div class="section__head">
+      <div
+        class:list={[
+          'section__head',
+          { 'section__head--emphasis': titleEmphasis },
+        ]}
+      >
         {eyebrow && <p class="section__eyebrow">{eyebrow}</p>}
         {hasTitle && (
-          <h2 class="section__title">
+          <h2
+            class:list={[
+              'section__title',
+              { 'section__title--emphasis': titleEmphasis },
+            ]}
+          >
             {hasTitleSlot ? <slot name="title" /> : title}
           </h2>
         )}
@@ -133,5 +154,20 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
   }
   .section__body--narrow {
     max-width: var(--reading-width);
+  }
+
+  /* Emphasis variant: the title reads as the page's feature, not just
+     another section heading — centered, a step larger, accent-coloured. */
+  .section__head--emphasis {
+    max-width: none;
+    text-align: center;
+  }
+  .section__head--emphasis .section__subtitle {
+    max-width: var(--reading-width);
+    margin-inline: auto;
+  }
+  .section__title--emphasis {
+    font-size: var(--text-4xl);
+    color: var(--color-accent);
   }
 </style>

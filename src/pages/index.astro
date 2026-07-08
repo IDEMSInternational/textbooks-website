@@ -172,9 +172,13 @@ const team = [
     <Section
       tone="dark"
       eyebrow="The unsolved problem"
-      title="Existing textbooks aren’t a match for a complex, rapidly changing world."
       subtitle="A global community of educators and authors are committed to developing a flourishing ecosystem of open, accessible textbooks and educational resources to make high-quality teaching and learning accessible to all."
     >
+      <Fragment slot="title">
+        Existing textbooks aren’t a match
+        <br class="soft-break" />
+        for a complex, rapidly changing world.
+      </Fragment>
       <div class="section-lead">
         <p>
           But from the moment they’re created, even the best textbooks need
@@ -214,48 +218,58 @@ const team = [
     </Section>
 
     <Section
-    eyebrow="The solution">
+      eyebrow="The solution"
+      titleEmphasis
+    >
       <Fragment slot="title">
         Open, <em>adaptive</em> educational resources:
         <br />
         A great leap forward for teaching and learning
       </Fragment>
 
-      <div class="section-lead">
-        <p>
-          IDEMS is introducing a living library of high-quality open
-          statistics and data science textbooks (and supporting teaching,
-          learning and assessment resources) that can be tailored to any
-          course, context, and/or student. Educators develop entirely new
-          textbooks without starting from scratch–or creating an isolated
-          copy that requires constant upkeep.
-        </p>
-        <p>
-          With IDEMS’ Open, Adaptive Statistics &amp; Data Science Textbooks,
-          educators can:
-        </p>
-        <ul class="section-lead__list">
-          <li>
-            Easily recombine existing open textbooks and resources to shape
-            new versions for unique courses and students
-          </li>
-          <li>Swap or add new examples, datasets, or assessments</li>
-          <li>Translate an entire textbook or section in real time.</li>
-          <li>
-            Decide what delivery format works best for a unique context and
-            students
-          </li>
-          <li>
-            Contribute to the ongoing development of an ever-expanding,
-            peer-reviewed textbook and resource library
-          </li>
-        </ul>
-        <p>
-          New textbook and resource versions developed out of our system stay
-          connected: your adaptations and improvements help other educators
-          and authors, and theirs help yours.
-        </p>
-        <a class="btn" href={`${base}/product`}>Learn more about the product</a>
+      <div class="solution-intro">
+        <div class="section-lead">
+          <p>
+            IDEMS is introducing a living library of high-quality open
+            statistics and data science textbooks (and supporting teaching,
+            learning and assessment resources) that can be tailored to any
+            course, context, and/or student. Educators develop entirely new
+            textbooks without starting from scratch–or creating an isolated
+            copy that requires constant upkeep.
+          </p>
+          <p>
+            With IDEMS’ Open, Adaptive Statistics &amp; Data Science
+            Textbooks, educators can:
+          </p>
+          <ul class="section-lead__list">
+            <li>
+              Easily recombine existing open textbooks and resources to shape
+              new versions for unique courses and students
+            </li>
+            <li>Swap or add new examples, datasets, or assessments</li>
+            <li>Translate an entire textbook or section in real time.</li>
+            <li>
+              Decide what delivery format works best for a unique context and
+              students
+            </li>
+            <li>
+              Contribute to the ongoing development of an ever-expanding,
+              peer-reviewed textbook and resource library
+            </li>
+          </ul>
+          <p>
+            New textbook and resource versions developed out of our system
+            stay connected: your adaptations and improvements help other
+            educators and authors, and theirs help yours.
+          </p>
+        </div>
+
+        <aside class="solution-cta">
+          <p>See the full architecture behind the library.</p>
+          <a class="btn btn--primary" href={`${base}/product`}>
+            Learn more about the product
+          </a>
+        </aside>
       </div>
 
       <p class="section-subhead">Why it matters for:</p>
@@ -549,6 +563,17 @@ const team = [
 </script>
 
 <style>
+  /* Deliberate line break in the "Existing textbooks aren't a match…"
+     headline — suppressed on narrow screens where it could land awkwardly. */
+  .soft-break {
+    display: none;
+  }
+  @media (min-width: 30rem) {
+    .soft-break {
+      display: block;
+    }
+  }
+
   .hero {
     padding-block: var(--space-8) var(--space-10);
   }
@@ -620,10 +645,39 @@ const team = [
     font-weight: 600;
   }
 
-  /* Reading-width intro (text + bullets + button) above a full-width CardGrid. */
+  /* Solution section: reading-width intro text alongside a sidebar CTA card,
+     so "Learn more about the product" isn't just tacked on after a bullet
+     list — it stacks below the text on narrow screens. */
+  .solution-intro {
+    display: grid;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  @media (min-width: 60rem) {
+    .solution-intro {
+      grid-template-columns: 1fr 16rem;
+      align-items: start;
+    }
+  }
+  .solution-cta {
+    padding: var(--space-5);
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+  .solution-cta p {
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Reading-width intro (text + bullets) used across several sections. */
   .section-lead {
     max-width: var(--reading-width);
     margin-bottom: var(--space-8);
+  }
+  .solution-intro .section-lead {
+    margin-bottom: 0;
   }
   .section-lead > * + * {
     margin-top: var(--space-4);
