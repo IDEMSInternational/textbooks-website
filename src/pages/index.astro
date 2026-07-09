@@ -351,10 +351,6 @@ const team = [
         </Card>
       </CardGrid>
 
-      <p class="solution-link">
-        <a href={`${base}/innovation`}>See the full architecture behind the library.</a>
-      </p>
-
       <div class="audience-panel" id="audience-panel" hidden>
         {
           audienceFeatures.map((audience) => (
@@ -383,6 +379,10 @@ const team = [
           ))
         }
       </div>
+
+      <p class="solution-link">
+        <a href={`${base}/innovation`}>See the full architecture behind the library.</a>
+      </p>
     </Section>
 
     <Section
@@ -681,6 +681,12 @@ const team = [
   .solution-lead__setup {
     font-style: italic;
   }
+  /* Pull the list up closer to its "educators can:" set-up line than the
+     section-lead default gap — it reads as introducing the list directly,
+     not just another paragraph in the sequence. */
+  .solution-lead__setup + .section-lead__list {
+    margin-top: var(--space-2);
+  }
 
   /* Plain text link (not a button) to the Innovation page, placed below the
      audience boxes rather than breaking up the intro copy. */
@@ -758,6 +764,7 @@ const team = [
    * reverting restores the prior plain-text rendering exactly.
    */
   .audience-panel__features {
+    max-width: var(--reading-width);
     margin: 0;
     padding: 0;
     list-style: none;
