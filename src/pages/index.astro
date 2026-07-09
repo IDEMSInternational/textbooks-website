@@ -734,10 +734,14 @@ const team = [
     transform: rotate(180deg);
   }
 
-  /* Shared panel: bubbles out full-width directly below the card row.
-     Only the `[data-audience-content]` block matching the active toggle
-     is shown; see scripts/audience-toggle.ts. */
+  /* Shared panel: bubbles out directly below the card row. Capped at reading
+     width rather than the full row width — this is stepped, single-column
+     text, and a bordered/backgrounded box that's much wider than its content
+     just reads as dead space, not intentional whitespace. Only the
+     `[data-audience-content]` block matching the active toggle is shown;
+     see scripts/audience-toggle.ts. */
   .audience-panel {
+    max-width: var(--reading-width);
     margin-top: var(--space-5);
     padding: var(--space-5);
     border: var(--border);
@@ -764,7 +768,6 @@ const team = [
    * reverting restores the prior plain-text rendering exactly.
    */
   .audience-panel__features {
-    max-width: var(--reading-width);
     margin: 0;
     padding: 0;
     list-style: none;
