@@ -16,6 +16,31 @@
  * "dark" re-declares the colour tokens so descendant text and cards invert
  * automatically (with a mint highlight); "tinted" is a pale grey-blue band that
  * keeps the default orange highlight.
+ *
+ * `titleEmphasis` is for the rare section that needs to outrank its neighbours
+ * (e.g. a "solution" following a "problem" section) — centers the title,
+ * bumps it a step larger, and colours it with the accent.
+ *
+ * `eyebrowBadge` renders the eyebrow as a filled, bolded flag/status banner
+ * instead of plain uppercase text — for a label (e.g. "Now in Early
+ * Prototype") that needs to read as its own assertive statement rather than
+ * a normal section eyebrow.
+ *
+ * `centeredHead` is the light-touch version of `titleEmphasis`: just centers
+ * the eyebrow/title/subtitle, with no size or colour change, for a section
+ * that wants a bit of visual variety without competing for attention.
+ *
+ * `eyebrowAccent2` colours the eyebrow with the secondary (blue) accent
+ * instead of the default orange — for a section that wants its eyebrow to
+ * stand out from neighbouring sections' eyebrows.
+ *
+ * `titleLineBreak` renders an embedded "\n" in a plain `title` string as a
+ * line break. Only needed on MDX pages: a `title` slot's content there gets
+ * markdown-parsed, which wraps each line in its own (invalid inside <h2>)
+ * <p> — so MDX callers pass a plain string with a literal "\n" instead, and
+ * opt into this to render it. Off by default so it doesn't affect `title`
+ * slots (e.g. on .astro pages), whose own JSX-formatting whitespace/newlines
+ * would otherwise start rendering as unwanted extra line breaks too.
  */
 interface Props {
   title?: string;
@@ -23,10 +48,25 @@ interface Props {
   subtitle?: string;
   narrow?: boolean;
   tone?: 'default' | 'dark' | 'tinted';
+  titleEmphasis?: boolean;
+  eyebrowBadge?: boolean;
+  centeredHead?: boolean;
+  eyebrowAccent2?: boolean;
+  titleLineBreak?: boolean;
 }
 
-const { title, eyebrow, subtitle, narrow = false, tone = 'default' } =
-  Astro.props;
+const {
+  title,
+  eyebrow,
+  subtitle,
+  narrow = false,
+  tone = 'default',
+  titleEmphasis = false,
+  eyebrowBadge = false,
+  centeredHead = false,
+  eyebrowAccent2 = false,
+  titleLineBreak = false,
+} = Astro.props;
 const hasTitleSlot = Astro.slots.has('title');
 const hasTitle = hasTitleSlot || Boolean(title);
 const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
@@ -40,10 +80,38 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
 >
   {
     hasHead && (
-      <div class="section__head">
-        {eyebrow && <p class="section__eyebrow">{eyebrow}</p>}
+      <div
+        class:list={[
+          'section__head',
+          {
+            'section__head--emphasis': titleEmphasis,
+            'section__head--centered': centeredHead,
+          },
+        ]}
+      >
+        {eyebrow && (
+          <p
+            class:list={[
+              'section__eyebrow',
+              {
+                'section__eyebrow--badge': eyebrowBadge,
+                'section__eyebrow--accent2': eyebrowAccent2,
+              },
+            ]}
+          >
+            {eyebrow}
+          </p>
+        )}
         {hasTitle && (
-          <h2 class="section__title">
+          <h2
+            class:list={[
+              'section__title',
+              {
+                'section__title--emphasis': titleEmphasis,
+                'section__title--line-break': titleLineBreak,
+              },
+            ]}
+          >
             {hasTitleSlot ? <slot name="title" /> : title}
           </h2>
         )}
@@ -118,10 +186,34 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     color: var(--color-accent);
     margin-bottom: var(--space-3);
   }
+  .section__eyebrow--badge {
+    /* Reads as a flag/status banner, not a normal eyebrow label — bigger,
+       bolder, and less pill-shaped than a typical rounded badge. */
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: #ffffff;
+    font-size: var(--text-base);
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(24, 24, 27, 0.15);
+  }
+  .section__eyebrow--accent2 {
+    color: var(--color-accent-2);
+  }
   .section__title {
-    font-size: var(--text-2xl);
+    /* Matches the pre-hero-bump hero size, per the doc's request that every
+       section headline read at the size the hero used to be. */
+    font-size: var(--text-3xl);
     letter-spacing: -0.01em;
     margin-bottom: var(--space-4);
+  }
+  /* Opt-in only (see `titleLineBreak` above) — applying this by default
+     broke every `title` slot on .astro pages, since their own JSX-
+     formatting whitespace/newlines started rendering as extra line breaks
+     the moment this was a blanket rule. */
+  .section__title--line-break {
+    white-space: pre-line;
   }
   .section__subtitle {
     font-size: var(--text-lg);
@@ -131,5 +223,34 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
   }
   .section__body--narrow {
     max-width: var(--reading-width);
+  }
+
+  /* Emphasis variant: the title reads as the page's feature, not just
+     another section heading — centered, a step larger, accent-coloured, and
+     given extra breathing room above/below so it doesn't crowd its
+     neighbours. */
+  .section__head--emphasis {
+    max-width: none;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+  .section__head--emphasis .section__subtitle {
+    max-width: var(--reading-width);
+    margin-inline: auto;
+  }
+  .section__title--emphasis {
+    font-size: var(--text-4xl);
+    color: var(--color-accent);
+  }
+
+  /* Light-touch variant: centered only, no size/colour change. */
+  .section__head--centered {
+    max-width: none;
+    text-align: center;
+  }
+  .section__head--centered .section__subtitle {
+    max-width: var(--reading-width);
+    margin-inline: auto;
   }
 </style>

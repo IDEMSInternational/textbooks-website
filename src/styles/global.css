@@ -34,11 +34,12 @@
   --text-xl: 1.375rem;
   --text-2xl: 1.75rem;
   --text-3xl: 2.25rem;
+  --text-4xl: 2.75rem;
 
   --leading-tight: 1.25;
   --leading-normal: 1.6;
 
-  /* ---- Colour (monochrome + one restrained accent) ---- */
+  /* ---- Colour (monochrome + two restrained accents) ---- */
   --color-bg: #ffffff;
   --color-surface: #fafafa;
   --color-surface-hover: #f4f4f5;
@@ -50,6 +51,12 @@
   --color-accent: #f37021;
   --color-accent-hover: #d95f15;
   --color-focus: #f37021;
+  /* Secondary accent (blue) — used where two CTAs sit side by side and
+     shouldn't read as "one real button, one afterthought"; the convention
+     going forward is orange for product/technical CTAs, this blue for
+     community ones (e.g. "Join the Community"). */
+  --color-accent-2: #649ba3;
+  --color-accent-2-hover: #4f7f89;
 
   /* ---- Other tokens ---- */
   --radius: 6px;
@@ -203,6 +210,19 @@ img {
    needs dark (not white) text to stay legible. */
 .section--dark .btn--primary {
   color: #1f2a2e;
+}
+
+/* Secondary CTA: filled with the second accent so a pair of buttons reads as
+   "two real choices" rather than one highlighted button and one ignored. */
+.btn--secondary {
+  background: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  color: #ffffff;
+}
+
+.btn--secondary:hover {
+  background: var(--color-accent-2-hover);
+  border-color: var(--color-accent-2-hover);
 }
 
 .btn--ghost {

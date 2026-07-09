@@ -56,6 +56,10 @@ const hasAside = Astro.slots.has('aside');
     font-weight: 600;
     line-height: var(--leading-tight);
     color: var(--color-text);
+    /* `title` is always a plain prop (no slot), so an embedded "\n" is safe
+       to render as a line break unconditionally — unlike Section, there's
+       no JSX-formatting whitespace from slotted content that could regress. */
+    white-space: pre-line;
   }
   .row__aside {
     margin-top: var(--space-4);

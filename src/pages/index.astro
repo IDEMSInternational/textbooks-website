@@ -25,22 +25,22 @@ const audienceFeatures = [
     tagline: 'Adapt & Iterate',
     features: [
       {
-        title: 'Feature 1: Find the right foundation',
+        title: 'Step 1: Find the right foundation',
         body: 'Discover a growing library of free, open textbooks and resources ready to use and adapt.',
         note: 'Move beyond searching through scattered resources or relying on textbooks that are outdated, locked behind paywalls, or difficult to modify.',
       },
       {
-        title: 'Feature 2: Adapt materials to your students',
+        title: 'Step 2: Adapt materials to your students',
         body: 'Change examples, datasets, assessments, explanations, and activities to match your learners and your teaching goals.',
         note: 'Teach core concepts through content that feels relevant, meaningful, and accessible to your students.',
       },
       {
-        title: 'Feature 3: Choose the variant that fits',
+        title: 'Step 3: Choose the variant that fits',
         body: 'Choose or build on variants created for different audiences, tools, and disciplines.',
         note: 'Avoid one-size-fits-all textbooks and build learning experiences that reflect the diversity of your students.',
       },
       {
-        title: 'Feature 4: Improve your course over time',
+        title: 'Step 4: Improve your course over time',
         body: 'Continuously refine resources as your course and students evolve.',
         note: 'Keep your resources current while contributing to a community of educators who are continuously improving teaching and learning.',
       },
@@ -52,22 +52,22 @@ const audienceFeatures = [
     tagline: 'Adapt & Innovate',
     features: [
       {
-        title: 'Feature 1: Start from “What Works”',
+        title: 'Step 1: Start from “What Works”',
         body: 'Build on existing open textbooks and resources instead of starting from a blank page.',
         note: 'Remove the biggest barriers to textbook creation, time, cost, and expertise, so more educators can become authors.',
       },
       {
-        title: 'Feature 2: Create your own variant',
+        title: 'Step 2: Create your own variant',
         body: 'Add your examples, datasets, assessments, explanations, and activities to develop a textbook that fits your course.',
         note: 'Transform a good textbook into the right textbook for your students and your context.',
       },
       {
-        title: 'Feature 3: Collaborate beyond the classroom',
+        title: 'Step 3: Collaborate beyond the classroom',
         body: 'Share your adaptations and build on the work of other educators.',
         note: 'Move from isolated course materials to a community where teaching innovations can be reused and improved.',
       },
       {
-        title: 'Feature 4: Get recognised for your contribution',
+        title: 'Step 4: Get recognised for your contribution',
         body: 'Publish your adapted textbook variant and receive attribution as a contributor to the open library.',
         note: 'Your teaching expertise becomes a visible contribution that helps others while building your academic profile.',
       },
@@ -79,22 +79,22 @@ const audienceFeatures = [
     tagline: 'Create & Evolve',
     features: [
       {
-        title: 'Feature 1: Make your work reusable',
+        title: 'Step 1: Make your work reusable',
         body: 'Create resources that can be adapted across platforms, formats, and teaching contexts.',
         note: 'Keep your textbook accessible and valuable as technology, disciplines, and learner needs change.',
       },
       {
-        title: 'Feature 2: Extend your textbook’s reach',
+        title: 'Step 2: Extend your textbook’s reach',
         body: 'Enable educators to discover, adopt, and adapt your work for new audiences.',
         note: 'Help your ideas reach learners and communities beyond the original context you designed them for.',
       },
       {
-        title: 'Feature 3: Understand your impact',
+        title: 'Step 3: Understand your impact',
         body: 'Gain insight into how your resources are being used, adapted, and built upon.',
         note: 'See the real-world influence of your work and discover new opportunities for collaboration.',
       },
       {
-        title: 'Feature 4: Evolve with the community',
+        title: 'Step 4: Evolve with the community',
         body: 'Use feedback and contributions from educators to improve future versions of your textbook.',
         note: 'Keep your work alive, current, and continuously improving alongside your field.',
       },
@@ -145,14 +145,15 @@ const team = [
         </h1>
         <p class="hero__lede">
           High-quality teaching and learning digital textbooks and resources.
-          <br>Created by subject-matter experts, customised by expert educators, improved everywhere to benefit everyone.
+          <br>Created by subject-matter experts, customised by expert educators,
+          <br>improved everywhere to benefit everyone.
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn--primary" href={`${base}/product`}>
-            Explore the product
+          <a class="btn btn--primary" href={`${base}/innovation`}>
+            Explore the innovation
           </a>
-          <a class="btn" href={`${base}/join`}>
+          <a class="btn btn--secondary" href={`${base}/join`}>
             Join the community
           </a>
         </div>
@@ -172,9 +173,13 @@ const team = [
     <Section
       tone="dark"
       eyebrow="The unsolved problem"
-      title="Existing textbooks aren’t a match for a complex, rapidly changing world."
       subtitle="A global community of educators and authors are committed to developing a flourishing ecosystem of open, accessible textbooks and educational resources to make high-quality teaching and learning accessible to all."
     >
+      <Fragment slot="title">
+        Existing textbooks aren’t a match
+        <br class="soft-break" />
+        for a complex, rapidly changing world.
+      </Fragment>
       <div class="section-lead">
         <p>
           But from the moment they’re created, even the best textbooks need
@@ -195,14 +200,14 @@ const team = [
         </Card>
         <Card title="Variable Contextual Realities">
           <p>
-            Teaching and learning happen better when resources are locally
-            relevant and accessible. But existing textbooks can’t easily
-            adapt into new cultural or language contexts; incorporate
-            different examples, datasets or tools; or account for limited
-            access in low-resource contexts.
+            Teaching and learning happen better when resources are relevant
+            and accessible. But existing textbooks can’t easily adapt into
+            new cultural or language contexts; incorporate different
+            examples, datasets or tools; or account for limited access in
+            low-resource contexts.
           </p>
         </Card>
-        <Card title="Different Student Strengths & Weaknesses">
+        <Card title="Different Strengths and Weaknesses">
           <p>
             Even within a single course, students have varying strengths and
             weaknesses. But existing textbooks are one-size-fits-all, unable
@@ -214,14 +219,17 @@ const team = [
     </Section>
 
     <Section
-    eyebrow="The solution">
+      eyebrow="The solution"
+      eyebrowAccent2
+      titleEmphasis
+    >
       <Fragment slot="title">
         Open, <em>adaptive</em> educational resources:
         <br />
         A great leap forward for teaching and learning
       </Fragment>
 
-      <div class="section-lead">
+      <div class="section-lead solution-lead">
         <p>
           IDEMS is introducing a living library of high-quality open
           statistics and data science textbooks (and supporting teaching,
@@ -230,9 +238,9 @@ const team = [
           textbooks without starting from scratch–or creating an isolated
           copy that requires constant upkeep.
         </p>
-        <p>
-          With IDEMS’ Open, Adaptive Statistics &amp; Data Science Textbooks,
-          educators can:
+        <p class="solution-lead__setup">
+          With IDEMS’ <strong>Open, Adaptive Statistics &amp; Data Science
+          Textbooks</strong>, educators can:
         </p>
         <ul class="section-lead__list">
           <li>
@@ -251,14 +259,13 @@ const team = [
           </li>
         </ul>
         <p>
-          New textbook and resource versions developed out of our system stay
-          connected: your adaptations and improvements help other educators
-          and authors, and theirs help yours.
+          New textbook and resource versions developed out of our system
+          stay connected: your adaptations and improvements help other
+          educators and authors, and theirs help yours.
         </p>
-        <a class="btn" href={`${base}/product`}>Learn more about the product</a>
       </div>
 
-      <p class="section-subhead">Why it matters for:</p>
+      <p class="section-subhead">How it works for:</p>
 
       <CardGrid>
         <Card title="Educators">
@@ -275,7 +282,7 @@ const team = [
             aria-expanded="false"
             aria-controls="audience-panel"
           >
-            See features
+            See how it works
             <svg class="audience-toggle__chevron" viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M4 6l4 4 4-4"
@@ -303,7 +310,7 @@ const team = [
             aria-expanded="false"
             aria-controls="audience-panel"
           >
-            See features
+            See how it works
             <svg class="audience-toggle__chevron" viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M4 6l4 4 4-4"
@@ -329,7 +336,7 @@ const team = [
             aria-expanded="false"
             aria-controls="audience-panel"
           >
-            See features
+            See how it works
             <svg class="audience-toggle__chevron" viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M4 6l4 4 4-4"
@@ -352,11 +359,19 @@ const team = [
                 {audience.name} · <em>{audience.tagline}</em>
               </p>
               <ol class="audience-panel__features">
-                {audience.features.map((feature) => (
-                  <li>
-                    <p class="audience-panel__feature-title">{feature.title}</p>
-                    <p>{feature.body}</p>
-                    <p class="audience-panel__feature-note">{feature.note}</p>
+                {audience.features.map((feature, i) => (
+                  <li class="audience-panel__feature">
+                    <span class="audience-panel__feature-step" aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    <div class="audience-panel__feature-content">
+                      <p class="audience-panel__feature-title">
+                        <span class="visually-hidden">Step {i + 1}: </span>
+                        {feature.title.replace(/^Step \d+:\s*/, '')}
+                      </p>
+                      <p>{feature.body}</p>
+                      <p class="audience-panel__feature-note">{feature.note}</p>
+                    </div>
                   </li>
                 ))}
               </ol>
@@ -364,99 +379,171 @@ const team = [
           ))
         }
       </div>
+
+      <p class="solution-link">
+        <a href={`${base}/innovation`}>See the full architecture behind the library.</a>
+      </p>
     </Section>
 
     <Section
       tone="tinted"
       eyebrow="Use cases"
       title="Centring educators, empowering local innovation, transforming authoring, teaching and learning"
-      subtitle="What does that look like in practice? Meet three educators using Open, Adaptive Statistics & Data Science Textbooks to solve three different problems: swapping programming language application, splitting one course into several tailored versions, and entirely reshaping content for a new audience and context. Each adaptation stays connected to the whole, and benefits everyone else, growing the library instead of forking away from it."
+      subtitle="What does that look like in practice?"
       narrow
     >
+      <div class="section-lead">
+        <p>
+          Meet three educators using <strong>Open, Adaptive Statistics &amp;
+          Data Science Textbooks</strong> to solve three different problems:
+        </p>
+        <ol class="section-lead__list">
+          <li>swapping programming language application</li>
+          <li>splitting one course into several tailored versions, and</li>
+          <li>entirely reshaping content for a new audience and context.</li>
+        </ol>
+        <p>
+          Each adaptation stays connected to the whole, and benefits everyone
+          else, growing the library instead of forking away from it.
+        </p>
+      </div>
+
       <div class="usecases">
-        <article class="usecase">
-          <h3 class="usecase__title">Same Concepts, Different Applications</h3>
-          <p>
-            <em>An Introduction to Data Science</em> is Dr. Lily Clements’
-            favourite textbook, but it uses R and this year she’s teaching her
-            students to code with Python.
-          </p>
-          <p>
-            Rather than starting from scratch, she creates a new textbook
-            variant. She takes the textbook and replaces R examples with
-            Python, updates code snippets, and tailors the embedded
-            assessments in the existing textbook to develop an entirely new
-            textbook: <em>An Introduction to Data Science with Python</em>.
-          </p>
-          <p>
-            When she's ready, she shares her adaptation with the community.
-            Following peer review, her textbook is recognised as a curated
-            contribution to the open library. She receives attribution as the
-            author of the adaptation, while the original authors continue to
-            receive credit for the foundation on which it was built.
-          </p>
-          <p>
-            She is now both an educator and an author, with her peer-reviewed
-            textbook contributing to the continuously evolving open library.
-            Future educators can adopt her version, adapt it for their own
-            contexts, or build on it further – creating a living ecosystem of
-            textbooks that evolves alongside the discipline.
-          </p>
-        </article>
-        <article class="usecase">
-          <h3 class="usecase__title">One Course, Multiple Textbooks</h3>
-          <p>
-            Dr. David Stern is a guest lecturer at Maseno University in
-            Kenya, teaching an <em>Introduction to Data Science for Social
-            Impact</em> course. His students come from diverse academic
-            backgrounds, with varying levels of experience in data analysis,
-            programming, and statistical thinking.
-          </p>
-          <p>
-            Rather than creating a one-size-fits-all textbook, David builds
-            multiple versions of the same foundational course resource. Each
-            version shares the same core concepts and learning objectives but
-            includes different examples, explanations, exercises, and
-            assessments to support students with different needs.
-          </p>
-          <p>
-            Students receive materials that better match their needs, while
-            still progressing towards shared learning goals. Over time, these
-            adapted versions become part of a growing library of resources
-            that educators can reuse, refine, and customise for their own
-            learners.
-          </p>
-        </article>
-        <article class="usecase">
-          <h3 class="usecase__title">Context-Relevant Examples and Datasets</h3>
-          <p>
-            <em>Statistical Thinking for the 21st Century</em> is a highly
-            regarded open textbook for introducing statistics to beginners.
-            However, its examples and datasets are designed primarily for
-            STEM students in US universities. Professor Roger Stern is
-            preparing a course on statistical analysis of historical weather
-            data for a local Meteorological Office team in Zimbabwe.
-          </p>
-          <p>
-            Rather than starting from scratch, he adapts the existing
-            textbook by replacing examples, datasets, and tools with
-            materials that reflect the team’s own work and local context. The
-            statistical concepts remain the same, but the team learn through
-            data and problems that are directly relevant to their roles:
-            analysing climate patterns, interpreting historical records, and
-            applying statistical methods to real-world decisions.
-          </p>
-          <p>
-            Roger’s adaptation transforms an existing open resource into a
-            specialised textbook for a new audience, while contributing a
-            valuable version back to the open library for others to
-            discover, adapt, and build upon.
-          </p>
-        </article>
+        <details class="usecase">
+          <summary class="usecase__summary">
+            <h3 class="usecase__title">Same Concepts, Different Applications</h3>
+            <svg class="usecase__caret" viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M4 6l4 4 4-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </summary>
+          <div class="usecase__body">
+            <p>
+              <em>An Introduction to Data Science</em> is Dr. Lily Clements’
+              favourite textbook, but it uses R and this year she’s teaching
+              her students to code with Python.
+            </p>
+            <p>
+              Rather than starting from scratch, she creates a new textbook
+              variant. She takes the textbook and replaces R examples with
+              Python, updates code snippets, and tailors the embedded
+              assessments in the existing textbook to develop an entirely new
+              textbook: <em>An Introduction to Data Science with Python</em>.
+            </p>
+            <p>
+              When she's ready, she shares her adaptation with the community.
+              Following peer review, her textbook is recognised as a curated
+              contribution to the open library. She receives attribution as
+              the author of the adaptation, while the original authors
+              continue to receive credit for the foundation on which it was
+              built.
+            </p>
+            <p>
+              She is now both an educator and an author, with her
+              peer-reviewed textbook contributing to the continuously
+              evolving open library. Future educators can adopt her version,
+              adapt it for their own contexts, or build on it further –
+              creating a living ecosystem of textbooks that evolves alongside
+              the discipline.
+            </p>
+          </div>
+        </details>
+        <details class="usecase">
+          <summary class="usecase__summary">
+            <h3 class="usecase__title">One Course, Multiple Textbooks</h3>
+            <svg class="usecase__caret" viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M4 6l4 4 4-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </summary>
+          <div class="usecase__body">
+            <p>
+              Dr. David Stern is a guest lecturer at Maseno University in
+              Kenya, teaching an <em>Introduction to Data Science for Social
+              Impact</em> course. His students come from diverse academic
+              backgrounds, with varying levels of experience in data
+              analysis, programming, and statistical thinking.
+            </p>
+            <p>
+              Rather than creating a one-size-fits-all textbook, David builds
+              multiple versions of the same foundational course resource.
+              Each version shares the same core concepts and learning
+              objectives but includes different examples, explanations,
+              exercises, and assessments to support students with different
+              needs.
+            </p>
+            <p>
+              Students receive materials that better match their needs, while
+              still progressing towards shared learning goals. Over time,
+              these adapted versions become part of a growing library of
+              resources that educators can reuse, refine, and customise for
+              their own learners.
+            </p>
+          </div>
+        </details>
+        <details class="usecase">
+          <summary class="usecase__summary">
+            <h3 class="usecase__title">Context-Relevant Examples and Datasets</h3>
+            <svg class="usecase__caret" viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M4 6l4 4 4-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </summary>
+          <div class="usecase__body">
+            <p>
+              <em>Statistical Thinking for the 21st Century</em> is a highly
+              regarded open textbook for introducing statistics to beginners.
+              However, its examples and datasets are designed primarily for
+              STEM students in US universities. Professor Roger Stern is
+              preparing a course on statistical analysis of historical
+              weather data for a local Meteorological Office team in
+              Zimbabwe.
+            </p>
+            <p>
+              Rather than starting from scratch, he adapts the existing
+              textbook by replacing examples, datasets, and tools with
+              materials that reflect the team’s own work and local context.
+              The statistical concepts remain the same, but the team learn
+              through data and problems that are directly relevant to their
+              roles: analysing climate patterns, interpreting historical
+              records, and applying statistical methods to real-world
+              decisions.
+            </p>
+            <p>
+              Roger’s adaptation transforms an existing open resource into a
+              specialised textbook for a new audience, while contributing a
+              valuable version back to the open library for others to
+              discover, adapt, and build upon.
+            </p>
+          </div>
+        </details>
       </div>
     </Section>
 
-    <Section title="What people are saying about Open, Adaptive Data Science & Statistics Textbooks">
+    <Section>
+      <Fragment slot="title">
+        What people are saying about
+        <br />
+        Open, Adaptive Statistics &amp; Data Science Textbooks
+      </Fragment>
       <div class="testimonials">
         <figure class="testimonial">
           <blockquote>
@@ -496,17 +583,20 @@ const team = [
       </div>
     </Section>
 
-    <Section
-      title="IDEMS: Where statistics, education, mathematics and tech meet"
-    >
+    <Section>
+      <Fragment slot="title">
+        IDEMS: Where statistics, education,
+        <br />
+        mathematics and tech meet
+      </Fragment>
       <div class="section-lead">
         <p>
           UK-based IDEMS is a social enterprise building open,
-          community-owned technology for global impact. Open, Adaptive
-          Statistics &amp; Data Science Textbooks emerge from our
-          understanding of the need for deeply technical educator-centred
-          innovation that supports global collaboration and local
-          adaptation.
+          community-owned technology for global impact.
+          <strong>Open, Adaptive Statistics &amp; Data Science Textbooks</strong>
+          emerge from our understanding of the need for deeply technical
+          educator-centred innovation that supports global collaboration and
+          local adaptation.
         </p>
         <p>
           IDEMS’ team of mathematical scientists and software engineers
@@ -538,7 +628,7 @@ const team = [
       </ul>
 
       <p class="team__more">
-        <a class="btn" href={`${base}/idems`}>Learn more about IDEMS</a>
+        <a class="btn btn--primary" href={`${base}/idems`}>Learn more about IDEMS</a>
       </p>
     </Section>
   </div>
@@ -549,6 +639,17 @@ const team = [
 </script>
 
 <style>
+  /* Deliberate line break in the "Existing textbooks aren't a match…"
+     headline — suppressed on narrow screens where it could land awkwardly. */
+  .soft-break {
+    display: none;
+  }
+  @media (min-width: 30rem) {
+    .soft-break {
+      display: block;
+    }
+  }
+
   .hero {
     padding-block: var(--space-8) var(--space-10);
   }
@@ -593,7 +694,9 @@ const team = [
     margin-bottom: var(--space-3);
   }
   .hero__title {
-    font-size: var(--text-3xl);
+    /* Bigger than the section-title scale below, so the hero clearly reads
+       as the page's lead statement. */
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl));
     letter-spacing: -0.02em;
     margin-bottom: var(--space-4);
   }
@@ -618,7 +721,7 @@ const team = [
     font-weight: 600;
   }
 
-  /* Reading-width intro (text + bullets + button) above a full-width CardGrid. */
+  /* Reading-width intro (text + bullets) used across several sections. */
   .section-lead {
     max-width: var(--reading-width);
     margin-bottom: var(--space-8);
@@ -638,6 +741,33 @@ const team = [
     gap: var(--space-2);
     color: var(--color-text-muted);
     line-height: var(--leading-normal);
+  }
+
+  /* Solution section's intro copy: indented a step further than the page's
+     other section-lead blocks, with its "educators can:" lead-in sentence
+     italicised as a set-up line for the bullet list. */
+  .solution-lead {
+    margin-left: var(--space-6);
+  }
+  .solution-lead__setup {
+    font-style: italic;
+  }
+  /* Pull the list up closer to its "educators can:" set-up line than the
+     section-lead default gap — it reads as introducing the list directly,
+     not just another paragraph in the sequence. */
+  .solution-lead__setup + .section-lead__list {
+    margin-top: var(--space-2);
+  }
+
+  /* Plain text link (not a button) to the Innovation page, placed below the
+     audience boxes rather than breaking up the intro copy. */
+  .solution-link {
+    margin-top: var(--space-6);
+  }
+  .solution-link a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .section-subhead {
@@ -675,10 +805,14 @@ const team = [
     transform: rotate(180deg);
   }
 
-  /* Shared panel: bubbles out full-width directly below the card row.
-     Only the `[data-audience-content]` block matching the active toggle
-     is shown; see scripts/audience-toggle.ts. */
+  /* Shared panel: bubbles out directly below the card row. Capped at reading
+     width rather than the full row width — this is stepped, single-column
+     text, and a bordered/backgrounded box that's much wider than its content
+     just reads as dead space, not intentional whitespace. Only the
+     `[data-audience-content]` block matching the active toggle is shown;
+     see scripts/audience-toggle.ts. */
   .audience-panel {
+    max-width: var(--reading-width);
     margin-top: var(--space-5);
     padding: var(--space-5);
     border: var(--border);
@@ -694,17 +828,59 @@ const team = [
     font-weight: 400;
     color: var(--color-text-subtle);
   }
+  /*
+   * EXPERIMENTAL — step-sequence visualization.
+   * Doc feedback: with "Step 1/2/3/4" as plain text, the four features don't
+   * read as an obvious sequence. This tries a numbered-circle stepper with a
+   * connecting line instead of the previous 2-column grid. It's likely to be
+   * rejected in favour of just the plain "Step N:" text — to roll back,
+   * revert this commit; the title strings themselves are untouched (the
+   * "Step N:" prefix is stripped at render time, not in the data), so
+   * reverting restores the prior plain-text rendering exactly.
+   */
   .audience-panel__features {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: grid;
-    gap: var(--space-4);
+    display: flex;
+    flex-direction: column;
   }
-  @media (min-width: 40rem) {
-    .audience-panel__features {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .audience-panel__feature {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.75rem 1fr;
+    column-gap: var(--space-4);
+    padding-bottom: var(--space-5);
+  }
+  .audience-panel__feature:last-child {
+    padding-bottom: 0;
+  }
+  .audience-panel__feature-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #ffffff;
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+  /* Connecting line: spans from the bottom of this item's circle down to the
+     bottom of the `<li>` box (i.e. to where the next circle starts), so it
+     adapts to each feature's content height instead of assuming a fixed
+     distance between circles. */
+  .audience-panel__feature:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 1.75rem;
+    bottom: 0;
+    left: calc(1.75rem / 2 - 1px);
+    width: 2px;
+    background: var(--color-border-strong);
   }
   .audience-panel__feature-title {
     font-weight: 600;
@@ -712,7 +888,9 @@ const team = [
     margin-bottom: var(--space-2);
   }
   .audience-panel__features p {
-    font-size: var(--text-sm);
+    /* Same rationale as Card's body text: standard site size, not a step
+       smaller. */
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
     color: var(--color-text-muted);
   }
@@ -735,16 +913,42 @@ const team = [
     flex-direction: column;
     gap: var(--space-6);
   }
+  /* Expand/collapse boxes (native <details>/<summary>, closed by default):
+     the headline is always visible; the long-form narrative only renders
+     once opened. A caret is the only "expand" affordance. */
   .usecase {
     padding: var(--space-5);
     border: var(--border);
     border-radius: var(--radius);
     background: var(--color-surface);
   }
+  .usecase__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    list-style: none;
+    cursor: pointer;
+  }
+  .usecase__summary::-webkit-details-marker {
+    display: none;
+  }
   .usecase__title {
     font-size: var(--text-lg);
     letter-spacing: -0.01em;
-    margin-bottom: var(--space-3);
+  }
+  .usecase__caret {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-accent);
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+  }
+  .usecase[open] .usecase__caret {
+    transform: rotate(180deg);
+  }
+  .usecase__body {
+    margin-top: var(--space-4);
   }
   .usecase p {
     color: var(--color-text-muted);
