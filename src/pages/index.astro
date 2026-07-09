@@ -200,14 +200,14 @@ const team = [
         </Card>
         <Card title="Variable Contextual Realities">
           <p>
-            Teaching and learning happen better when resources are locally
-            relevant and accessible. But existing textbooks can’t easily
-            adapt into new cultural or language contexts; incorporate
-            different examples, datasets or tools; or account for limited
-            access in low-resource contexts.
+            Teaching and learning happen better when resources are relevant
+            and accessible. But existing textbooks can’t easily adapt into
+            new cultural or language contexts; incorporate different
+            examples, datasets or tools; or account for limited access in
+            low-resource contexts.
           </p>
         </Card>
-        <Card title="Different Student Strengths & Weaknesses">
+        <Card title="Different Strengths and Weaknesses">
           <p>
             Even within a single course, students have varying strengths and
             weaknesses. But existing textbooks are one-size-fits-all, unable
@@ -769,7 +769,9 @@ const team = [
     margin-bottom: var(--space-2);
   }
   .audience-panel__features p {
-    font-size: var(--text-sm);
+    /* Same rationale as Card's body text: standard site size, not a step
+       smaller. */
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
     color: var(--color-text-muted);
   }
