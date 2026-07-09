@@ -51,10 +51,12 @@
   --color-accent: #f37021;
   --color-accent-hover: #d95f15;
   --color-focus: #f37021;
-  /* Secondary accent (teal) — used where two CTAs sit side by side and
-     shouldn't read as "one real button, one afterthought". */
-  --color-accent-2: #57878f;
-  --color-accent-2-hover: #446c73;
+  /* Secondary accent (blue) — used where two CTAs sit side by side and
+     shouldn't read as "one real button, one afterthought"; the convention
+     going forward is orange for product/technical CTAs, this blue for
+     community ones (e.g. "Join the Community"). */
+  --color-accent-2: #649ba3;
+  --color-accent-2-hover: #4f7f89;
 
   /* ---- Other tokens ---- */
   --radius: 6px;
