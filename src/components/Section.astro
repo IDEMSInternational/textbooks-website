@@ -21,9 +21,10 @@
  * (e.g. a "solution" following a "problem" section) — centers the title,
  * bumps it a step larger, and colours it with the accent.
  *
- * `eyebrowBadge` renders the eyebrow as a filled pill instead of plain
- * uppercase text — for a status-style label (e.g. "Now in Early Prototype")
- * that needs to read as more assertive than a normal section eyebrow.
+ * `eyebrowBadge` renders the eyebrow as a filled, bolded flag/status banner
+ * instead of plain uppercase text — for a label (e.g. "Now in Early
+ * Prototype") that needs to read as its own assertive statement rather than
+ * a normal section eyebrow.
  *
  * `centeredHead` is the light-touch version of `titleEmphasis`: just centers
  * the eyebrow/title/subtitle, with no size or colour change, for a section
@@ -173,11 +174,16 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     margin-bottom: var(--space-3);
   }
   .section__eyebrow--badge {
+    /* Reads as a flag/status banner, not a normal eyebrow label — bigger,
+       bolder, and less pill-shaped than a typical rounded badge. */
     display: inline-block;
-    padding: var(--space-1) var(--space-3);
-    border-radius: 999px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
     background: var(--color-accent);
     color: #ffffff;
+    font-size: var(--text-base);
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(24, 24, 27, 0.15);
   }
   .section__eyebrow--accent2 {
     color: var(--color-accent-2);
@@ -188,6 +194,11 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     font-size: var(--text-3xl);
     letter-spacing: -0.01em;
     margin-bottom: var(--space-4);
+    /* Lets a plain `title` string carry an embedded "\n" as a deliberate
+       line break (used on MDX pages, where a `title` slot's content gets
+       markdown-parsed and would wrap each line in an invalid <p> inside the
+       <h2>) — a no-op for every title without one. */
+    white-space: pre-line;
   }
   .section__subtitle {
     font-size: var(--text-lg);
