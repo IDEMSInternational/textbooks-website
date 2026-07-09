@@ -25,22 +25,22 @@ const audienceFeatures = [
     tagline: 'Adapt & Iterate',
     features: [
       {
-        title: 'Feature 1: Find the right foundation',
+        title: 'Step 1: Find the right foundation',
         body: 'Discover a growing library of free, open textbooks and resources ready to use and adapt.',
         note: 'Move beyond searching through scattered resources or relying on textbooks that are outdated, locked behind paywalls, or difficult to modify.',
       },
       {
-        title: 'Feature 2: Adapt materials to your students',
+        title: 'Step 2: Adapt materials to your students',
         body: 'Change examples, datasets, assessments, explanations, and activities to match your learners and your teaching goals.',
         note: 'Teach core concepts through content that feels relevant, meaningful, and accessible to your students.',
       },
       {
-        title: 'Feature 3: Choose the variant that fits',
+        title: 'Step 3: Choose the variant that fits',
         body: 'Choose or build on variants created for different audiences, tools, and disciplines.',
         note: 'Avoid one-size-fits-all textbooks and build learning experiences that reflect the diversity of your students.',
       },
       {
-        title: 'Feature 4: Improve your course over time',
+        title: 'Step 4: Improve your course over time',
         body: 'Continuously refine resources as your course and students evolve.',
         note: 'Keep your resources current while contributing to a community of educators who are continuously improving teaching and learning.',
       },
@@ -52,22 +52,22 @@ const audienceFeatures = [
     tagline: 'Adapt & Innovate',
     features: [
       {
-        title: 'Feature 1: Start from “What Works”',
+        title: 'Step 1: Start from “What Works”',
         body: 'Build on existing open textbooks and resources instead of starting from a blank page.',
         note: 'Remove the biggest barriers to textbook creation, time, cost, and expertise, so more educators can become authors.',
       },
       {
-        title: 'Feature 2: Create your own variant',
+        title: 'Step 2: Create your own variant',
         body: 'Add your examples, datasets, assessments, explanations, and activities to develop a textbook that fits your course.',
         note: 'Transform a good textbook into the right textbook for your students and your context.',
       },
       {
-        title: 'Feature 3: Collaborate beyond the classroom',
+        title: 'Step 3: Collaborate beyond the classroom',
         body: 'Share your adaptations and build on the work of other educators.',
         note: 'Move from isolated course materials to a community where teaching innovations can be reused and improved.',
       },
       {
-        title: 'Feature 4: Get recognised for your contribution',
+        title: 'Step 4: Get recognised for your contribution',
         body: 'Publish your adapted textbook variant and receive attribution as a contributor to the open library.',
         note: 'Your teaching expertise becomes a visible contribution that helps others while building your academic profile.',
       },
@@ -79,22 +79,22 @@ const audienceFeatures = [
     tagline: 'Create & Evolve',
     features: [
       {
-        title: 'Feature 1: Make your work reusable',
+        title: 'Step 1: Make your work reusable',
         body: 'Create resources that can be adapted across platforms, formats, and teaching contexts.',
         note: 'Keep your textbook accessible and valuable as technology, disciplines, and learner needs change.',
       },
       {
-        title: 'Feature 2: Extend your textbook’s reach',
+        title: 'Step 2: Extend your textbook’s reach',
         body: 'Enable educators to discover, adopt, and adapt your work for new audiences.',
         note: 'Help your ideas reach learners and communities beyond the original context you designed them for.',
       },
       {
-        title: 'Feature 3: Understand your impact',
+        title: 'Step 3: Understand your impact',
         body: 'Gain insight into how your resources are being used, adapted, and built upon.',
         note: 'See the real-world influence of your work and discover new opportunities for collaboration.',
       },
       {
-        title: 'Feature 4: Evolve with the community',
+        title: 'Step 4: Evolve with the community',
         body: 'Use feedback and contributions from educators to improve future versions of your textbook.',
         note: 'Keep your work alive, current, and continuously improving alongside your field.',
       },
@@ -220,6 +220,7 @@ const team = [
 
     <Section
       eyebrow="The solution"
+      eyebrowAccent2
       titleEmphasis
     >
       <Fragment slot="title">
@@ -228,52 +229,43 @@ const team = [
         A great leap forward for teaching and learning
       </Fragment>
 
-      <div class="solution-intro">
-        <div class="section-lead">
-          <p>
-            IDEMS is introducing a living library of high-quality open
-            statistics and data science textbooks (and supporting teaching,
-            learning and assessment resources) that can be tailored to any
-            course, context, and/or student. Educators develop entirely new
-            textbooks without starting from scratch–or creating an isolated
-            copy that requires constant upkeep.
-          </p>
-          <p>
-            With IDEMS’ <strong>Open, Adaptive Statistics &amp; Data Science
-            Textbooks</strong>, educators can:
-          </p>
-          <ul class="section-lead__list">
-            <li>
-              Easily recombine existing open textbooks and resources to shape
-              new versions for unique courses and students
-            </li>
-            <li>Swap or add new examples, datasets, or assessments</li>
-            <li>Translate an entire textbook or section in real time.</li>
-            <li>
-              Decide what delivery format works best for a unique context and
-              students
-            </li>
-            <li>
-              Contribute to the ongoing development of an ever-expanding,
-              peer-reviewed textbook and resource library
-            </li>
-          </ul>
-          <p>
-            New textbook and resource versions developed out of our system
-            stay connected: your adaptations and improvements help other
-            educators and authors, and theirs help yours.
-          </p>
-        </div>
-
-        <aside class="solution-cta">
-          <p>See the full architecture behind the library.</p>
-          <a class="btn btn--primary" href={`${base}/innovation`}>
-            Learn more about the innovation
-          </a>
-        </aside>
+      <div class="section-lead solution-lead">
+        <p>
+          IDEMS is introducing a living library of high-quality open
+          statistics and data science textbooks (and supporting teaching,
+          learning and assessment resources) that can be tailored to any
+          course, context, and/or student. Educators develop entirely new
+          textbooks without starting from scratch–or creating an isolated
+          copy that requires constant upkeep.
+        </p>
+        <p class="solution-lead__setup">
+          With IDEMS’ <strong>Open, Adaptive Statistics &amp; Data Science
+          Textbooks</strong>, educators can:
+        </p>
+        <ul class="section-lead__list">
+          <li>
+            Easily recombine existing open textbooks and resources to shape
+            new versions for unique courses and students
+          </li>
+          <li>Swap or add new examples, datasets, or assessments</li>
+          <li>Translate an entire textbook or section in real time.</li>
+          <li>
+            Decide what delivery format works best for a unique context and
+            students
+          </li>
+          <li>
+            Contribute to the ongoing development of an ever-expanding,
+            peer-reviewed textbook and resource library
+          </li>
+        </ul>
+        <p>
+          New textbook and resource versions developed out of our system
+          stay connected: your adaptations and improvements help other
+          educators and authors, and theirs help yours.
+        </p>
       </div>
 
-      <p class="section-subhead">Why it matters for:</p>
+      <p class="section-subhead">How it works for:</p>
 
       <CardGrid>
         <Card title="Educators">
@@ -290,7 +282,7 @@ const team = [
             aria-expanded="false"
             aria-controls="audience-panel"
           >
-            See features
+            See how it works
             <svg class="audience-toggle__chevron" viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M4 6l4 4 4-4"
@@ -318,7 +310,7 @@ const team = [
             aria-expanded="false"
             aria-controls="audience-panel"
           >
-            See features
+            See how it works
             <svg class="audience-toggle__chevron" viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M4 6l4 4 4-4"
@@ -344,7 +336,7 @@ const team = [
             aria-expanded="false"
             aria-controls="audience-panel"
           >
-            See features
+            See how it works
             <svg class="audience-toggle__chevron" viewBox="0 0 16 16" aria-hidden="true">
               <path
                 d="M4 6l4 4 4-4"
@@ -358,6 +350,10 @@ const team = [
           </button>
         </Card>
       </CardGrid>
+
+      <p class="solution-link">
+        <a href={`${base}/innovation`}>See the full architecture behind the library.</a>
+      </p>
 
       <div class="audience-panel" id="audience-panel" hidden>
         {
@@ -646,39 +642,10 @@ const team = [
     font-weight: 600;
   }
 
-  /* Solution section: reading-width intro text alongside a sidebar CTA card,
-     so "Learn more about the product" isn't just tacked on after a bullet
-     list — it stacks below the text on narrow screens. */
-  .solution-intro {
-    display: grid;
-    gap: var(--space-6);
-    margin-bottom: var(--space-8);
-  }
-  @media (min-width: 60rem) {
-    .solution-intro {
-      grid-template-columns: 1fr 16rem;
-      align-items: start;
-    }
-  }
-  .solution-cta {
-    padding: var(--space-5);
-    border: var(--border);
-    border-radius: var(--radius);
-    background: var(--color-surface);
-  }
-  .solution-cta p {
-    color: var(--color-text-muted);
-    line-height: var(--leading-normal);
-    margin-bottom: var(--space-4);
-  }
-
   /* Reading-width intro (text + bullets) used across several sections. */
   .section-lead {
     max-width: var(--reading-width);
     margin-bottom: var(--space-8);
-  }
-  .solution-intro .section-lead {
-    margin-bottom: 0;
   }
   .section-lead > * + * {
     margin-top: var(--space-4);
@@ -695,6 +662,27 @@ const team = [
     gap: var(--space-2);
     color: var(--color-text-muted);
     line-height: var(--leading-normal);
+  }
+
+  /* Solution section's intro copy: indented a step further than the page's
+     other section-lead blocks, with its "educators can:" lead-in sentence
+     italicised as a set-up line for the bullet list. */
+  .solution-lead {
+    margin-left: var(--space-6);
+  }
+  .solution-lead__setup {
+    font-style: italic;
+  }
+
+  /* Plain text link (not a button) to the Innovation page, placed below the
+     audience boxes rather than breaking up the intro copy. */
+  .solution-link {
+    margin-top: var(--space-6);
+  }
+  .solution-link a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .section-subhead {

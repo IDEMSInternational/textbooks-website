@@ -28,6 +28,10 @@
  * `centeredHead` is the light-touch version of `titleEmphasis`: just centers
  * the eyebrow/title/subtitle, with no size or colour change, for a section
  * that wants a bit of visual variety without competing for attention.
+ *
+ * `eyebrowAccent2` colours the eyebrow with the secondary (blue) accent
+ * instead of the default orange — for a section that wants its eyebrow to
+ * stand out from neighbouring sections' eyebrows.
  */
 interface Props {
   title?: string;
@@ -38,6 +42,7 @@ interface Props {
   titleEmphasis?: boolean;
   eyebrowBadge?: boolean;
   centeredHead?: boolean;
+  eyebrowAccent2?: boolean;
 }
 
 const {
@@ -49,6 +54,7 @@ const {
   titleEmphasis = false,
   eyebrowBadge = false,
   centeredHead = false,
+  eyebrowAccent2 = false,
 } = Astro.props;
 const hasTitleSlot = Astro.slots.has('title');
 const hasTitle = hasTitleSlot || Boolean(title);
@@ -76,7 +82,10 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
           <p
             class:list={[
               'section__eyebrow',
-              { 'section__eyebrow--badge': eyebrowBadge },
+              {
+                'section__eyebrow--badge': eyebrowBadge,
+                'section__eyebrow--accent2': eyebrowAccent2,
+              },
             ]}
           >
             {eyebrow}
@@ -170,6 +179,9 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     background: var(--color-accent);
     color: #ffffff;
   }
+  .section__eyebrow--accent2 {
+    color: var(--color-accent-2);
+  }
   .section__title {
     /* Matches the pre-hero-bump hero size, per the doc's request that every
        section headline read at the size the hero used to be. */
@@ -188,9 +200,13 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
   }
 
   /* Emphasis variant: the title reads as the page's feature, not just
-     another section heading — centered, a step larger, accent-coloured. */
+     another section heading — centered, a step larger, accent-coloured, and
+     given extra breathing room above/below so it doesn't crowd its
+     neighbours. */
   .section__head--emphasis {
     max-width: none;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-8);
     text-align: center;
   }
   .section__head--emphasis .section__subtitle {
