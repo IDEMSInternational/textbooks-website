@@ -189,6 +189,12 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     letter-spacing: -0.01em;
     margin-bottom: var(--space-4);
   }
+  /* A <strong> inside a title (e.g. the bolded product name convention)
+     would otherwise jump to the browser's default 700 against the heading's
+     own 600 — reads as over-emphasised on top of already-large text. */
+  .section__title strong {
+    font-weight: 600;
+  }
   .section__subtitle {
     font-size: var(--text-lg);
     line-height: var(--leading-normal);
