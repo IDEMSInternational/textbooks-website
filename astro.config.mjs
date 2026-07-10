@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 
 // Deployment subpath (GitHub Pages project site). Defined as a const so both
 // Astro's `base` and the markdown link plugin below stay in sync.
-const base = '/textbooks-website';
+const base = '/';
 
 /**
  * remark plugin: prefix `base` onto root-absolute internal links in markdown
@@ -53,7 +53,7 @@ function remarkBaseLinks() {
 // - To deploy at a domain root instead (Cloudflare Pages, a custom domain, or a
 //   user/organisation GitHub page), set `base` to '/' and update `site`.
 export default defineConfig({
-  site: 'https://jfmcquade.github.io',
+  site: 'https://statsbooks.idems.international',
   base,
 
   markdown: {
