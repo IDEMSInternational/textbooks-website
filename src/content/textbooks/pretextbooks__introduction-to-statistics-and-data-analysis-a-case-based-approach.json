@@ -1,0 +1,36 @@
+{
+  "id": "pretextbooks/introduction-to-statistics-and-data-analysis-a-case-based-approach",
+  "title": "Introduction to Statistics and Data Analysis A Case-Based Approach",
+  "description": "A collection of real-world case studies demonstrating advanced data analysis and visualisation techniques in R, covering topics from drug trial data and COVID-19 to election results, sports analytics, and genomics. Each chapter tackles a distinct dataset and question.",
+  "authors": [
+    "Conrad Ziller"
+  ],
+  "url": "https://pretextbooks.github.io/introstats/meta-front.html",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general"
+  ],
+  "keywords": [
+    "R programming",
+    "data analysis",
+    "case studies",
+    "data visualisation",
+    "ggplot2",
+    "Tidyverse",
+    "genomics",
+    "Bioconductor",
+    "COVID-19",
+    "sports analytics",
+    "wrangling",
+    "exploratory data analysis",
+    "import"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-NC-SA",
+    "difficulty": "introductory"
+  }
+}
