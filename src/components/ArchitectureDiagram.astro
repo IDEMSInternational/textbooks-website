@@ -1,0 +1,268 @@
+---
+/**
+ * ArchitectureDiagram — a vertical pipeline diagram of the "Global Textbooks
+ * Operating Environment": a bounded outer container holding the Resources
+ * Library, the IDEMS Middleware with its three parts, the Publishing Hub, and
+ * locally-owned Local Variants, joined by bidirectional connectors.
+ *
+ * Content is hardcoded for now (some copy is still placeholder/TBD). Styling is
+ * driven entirely by the global design tokens, so it reads as part of the site
+ * rather than an embedded graphic. Decorative arrows are aria-hidden; the text
+ * is read in pipeline order by assistive tech, and the whole thing is a
+ * <figure> with the summary line as its <figcaption>.
+ */
+---
+
+<figure class="oe">
+  <span class="oe__label">Global Textbooks Operating Environment — Bounded</span>
+
+  <div class="oe__node">
+    <p class="oe__node-title">Resources Library</p>
+    <p class="oe__node-desc">Open textbooks &amp; teaching resources — not yet structured</p>
+  </div>
+
+  <div class="oe__connector">
+    <span class="oe__arrow oe__arrow--up" aria-hidden="true"></span>
+    <span class="oe__connector-label">[brief description TBD]</span>
+    <span class="oe__arrow oe__arrow--down" aria-hidden="true"></span>
+  </div>
+
+  <div class="oe__middleware">
+    <div class="oe__middleware-head">
+      <p class="oe__middleware-title">IDEMS Middleware</p>
+      <p class="oe__middleware-subhead">Systemic Meaning-Making</p>
+    </div>
+
+    <div class="oe__part">
+      <p class="oe__part-title">IDEMS IP</p>
+      <p class="oe__part-desc">
+        IDEMS’ patented process for turning raw Library content into structured,
+        meaningful data — applying deterministic rules and expert-defined logic
+        so every downstream customisation inherits a consistent, auditable
+        foundation. <em>[draft — expand with full description]</em>
+      </p>
+    </div>
+
+    <div class="oe__connector oe__connector--tight">
+      <span class="oe__arrow oe__arrow--down" aria-hidden="true"></span>
+      <span class="oe__connector-label oe__connector-label--muted">structures into</span>
+    </div>
+
+    <div class="oe__part">
+      <p class="oe__part-title">Textbooks Brain</p>
+      <p class="oe__part-desc">
+        Built on IDEMS’ IP, the Brain holds open software, resources, and complex
+        meaning-making knowledge as structured, malleable data in a deterministic
+        core. This expert-maintained foundation is what makes responsible,
+        auditable AI possible — supporting every customisation while continuously
+        improving itself.
+      </p>
+    </div>
+
+    <div class="oe__connector oe__connector--tight">
+      <span class="oe__arrow oe__arrow--down" aria-hidden="true"></span>
+      <span class="oe__connector-label oe__connector-label--muted">trains</span>
+    </div>
+
+    <div class="oe__part">
+      <p class="oe__part-title">Agentic AI Hands</p>
+      <p class="oe__part-desc">
+        A suite of expert small language model agents, each built for a narrow
+        use case — helping non-technologist educators and authors publish, adapt,
+        and iterate on textbooks. Trained on the Brain’s high-quality data, they
+        stay bounded, auditable, and resource-efficient.
+      </p>
+    </div>
+  </div>
+
+  <div class="oe__connector">
+    <span class="oe__arrow oe__arrow--up" aria-hidden="true"></span>
+    <span class="oe__connector-label">[brief description TBD]</span>
+    <span class="oe__arrow oe__arrow--down" aria-hidden="true"></span>
+  </div>
+
+  <div class="oe__node">
+    <p class="oe__node-title">Publishing Hub</p>
+    <p class="oe__node-desc">Educators create &amp; publish with trained Agentic AI Hands</p>
+  </div>
+
+  <div class="oe__connector">
+    <span class="oe__arrow oe__arrow--up" aria-hidden="true"></span>
+    <span class="oe__arrow oe__arrow--down" aria-hidden="true"></span>
+  </div>
+
+  <div class="oe__node oe__node--dashed">
+    <p class="oe__node-title">Local Variants</p>
+    <p class="oe__node-desc">Unlimited, owned locally</p>
+  </div>
+
+  <figcaption class="oe__caption">
+    Every arrow runs both ways — local adaptation flows back upstream,
+    continuously structuring and improving the Brain and the Library it draws
+    from.
+  </figcaption>
+</figure>
+
+<style>
+  /* Bounded outer container: the whole operating environment. A firm (solid)
+     1px border reads as the "bounded" edge; the label chip straddles it. */
+  .oe {
+    max-width: 40rem;
+    margin-inline: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    margin-top: var(--space-8);
+  }
+
+  /* Framing label, sitting on the top border as a small accent pill (echoes
+     the section eyebrow-badge treatment). */
+  .oe__label {
+    position: absolute;
+    top: 0;
+    left: var(--space-4);
+    transform: translateY(-50%);
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    background: var(--color-bg);
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  /* Top-level nodes (Resources Library, Publishing Hub, Local Variants): white
+     cards that lift off the tinted container. */
+  .oe__node {
+    padding: var(--space-3) var(--space-4);
+    border: var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    text-align: center;
+  }
+  .oe__node--dashed {
+    border-style: dashed;
+    border-color: var(--color-border-strong);
+  }
+  .oe__node-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .oe__node-desc {
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+  }
+
+  /* Bidirectional connectors: outward-pointing arrowheads with an optional
+     label between them. The arrowheads are CSS triangles, no SVG needed. */
+  .oe__connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding-block: var(--space-2);
+  }
+  .oe__connector--tight {
+    padding-block: var(--space-1);
+  }
+  .oe__arrow {
+    width: 0;
+    height: 0;
+    border-inline: 5px solid transparent;
+  }
+  .oe__arrow--up {
+    border-bottom: 6px solid var(--color-text-subtle);
+  }
+  .oe__arrow--down {
+    border-top: 6px solid var(--color-text-subtle);
+  }
+  .oe__connector-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    text-align: center;
+  }
+  /* Internal transforms ("structures into", "trains"): quieter than the
+     boundary-crossing labels — muted, lower-case, italic. */
+  .oe__connector-label--muted {
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: none;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  /* IDEMS Middleware panel — the pioneering core. A solid accent border plus a
+     faint accent tint set it apart as the special layer (the tint falls back to
+     the plain surface where color-mix isn't supported). */
+  .oe__middleware {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-4);
+    border: 1.5px solid var(--color-accent);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+  }
+  .oe__middleware-head {
+    margin-bottom: var(--space-3);
+    text-align: center;
+  }
+  .oe__middleware-title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .oe__middleware-subhead {
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  /* IP / Brain / Hands cards inside the middleware. */
+  .oe__part {
+    padding: var(--space-4);
+    border: var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+  }
+  .oe__part-title {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    text-align: center;
+  }
+  .oe__part-desc {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+  }
+  .oe__part-desc em {
+    font-style: italic;
+    color: var(--color-text-subtle);
+  }
+
+  .oe__caption {
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--color-text-subtle);
+    text-align: center;
+  }
+</style>

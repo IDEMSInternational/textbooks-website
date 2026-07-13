@@ -6,6 +6,45 @@ description: What's innovative — a connected system for open, adaptable, accre
 order: 1
 ---
 
+export const roadmap = [
+  {
+    title: 'Resources Library Demo',
+    date: 'July 2026',
+    body: 'Demonstration of prototype curated textbook library, with PreTeXt-enabled publishing functionality.',
+    note: 'Select community members will be invited to join the demo and share feedback.',
+  },
+  {
+    title: 'Course Textbook Creation & Demo',
+    date: 'September 2026',
+    body: 'Demonstration of the prototype textbook customisation experience out of the Resources Library, including functionality to publish to multiple or variable online and offline formats.',
+    note: 'We invite the community to share lecture notes, textbooks, or course materials they would like included in this demo. [Deadline: August 24, 2026]',
+  },
+  {
+    title: 'Prototype Variant Authoring System',
+    date: 'Late Autumn 2026',
+    body: 'Delivery of the prototype backend variant authoring system based on materials already included in the Resources Library, with prototype frontend user experience for building variants.',
+    note: 'Select active community members will be invited to trial the prototype experience.',
+  },
+  {
+    title: 'Variant Pilot Trials',
+    date: 'January 2027',
+    body: 'Launch of pilot trials of alpha prototype product that combines the backend architecture and frontend user experience of the prototype Resources Library, Middleware, and Customisation & Publishing layers.',
+    note: 'Select community educators, with a preference for those who have joined previous demos and trials, will be invited to author their own textbook variant for pilot in their course/test with students.',
+  },
+  {
+    title: 'Full System Testing',
+    date: 'Spring 2027',
+    body: 'General user launch of alpha backend system and frontend experience, including multi-source resource ingestion, variant authoring system, limited assessment integrations and publishing. Demonstration of agentic AI-enabled workflows.',
+    note: 'The full community will be invited to trial the prototype product. Open to the public/new community members.',
+  },
+  {
+    title: 'Beta Product Launch',
+    date: 'July 2027',
+    body: 'Public launch of beta backend system and frontend experience. This includes expanded assessment and publishing integrations, beta AI workflows, alpha accreditation process, and alpha course-level analytics for educators.',
+    note: 'Launch to all new and existing community members at the ISI World Statistics Congress.',
+  },
+];
+
 <Section
   eyebrow="Now in early prototype"
   eyebrowBadge
@@ -13,7 +52,7 @@ order: 1
   titleLineBreak
 >
 
-*No copies, forks or siloes.*<br />
+**No copies, forks or siloes.**<br />
 Just a connected living textbook infrastructure<br />
 that continuously improves for everyone.
 
@@ -36,71 +75,55 @@ The **Customisation & Publishing** layer allows educators to easily access, make
 
 The **IDEMS Middleware** layer makes it all possible: It transforms open digital textbooks and resources into malleable, reusable structured data. It creates, manages and maintains coherent meaning between structured Resource Library data and unlimited published textbook variants to maintain systemic interoperability.
 
-<Rows>
-<Row eyebrow="Layer 1" title="Resources Library">
-
-**A continuously evolving library of high-quality textbooks and teaching, learning, and assessment materials and software.**
-
-</Row>
-<Row eyebrow="Layer 2" title="IDEMS Middleware">
-
-**The core innovation, a middleware developed by IDEMS' mathematicians and mathematical scientists.** This groundbreaking layer lets local educators easily develop custom digital textbooks and resources for their courses, contexts and students–and retain a living connection with a single unified **Open, Adaptive Digital Textbooks** architecture. A customisation anywhere becomes an innovation that can be used everywhere in a system with no duplication and no siloed forks.
-
-</Row>
-<Row eyebrow="Layer 3" title={"Customisation\n& Publishing"}>
-
-**The textbooks adaptation, customisation, and publishing platform hub.** Educators at the national, regional, school, or classroom level, with the support of expert AI agents, compile context-specific textbooks (based on permission level if set by an existing education system)–and gain the ability to integrate their own resources and innovations into existing resources. Authors can see how their work is used by others to improve existing, or develop entirely new, textbooks and resources.
-
-</Row>
-</Rows>
-
 </Section>
 
 <Section
   eyebrow="The pioneering core"
   eyebrowAccent2
   titleEmphasis
-  title="IDEMS Middleware: The Innovation Behind Unlimited Interoperable Versions"
+  title={"IDEMS Middleware: The Innovation Behind\nUnlimited Interoperable Versions"}
+  titleLineBreak
 >
 
+<div class="measure-center">
 This groundbreaking layer makes local customisation and ownership, systemic quality and standards, and global collaboration possible at the same time. The result is a unified, living textbooks ecosystem that makes isolated forks and duplicated efforts a thing of the past.
+</div>
 
-<CardGrid columns={2}>
-<Card title="The Textbooks Brain">
-
-The "brains" of the textbooks operation (built on IDEMS' IP), this holds both open software/resources and complex meaning-making knowledge as structured, malleable data in a novel deterministic core. The expert-maintained core is the data foundation of responsible, auditable AI, which supports educators' textbook customisation and contributes to the Brain's continuous improvement.
-
-</Card>
-<Card title="Agentic AI Hands">
-
-This suite of expert small language model AI agents are developed for narrow use cases, supporting textbook publishing, adaptation and iteration by non-technologist educators and authors. Trained on the Textbooks Brain's high-quality data, AI Hands are bounded, auditable, and resource efficient.
-
-</Card>
-</CardGrid>
-
-<Card title="A Global Impact Operating Environment">
-
-Together these power a novel **Open, Adaptive Digital Textbooks** Operating Environment.
-
-Unlimited, low-cost local textbook adaptations and innovations, owned and controlled at the local level, maintain a living connection with a system of expert-maintained, accredited high-quality educational resources. It's a bounded digital textbooks ecosystem that enables multidirectional global-local collaboration and innovation.
-
-The result is continuous improvement of teaching and learning resources at the systemic and local levels, for measurably improved student outcomes around the world.
-
-</Card>
+<ArchitectureDiagram />
 
 </Section>
 
 <Section
   tone="dark"
-  eyebrow="Status"
-  title="Now in Alpha Pilot"
+  eyebrow="Inclusive innovation"
+  title="A New Model of Community-Centred Technology"
 >
 
-Where are we now, what are we doing, what do we need (community, resources, etc.)?
+Software, resources, knowledge, relationships, sense making: all are data, held across communities and roles, at every level of expertise.
 
-<ButtonGroup>
-<Button href="/library">View the textbooks library</Button>
-<Button href="/join" variant="secondary">Join the community</Button>
-</ButtonGroup>
+Even in large, centralised organisations, designing technology systems to manage this kind of data complexity is a hard problem. Across variable global educational contexts, it’s currently impossible. Existing technologies aren’t built for the distributed ownership and collaboration needed to unlock scattered data and make it accessible–and useful.
+
+IDEMS’ innovation is a new model: technology designed to surface and apply the layered expertise of communities at scale, enabling the right people to affordably access what they need, take ownership to serve their context, and contribute back to a single system that benefits everyone.
+
+</Section>
+
+<Section
+  eyebrow="Where we are"
+  title="Now in Prototype & Alpha Pilot"
+>
+
+IDEMS invites educators, authors, researchers, and technologists to join our community. The community helps us expand the resources and technology library, test variant functionality, trial textbooks in application in varied educational contexts, and otherwise contribute to making **Open, Adaptive Digital Textbooks** work for everyone everywhere.
+
+IDEMS is fundraising for mission-aligned grants and social investment to ensure that impact and inclusion remain the focus of our deeply technical innovation. We are open to new ideas for research collaborations to pursue large grants.
+
+Below we have included an early roadmap of innovation milestones and product deliverables. We invite you to share your role and interests so we can include you in tests, trials and pilots as relevant.
+
+<h3 class="roadmap-title">Innovation Milestones &amp; Product Deliverables Community Calendar <br /><span class="roadmap-title__note">(subject to change based on funding)</span></h3>
+
+<div class="roadmap">
+<Steps steps={roadmap} collapsible />
+</div>
+
+<Button href="/join" variant="secondary">Join the Community</Button>
 
 </Section>

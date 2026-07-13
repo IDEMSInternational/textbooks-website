@@ -522,6 +522,35 @@ img {
 .content-sections .section__body > :where(p, ul, ol, blockquote, h3, h4) {
   max-width: var(--reading-width);
 }
+/* Opt-in: cap a section paragraph to the ArchitectureDiagram's width and centre
+   it as a block, so it sits directly above and aligns with that centred diagram.
+   Applied to a wrapping <div> (a bare markdown paragraph can't take a class); the
+   paragraph inside inherits the muted body colour. Text stays left-aligned. Keep
+   40rem in sync with `.oe` in ArchitectureDiagram.astro. */
+.content-sections .section__body > .measure-center {
+  max-width: 40rem;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+}
+/* Wrapper for an embedded block component (e.g. a Steps roadmap) so its inner
+   <ol>/<ul> isn't a direct child of the section body — keeping it clear of the
+   markdown-list rules above (padding, list-item margins) — while still sitting
+   at reading width. */
+.content-sections .section__body > .roadmap {
+  max-width: var(--reading-width);
+}
+/* Title introducing the roadmap Steps within a section — a step below the
+   section title (h2) but clearly a heading, not body text. */
+.content-sections .section__body > .roadmap-title {
+  font-size: var(--text-2xl);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+.roadmap-title__note {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-subtle);
+}
 .content-sections .section__body > :where(p, ul, ol) {
   color: var(--color-text-muted);
   line-height: var(--leading-normal);

@@ -21,10 +21,10 @@
  * (e.g. a "solution" following a "problem" section) — centers the title,
  * bumps it a step larger, and colours it with the accent.
  *
- * `eyebrowBadge` renders the eyebrow as a filled, bolded flag/status banner
- * instead of plain uppercase text — for a label (e.g. "Now in Early
- * Prototype") that needs to read as its own assertive statement rather than
- * a normal section eyebrow.
+ * `eyebrowBadge` renders the eyebrow as a status pill — the accent label in a
+ * small accent-tinted, dot-prefixed capsule — instead of plain uppercase text,
+ * for a stage/status flag (e.g. "Now in early prototype") that should read as
+ * its own contained badge rather than a normal section eyebrow.
  *
  * `centeredHead` is the light-touch version of `titleEmphasis`: just centers
  * the eyebrow/title/subtitle, with no size or colour change, for a section
@@ -191,16 +191,31 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     margin-bottom: var(--space-3);
   }
   .section__eyebrow--badge {
-    /* Reads as a flag/status banner, not a normal eyebrow label — bigger,
-       bolder, and less pill-shaped than a typical rounded badge. */
-    display: inline-block;
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-sm);
-    background: var(--color-accent);
-    color: #ffffff;
-    font-size: var(--text-base);
-    font-weight: 700;
-    box-shadow: 0 2px 6px rgba(24, 24, 27, 0.15);
+    /* A status flag, not a button. The base eyebrow's uppercase accent label
+       sits in a small accent-tinted capsule with a leading status dot — no
+       solid fill, white text or drop shadow, which were what made it read as
+       a primary button. Colours derive from --color-accent, so it still
+       adapts on tinted/dark sections; browsers without color-mix fall back to
+       a plain accent-outlined pill. */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
+    border: 1px solid var(--color-accent);
+    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    line-height: 1;
+    margin-bottom: var(--space-4);
+  }
+  .section__eyebrow--badge::before {
+    /* Small status dot — reinforces the "stage/status" reading. */
+    content: '';
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
   }
   .section__eyebrow--accent2 {
     color: var(--color-accent-2);
