@@ -1,0 +1,18 @@
+---
+/**
+ * AccordionGroup — vertical stack wrapper for `Accordion` items, with even
+ * spacing between them.
+ */
+---
+
+<div class="accordion-group">
+  <slot />
+</div>
+
+<style>
+  .accordion-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+</style>

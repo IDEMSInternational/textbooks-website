@@ -8,6 +8,8 @@ import Section from '../components/Section.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Card from '../components/Card.astro';
 import Team from '../components/Team.astro';
+import AccordionGroup from '../components/AccordionGroup.astro';
+import Accordion from '../components/Accordion.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -383,141 +385,96 @@ const audienceFeatures = [
         </p>
       </div>
 
-      <div class="usecases">
-        <details class="usecase">
-          <summary class="usecase__summary">
-            <h3 class="usecase__title">Same Concepts, Different Applications</h3>
-            <svg class="usecase__caret" viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M4 6l4 4 4-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </summary>
-          <div class="usecase__body">
-            <p>
-              <em>An Introduction to Data Science</em> is Dr. Lily Clements’
-              favourite textbook, but it uses R and this year she’s teaching
-              her students to code with Python.
-            </p>
-            <p>
-              Rather than starting from scratch, she creates a new textbook
-              variant. She takes the textbook and replaces R examples with
-              Python, updates code snippets, and tailors the embedded
-              assessments in the existing textbook to develop an entirely new
-              textbook: <em>An Introduction to Data Science with Python</em>.
-            </p>
-            <p>
-              When she's ready, she shares her adaptation with the community.
-              Following peer review, her textbook is recognised as a curated
-              contribution to the open library. She receives attribution as
-              the author of the adaptation, while the original authors
-              continue to receive credit for the foundation on which it was
-              built.
-            </p>
-            <p>
-              She is now both an educator and an author, with her
-              peer-reviewed textbook contributing to the continuously
-              evolving open library. Future educators can adopt her version,
-              adapt it for their own contexts, or build on it further –
-              creating a living ecosystem of textbooks that evolves alongside
-              the discipline.
-            </p>
-          </div>
-        </details>
-        <details class="usecase">
-          <summary class="usecase__summary">
-            <h3 class="usecase__title">One Course, Multiple Textbooks</h3>
-            <svg class="usecase__caret" viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M4 6l4 4 4-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </summary>
-          <div class="usecase__body">
-            <p>
-              Dr. David Stern is a guest lecturer at Maseno University in
-              Kenya, teaching an <em>Introduction to Data Science for Social
-              Impact</em> course. His students come from diverse academic
-              backgrounds, with varying levels of experience in data
-              analysis, programming, and statistical thinking.
-            </p>
-            <p>
-              Rather than creating a one-size-fits-all textbook, David builds
-              multiple versions of the same foundational course resource.
-              Each version shares the same core concepts and learning
-              objectives but includes different examples, explanations,
-              exercises, and assessments to support students with different
-              needs.
-            </p>
-            <p>
-              Students receive materials that better match their needs, while
-              still progressing towards shared learning goals. Over time,
-              these adapted versions become part of a growing library of
-              resources that educators can reuse, refine, and customise for
-              their own learners.
-            </p>
-          </div>
-        </details>
-        <details class="usecase">
-          <summary class="usecase__summary">
-            <h3 class="usecase__title">Context-Relevant Examples and Datasets</h3>
-            <svg class="usecase__caret" viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M4 6l4 4 4-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </summary>
-          <div class="usecase__body">
-            <p>
-              <em>Statistical Thinking for the 21st Century</em> is a highly
-              regarded open textbook for introducing statistics to beginners.
-              However, its examples and datasets are designed primarily for
-              STEM students in US universities. Professor Roger Stern is
-              preparing a course on statistical analysis of historical
-              weather data for a local Meteorological Office team in
-              Zimbabwe.
-            </p>
-            <p>
-              Rather than starting from scratch, he adapts the existing
-              textbook by replacing examples, datasets, and tools with
-              materials that reflect the team’s own work and local context.
-              The statistical concepts remain the same, but the team learn
-              through data and problems that are directly relevant to their
-              roles: analysing climate patterns, interpreting historical
-              records, and applying statistical methods to real-world
-              decisions.
-            </p>
-            <p>
-              Roger’s adaptation transforms an existing open resource into a
-              specialised textbook for a new audience, while contributing a
-              valuable version back to the open library for others to
-              discover, adapt, and build upon.
-            </p>
-          </div>
-        </details>
-      </div>
+      <AccordionGroup>
+        <Accordion title="Example 1 – Same Concepts, Different Applications">
+          <p>
+            <em>An Introduction to Data Science</em> is Dr. Lily Clements’
+            favourite textbook, but it uses R and this year she’s teaching
+            her students to code with Python.
+          </p>
+          <p>
+            Rather than starting from scratch, she creates a new textbook
+            variant. She takes the textbook and replaces R examples with
+            Python, updates code snippets, and tailors the embedded
+            assessments in the existing textbook to develop an entirely new
+            textbook: <em>An Introduction to Data Science with Python</em>.
+          </p>
+          <p>
+            When she's ready, she shares her adaptation with the community.
+            Following peer review, her textbook is recognised as a curated
+            contribution to the open library. She receives attribution as
+            the author of the adaptation, while the original authors
+            continue to receive credit for the foundation on which it was
+            built.
+          </p>
+          <p>
+            She is now both an educator and an author, with her
+            peer-reviewed textbook contributing to the continuously
+            evolving open library. Future educators can adopt her version,
+            adapt it for their own contexts, or build on it further –
+            creating a living ecosystem of textbooks that evolves alongside
+            the discipline.
+          </p>
+        </Accordion>
+        <Accordion title="Example 2 – One Course, Multiple Textbooks">
+          <p>
+            Dr. David Stern is a guest lecturer at Maseno University in
+            Kenya, teaching an <em>Introduction to Data Science for Social
+            Impact</em> course. His students come from diverse academic
+            backgrounds, with varying levels of experience in data
+            analysis, programming, and statistical thinking.
+          </p>
+          <p>
+            Rather than creating a one-size-fits-all textbook, David builds
+            multiple versions of the same foundational course resource.
+            Each version shares the same core concepts and learning
+            objectives but includes different examples, explanations,
+            exercises, and assessments to support students with different
+            needs.
+          </p>
+          <p>
+            Students receive materials that better match their needs, while
+            still progressing towards shared learning goals. Over time,
+            these adapted versions become part of a growing library of
+            resources that educators can reuse, refine, and customise for
+            their own learners.
+          </p>
+        </Accordion>
+        <Accordion title="Example 3 – Context-Relevant Examples and Datasets">
+          <p>
+            <em>Statistical Thinking for the 21st Century</em> is a highly
+            regarded open textbook for introducing statistics to beginners.
+            However, its examples and datasets are designed primarily for
+            STEM students in US universities. Professor Roger Stern is
+            preparing a course on statistical analysis of historical
+            weather data for a local Meteorological Office team in
+            Zimbabwe.
+          </p>
+          <p>
+            Rather than starting from scratch, he adapts the existing
+            textbook by replacing examples, datasets, and tools with
+            materials that reflect the team’s own work and local context.
+            The statistical concepts remain the same, but the team learn
+            through data and problems that are directly relevant to their
+            roles: analysing climate patterns, interpreting historical
+            records, and applying statistical methods to real-world
+            decisions.
+          </p>
+          <p>
+            Roger’s adaptation transforms an existing open resource into a
+            specialised textbook for a new audience, while contributing a
+            valuable version back to the open library for others to
+            discover, adapt, and build upon.
+          </p>
+        </Accordion>
+      </AccordionGroup>
     </Section>
 
     <Section>
       <Fragment slot="title">
         What people are saying about
         <br />
-        IDEMS' Open, Adaptive Statistics &amp; Data Science Textbooks
+        <span class="title-accent">Open, Adaptive Statistics &amp; Data Science Textbooks</span>
       </Fragment>
       <div class="testimonials">
         <figure class="testimonial">
@@ -607,6 +564,12 @@ const audienceFeatures = [
     .soft-break {
       display: block;
     }
+  }
+
+  /* Accent-coloured run within a section title (e.g. the product name on its
+     own line). */
+  .title-accent {
+    color: var(--color-accent);
   }
 
   .hero {
@@ -708,7 +671,6 @@ const audienceFeatures = [
      so the two of them read as a distinct callout. */
   .solution-lead__setup {
     margin-left: var(--space-6);
-    font-style: italic;
   }
   /* The list shares the set-up line's indent, and is pulled up closer than the
      section-lead default gap so it reads as introducing the list directly,
@@ -727,7 +689,6 @@ const audienceFeatures = [
 
   .section-subhead {
     font-weight: 600;
-    font-style: italic;
     margin-bottom: var(--space-5);
   }
 
@@ -862,60 +823,6 @@ const audienceFeatures = [
   .home-body p {
     color: var(--color-text-muted);
     line-height: var(--leading-normal);
-  }
-  .usecases {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-  /* Expand/collapse boxes (native <details>/<summary>, closed by default):
-     the headline is always visible; the long-form narrative only renders
-     once opened. A caret is the only "expand" affordance.
-     Padding lives on the summary/body rather than this container, so the
-     summary's clickable area fills the card right up to the border instead of
-     being inset from it. */
-  .usecase {
-    border: var(--border);
-    border-radius: var(--radius);
-    background: var(--color-surface);
-  }
-  .usecase__summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-    padding: var(--space-5);
-    list-style: none;
-    cursor: pointer;
-  }
-  .usecase__summary::-webkit-details-marker {
-    display: none;
-  }
-  .usecase__title {
-    font-size: var(--text-lg);
-    letter-spacing: -0.01em;
-  }
-  .usecase__caret {
-    width: 1rem;
-    height: 1rem;
-    color: var(--color-accent);
-    transition: transform 0.15s ease;
-    flex-shrink: 0;
-  }
-  .usecase[open] .usecase__caret {
-    transform: rotate(180deg);
-  }
-  /* Only shown when open. The summary's bottom padding provides the gap above,
-     so pad just the sides and bottom here. */
-  .usecase__body {
-    padding: 0 var(--space-5) var(--space-5);
-  }
-  .usecase p {
-    color: var(--color-text-muted);
-    line-height: var(--leading-normal);
-  }
-  .usecase p + p {
-    margin-top: var(--space-3);
   }
   .testimonials {
     margin-top: var(--space-8);
