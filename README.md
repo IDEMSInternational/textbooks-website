@@ -1,11 +1,17 @@
-# Open Textbook Library
+# Open, Adaptive Digital Textbooks — website
 
-A minimal, static **library of digital textbooks**. The textbooks themselves
-are **not** hosted here — every entry links out to an externally hosted site
-(e.g. GitHub Pages). This app is purely a discovery / index layer.
+The website for IDEMS' **Open, Adaptive Statistics & Data Science Textbooks**.
+Two things live here:
 
-Built with **Astro** + **TypeScript**, fully static, client-side search and
-filtering, no backend, no database, no external APIs.
+1. A **marketing / landing site** (Home, Innovation, About IDEMS, Impact and
+   Standards, Join) — component-driven content authored in Markdown/MDX.
+2. A **Library** (`/library`) — a static, client-filtered index of openly hosted
+   digital textbooks. The textbooks themselves are **not** hosted here; every
+   entry links out to an externally hosted site (e.g. GitHub Pages).
+
+Built with **Astro** + **TypeScript**, fully static. No backend, no database.
+The only external call is the Join page's interest form, which posts client-side
+to a Google Form; the Library's search and filtering are entirely client-side.
 
 ---
 
@@ -24,12 +30,28 @@ npm run test:data    # validate every textbook JSON against the schema
 npm run test         # both of the above
 ```
 
+There's also an optional end-to-end browser check that drives a locally
+installed Chrome (via `puppeteer-core`, no download) to confirm the Library's
+interactive behaviour against a running server:
+
+```bash
+npm run preview &
+node scripts/verify-browser.mjs http://localhost:4321
+```
+
 ---
 
-## What it does
+## What's on the site
 
-- **Home** (`/`) — short description + a live textbook count.
-- **Library** (`/library`) — the primary feature:
+- **Home** (`/`) — the marketing landing page: hero, the problem/solution
+  narrative, per-audience use cases, testimonials and the IDEMS team.
+- **Innovation** (`/innovation`) — a component-driven page describing the
+  three-layer architecture and the roadmap.
+- **About IDEMS** (`/idems`) and **Impact and Standards** (`/impact-and-standards`)
+  — prose content pages.
+- **Join** (`/join`) — a "register your interest" form that posts to a Google
+  Form.
+- **Library** (`/library`) — the searchable index:
   - Multi-select filters for **language**, **software**, **subject**, derived
     dynamically from the data (never hardcoded).
   - Case-insensitive **search** across title, description, keywords and authors.
@@ -37,21 +59,45 @@ npm run test         # both of the above
     with **OR within** a facet and **AND across** facets.
   - All filter/search state lives in the **URL** (`?language=en&software=python&search=matrix`)
     so views are shareable and browser back/forward works.
-- **Markdown pages** (`/idems`, `/community`, …) — driven entirely by files
-  in `src/content/pages/`. Add a page by dropping in a Markdown file; no routing
-  changes.
+
+The header nav is built automatically from the content pages (see below), so
+adding a page adds it to the menu with no routing changes.
+
+---
+
+## Two content models
+
+The repo has two independent content layers, each authored as plain files:
+
+### 1. Marketing / content pages (`src/content/pages/*.{md,mdx}`)
+
+Each file is a page. Frontmatter drives routing and navigation; the body is the
+content. Two templates:
+
+- `template: page` (default) — reading-width **prose**.
+- `template: sections` — a full-width, **component-driven** layout. The
+  design-system blocks (`Section`, `Card`, `CardGrid`, `Button`, `ButtonGroup`,
+  `Row`, `Rows`, `Steps`, `InterestForm`, `ArchitectureDiagram`) are put in
+  scope for the MDX, so authors use `<Section>` / `<Card>` **without importing
+  anything**. See `src/content/pages/innovation.mdx` for a worked example.
+
+### 2. Textbook data (`src/content/textbooks/*.json`)
+
+One JSON document per textbook, read through a single data-abstraction layer
+(`src/lib/textbooks.ts`) and rendered as cards on the Library page. Deliberately
+**not** an Astro content collection, so the source can later be swapped for
+Action-generated data without touching the UI (see
+[Automation readiness](#automation-readiness-not-implemented)).
 
 ---
 
 ## Architecture
 
-Two-layer content architecture:
-
 ```
 src/
 ├─ content/
 │  ├─ textbooks/*.json        # STRUCTURED data layer — one JSON document per textbook
-│  └─ pages/*.md              # CONTENT layer (static markdown pages)
+│  └─ pages/*.{md,mdx}        # CONTENT layer (prose + component-driven MDX pages)
 ├─ content.config.ts          # defines the `pages` collection (+ stops auto-collection)
 ├─ lib/
 │  ├─ types.ts                # Textbook type, facet/state types (single source of truth)
@@ -59,16 +105,18 @@ src/
 │  └─ filtering.ts            # pure filter + URL (de)serialisation logic (no DOM, testable)
 ├─ components/
 │  ├─ Layout.astro            # site shell (head, nav, footer)
-│  ├─ SearchBar.astro
-│  ├─ FilterPanel.astro       # renders facets derived from the data
+│  ├─ Section, Card, CardGrid, Accordion, Steps, Button, Row, …  # design system
+│  ├─ Team.astro, InterestForm.astro, ArchitectureDiagram.astro  # page-specific blocks
+│  ├─ SearchBar.astro, FilterPanel.astro, StatusBadge.astro      # Library UI
 │  └─ TextbookCard.astro      # depends only on core fields; chips only if present
 ├─ scripts/
-│  └─ library.ts              # the only client JS: filtering + URL state (~2KB)
+│  ├─ library.ts              # Library client JS: filtering + URL state
+│  └─ audience-toggle.ts      # Home page per-audience toggle
 ├─ styles/global.css          # design tokens + base + prose styles
 └─ pages/
-   ├─ index.astro
-   ├─ library.astro
-   └─ [slug].astro            # generic route for every markdown page
+   ├─ index.astro             # Home
+   ├─ library.astro           # Library
+   └─ [slug].astro            # generic route for every content page
 ```
 
 **Clear separation of concerns:**
@@ -81,8 +129,10 @@ src/
   defensively, sorts them by title and derives facets.
 - **Filtering logic** (`lib/filtering.ts`) is pure and framework-free, so the
   same rules are testable (`npm run test:logic`) and mirrored by the client.
-- **UI components** depend only on the five guaranteed fields and render
-  optional metadata only when present.
+- **Design-system components** (`Section`, `Card`, `CardGrid`, …) are content-
+  agnostic building blocks, shared between `.astro` pages and MDX content.
+- **Library UI components** depend only on the five guaranteed textbook fields
+  and render optional metadata only when present.
 
 ### Schema-flexible but UI-stable
 
@@ -141,13 +191,13 @@ Each document is validated against a JSON Schema
 
 ### Add a static page
 
-Drop a Markdown file into `src/content/pages/`:
+Drop a Markdown/MDX file into `src/content/pages/`:
 
 ```md
 ---
 title: FAQ
 slug: faq
-template: page
+template: page   # "page" = prose (default); "sections" = component-driven layout
 description: Frequently asked questions.
 # optional nav controls:
 nav: true      # default true — set false to keep it routable but out of the menu
@@ -163,12 +213,15 @@ is built from the `pages` collection, after Home and Library). No routing or
 layout changes needed. Use `nav: false` to hide a page from the menu, and
 `order` to position it (ties fall back to alphabetical by title).
 
-> **Note on `layout` vs `template`:** the brief's example used `layout: page`,
-> but Astro 5 reserves the `layout` frontmatter key for its legacy markdown
-> layout feature (it tries to resolve the value as a component path, which
-> breaks the build). We use `template` instead as a neutral layout hint; the
-> generic `[slug].astro` route applies the site layout. `slug` defaults to the
-> filename when omitted.
+For a **component-driven** page, set `template: sections` and use `.mdx`; the
+design-system components listed under [Two content models](#two-content-models)
+are already in scope — no imports required.
+
+> **Note on `layout` vs `template`:** Astro 5 reserves the `layout` frontmatter
+> key for its legacy markdown layout feature (it tries to resolve the value as a
+> component path, which breaks the build). We use `template` instead as a neutral
+> layout hint; the generic `[slug].astro` route applies the site layout. `slug`
+> defaults to the filename when omitted.
 
 ---
 
@@ -185,22 +238,28 @@ consistent spacing/type rhythm.
 
 Plain **case-insensitive substring** matching over a precomputed searchable
 string (title + description + keywords + authors). It fully meets the
-requirements with **zero dependencies**. The library ships ~2 KB of JS. If the
-dataset grows large enough to need ranked/fuzzy search, `lib/filtering.ts` is the
-single seam to swap in Fuse.js or FlexSearch (client-side only — no external
-search service).
+requirements with **zero dependencies**. If the dataset grows large enough to
+need ranked/fuzzy search, `lib/filtering.ts` is the single seam to swap in
+Fuse.js or FlexSearch (client-side only — no external search service).
 
 ---
 
 ## Deployment
 
 Fully static (`dist/`), so it works as-is on **GitHub Pages** and **Cloudflare
-Pages**.
+Pages**. This repo deploys to GitHub Pages on every push to `main` via
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), served at the
+custom domain **statsbooks.idems.international**. A separate CI workflow
+([`ci.yml`](.github/workflows/ci.yml)) type-checks, runs the tests and does a
+full build on every pull request.
 
-- **Cloudflare Pages / custom domain / root:** no config needed.
-- **GitHub Pages project subpath:** set `site` and `base` in `astro.config.mjs`,
-  e.g. `site: 'https://<user>.github.io'`, `base: '/textbooks-website'`. All
-  internal links already use `import.meta.env.BASE_URL`, so they respect `base`.
+- **Domain root (current) / Cloudflare Pages / custom domain:** `base` is `'/'`
+  in `astro.config.mjs`; no per-path config needed.
+- **GitHub Pages project subpath** (e.g. `.../textbooks-website`): set `site`
+  and `base` in `astro.config.mjs`, e.g. `base: '/textbooks-website'`. Internal
+  links respect `base` automatically — `.astro` files via
+  `import.meta.env.BASE_URL`, and markdown/MDX links via the `remarkBaseLinks`
+  plugin in the config.
 
 ---
 
