@@ -174,9 +174,13 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     background: #f2f7f9;
   }
 
+  /* Even vertical rhythm through the head and into the body: the eyebrow →
+     title → subtitle gaps, the head → body gap, and the body's own
+     paragraph gaps (see .section-lead) all use --space-4, so the whole
+     block reads as one consistent spacing scale rather than three. */
   .section__head {
     max-width: var(--reading-width);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
   }
   .section__eyebrow {
     font-size: var(--text-sm);
@@ -215,8 +219,12 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
   .section__title--line-break {
     white-space: pre-line;
   }
+  /* Matches the body's running text (.section-lead p): same base size, muted
+     colour and line-height. The subtitle isn't used by any section today —
+     its content was folded into the body — but it's kept for future use and
+     styled to sit consistently with body copy rather than as a larger lede. */
   .section__subtitle {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
     color: var(--color-text-muted);
     margin: 0;

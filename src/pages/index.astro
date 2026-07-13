@@ -173,7 +173,6 @@ const team = [
     <Section
       tone="dark"
       eyebrow="The unsolved problem"
-      subtitle="A global community of educators and authors are committed to developing a flourishing ecosystem of open, accessible textbooks and educational resources to make high-quality teaching and learning accessible to all."
     >
       <Fragment slot="title">
         Existing textbooks aren’t a match
@@ -181,6 +180,12 @@ const team = [
         for a complex, rapidly changing world.
       </Fragment>
       <div class="section-lead">
+        <p>
+          A global community of educators and authors are committed to
+          developing a flourishing ecosystem of open, accessible textbooks
+          and educational resources to make high-quality teaching and
+          learning accessible to all.
+        </p>
         <p>
           But from the moment they’re created, even the best textbooks need
           adaptation, updating and iteration to meet the needs of individual
@@ -297,11 +302,7 @@ const team = [
         </Card>
         <Card title="Educator-Authors">
           <p>
-            Build your own deeply customised textbook out of existing open
-            textbooks foundations, layering in new lessons, resources, and
-            assessments to create an entirely new version. Submit your
-            adapted textbook for community review to earn recognition for
-            your trusted contribution to the open library.
+            Build a customised textbook from open textbooks, and layer in new lessons, resources, and assessments. Submit it for community review to earn recognition for your contribution.
           </p>
           <button
             type="button"
@@ -381,7 +382,9 @@ const team = [
       </div>
 
       <p class="solution-link">
-        <a href={`${base}/innovation`}>See the full architecture behind the library.</a>
+        <a class="btn btn--primary" href={`${base}/innovation`}>
+          Explore the architecture
+        </a>
       </p>
     </Section>
 
@@ -389,10 +392,10 @@ const team = [
       tone="tinted"
       eyebrow="Use cases"
       title="Centring educators, empowering local innovation, transforming authoring, teaching and learning"
-      subtitle="What does that look like in practice?"
       narrow
     >
       <div class="section-lead">
+        <p>What does that look like in practice?</p>
         <p>
           Meet three educators using <strong>Open, Adaptive Statistics &amp;
           Data Science Textbooks</strong> to solve three different problems:
@@ -743,31 +746,27 @@ const team = [
     line-height: var(--leading-normal);
   }
 
-  /* Solution section's intro copy: indented a step further than the page's
-     other section-lead blocks, with its "educators can:" lead-in sentence
-     italicised as a set-up line for the bullet list. */
-  .solution-lead {
-    margin-left: var(--space-6);
-  }
+  /* Solution section's intro copy. The opening and closing paragraphs sit at
+     the normal section-lead indent; between them the italic "educators can:"
+     set-up line and the bullet list it introduces are indented a step further,
+     so the two of them read as a distinct callout. */
   .solution-lead__setup {
+    margin-left: var(--space-6);
     font-style: italic;
   }
-  /* Pull the list up closer to its "educators can:" set-up line than the
-     section-lead default gap — it reads as introducing the list directly,
+  /* The list shares the set-up line's indent, and is pulled up closer than the
+     section-lead default gap so it reads as introducing the list directly,
      not just another paragraph in the sequence. */
   .solution-lead__setup + .section-lead__list {
+    margin-left: var(--space-6);
     margin-top: var(--space-2);
   }
 
   /* Plain text link (not a button) to the Innovation page, placed below the
      audience boxes rather than breaking up the intro copy. */
   .solution-link {
-    margin-top: var(--space-6);
-  }
-  .solution-link a {
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    margin-top: var(--space-8);
+    text-align: center;
   }
 
   .section-subhead {
