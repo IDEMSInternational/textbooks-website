@@ -3,15 +3,11 @@
  * Home — short project description, a headline stat, and a link to the
  * library. 
  */
-import { Image } from 'astro:assets';
 import Layout from '../components/Layout.astro';
 import Section from '../components/Section.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Card from '../components/Card.astro';
-import davidStern from '../assets/team/david-stern.jpg';
-import jamesMusyoka from '../assets/team/james-musyoka.jpeg';
-import lily from '../assets/team/lily.jpeg';
-import roger from '../assets/team/roger.png';
+import Team from '../components/Team.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -102,33 +98,6 @@ const audienceFeatures = [
   },
 ];
 
-// Roger's bio remains a placeholder pending his write-up.
-const team = [
-  {
-    name: 'Dr David Stern',
-    role: 'Statistics Educator',
-    photo: davidStern,
-    bio: 'Extensive experience in curriculum development and international capacity building. He has served as Director of Project Development for AIMS-NEI, Vice President of the International Association for Statistical Education (IASE), and contributes to international initiatives including ISI, ISLP, and STACK.',
-  },
-  {
-    name: 'Dr James Musyoka',
-    role: 'Statistics Educator',
-    photo: jamesMusyoka,
-    bio: 'Co-founder of the African Maths Initiative, and former lecturer at Maseno University. He is an active member of the international statistics education community and previously served as Vice President of the International Association for Statistical Education (IASE).',
-  },
-  {
-    name: 'Dr Lily Clements',
-    role: 'Data Scientist & Educator',
-    photo: lily,
-    bio: 'Works at the intersection of statistics, open-source software, and data education, developing open educational resources, tools, and courses. She contributes to the international statistics education community and is a member of ISI and IASE.',
-  },
-  {
-    name: 'Professor Roger Stern',
-    role: 'Placeholder role',
-    photo: roger,
-    bio: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.',
-  },
-];
 ---
 
 <Layout
@@ -173,7 +142,6 @@ const team = [
     <Section
       tone="dark"
       eyebrow="The unsolved problem"
-      subtitle="A global community of educators and authors are committed to developing a flourishing ecosystem of open, accessible textbooks and educational resources to make high-quality teaching and learning accessible to all."
     >
       <Fragment slot="title">
         Existing textbooks aren’t a match
@@ -181,6 +149,12 @@ const team = [
         for a complex, rapidly changing world.
       </Fragment>
       <div class="section-lead">
+        <p>
+          A global community of educators and authors are committed to
+          developing a flourishing ecosystem of open, accessible textbooks
+          and educational resources to make high-quality teaching and
+          learning accessible to all.
+        </p>
         <p>
           But from the moment they’re created, even the best textbooks need
           adaptation, updating and iteration to meet the needs of individual
@@ -297,11 +271,7 @@ const team = [
         </Card>
         <Card title="Educator-Authors">
           <p>
-            Build your own deeply customised textbook out of existing open
-            textbooks foundations, layering in new lessons, resources, and
-            assessments to create an entirely new version. Submit your
-            adapted textbook for community review to earn recognition for
-            your trusted contribution to the open library.
+            Build a customised textbook from open textbooks, and layer in new lessons, resources, and assessments. Submit it for community review to earn recognition for your contribution.
           </p>
           <button
             type="button"
@@ -381,7 +351,9 @@ const team = [
       </div>
 
       <p class="solution-link">
-        <a href={`${base}/innovation`}>See the full architecture behind the library.</a>
+        <a class="btn btn--primary" href={`${base}/innovation`}>
+          Explore the architecture
+        </a>
       </p>
     </Section>
 
@@ -389,10 +361,13 @@ const team = [
       tone="tinted"
       eyebrow="Use cases"
       title="Centring educators, empowering local innovation, transforming authoring, teaching and learning"
-      subtitle="What does that look like in practice?"
       narrow
     >
       <div class="section-lead">
+        <p>
+          <strong>IDEMS’ Open, Adaptive Digital Textbooks</strong> reinvent what a textbook can be. Instead of a fixed, finished artefact, it's a living resource reshaped by the educators who use it.
+        </p>
+        <p>What does that look like in practice?</p>
         <p>
           Meet three educators using <strong>Open, Adaptive Statistics &amp;
           Data Science Textbooks</strong> to solve three different problems:
@@ -542,7 +517,7 @@ const team = [
       <Fragment slot="title">
         What people are saying about
         <br />
-        Open, Adaptive Statistics &amp; Data Science Textbooks
+        IDEMS' Open, Adaptive Statistics &amp; Data Science Textbooks
       </Fragment>
       <div class="testimonials">
         <figure class="testimonial">
@@ -609,23 +584,7 @@ const team = [
         <p>The team includes:</p>
       </div>
 
-      <ul class="team" role="list">
-        {
-          team.map((member) => (
-            <li class="team__member">
-              <Image
-                class="team__photo"
-                src={member.photo}
-                alt={member.name}
-                width={256}
-              />
-              <p class="team__name">{member.name}</p>
-              <p class="team__role">{member.role}</p>
-              <p class="team__bio">{member.bio}</p>
-            </li>
-          ))
-        }
-      </ul>
+      <Team />
 
       <p class="team__more">
         <a class="btn btn--primary" href={`${base}/idems`}>Learn more about IDEMS</a>
@@ -743,31 +702,27 @@ const team = [
     line-height: var(--leading-normal);
   }
 
-  /* Solution section's intro copy: indented a step further than the page's
-     other section-lead blocks, with its "educators can:" lead-in sentence
-     italicised as a set-up line for the bullet list. */
-  .solution-lead {
-    margin-left: var(--space-6);
-  }
+  /* Solution section's intro copy. The opening and closing paragraphs sit at
+     the normal section-lead indent; between them the italic "educators can:"
+     set-up line and the bullet list it introduces are indented a step further,
+     so the two of them read as a distinct callout. */
   .solution-lead__setup {
+    margin-left: var(--space-6);
     font-style: italic;
   }
-  /* Pull the list up closer to its "educators can:" set-up line than the
-     section-lead default gap — it reads as introducing the list directly,
+  /* The list shares the set-up line's indent, and is pulled up closer than the
+     section-lead default gap so it reads as introducing the list directly,
      not just another paragraph in the sequence. */
   .solution-lead__setup + .section-lead__list {
+    margin-left: var(--space-6);
     margin-top: var(--space-2);
   }
 
   /* Plain text link (not a button) to the Innovation page, placed below the
      audience boxes rather than breaking up the intro copy. */
   .solution-link {
-    margin-top: var(--space-6);
-  }
-  .solution-link a {
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    margin-top: var(--space-8);
+    text-align: center;
   }
 
   .section-subhead {
@@ -915,9 +870,11 @@ const team = [
   }
   /* Expand/collapse boxes (native <details>/<summary>, closed by default):
      the headline is always visible; the long-form narrative only renders
-     once opened. A caret is the only "expand" affordance. */
+     once opened. A caret is the only "expand" affordance.
+     Padding lives on the summary/body rather than this container, so the
+     summary's clickable area fills the card right up to the border instead of
+     being inset from it. */
   .usecase {
-    padding: var(--space-5);
     border: var(--border);
     border-radius: var(--radius);
     background: var(--color-surface);
@@ -927,6 +884,7 @@ const team = [
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4);
+    padding: var(--space-5);
     list-style: none;
     cursor: pointer;
   }
@@ -947,8 +905,10 @@ const team = [
   .usecase[open] .usecase__caret {
     transform: rotate(180deg);
   }
+  /* Only shown when open. The summary's bottom padding provides the gap above,
+     so pad just the sides and bottom here. */
   .usecase__body {
-    margin-top: var(--space-4);
+    padding: 0 var(--space-5) var(--space-5);
   }
   .usecase p {
     color: var(--color-text-muted);
@@ -958,6 +918,7 @@ const team = [
     margin-top: var(--space-3);
   }
   .testimonials {
+    margin-top: var(--space-8);
     display: grid;
     gap: var(--space-5);
   }
@@ -1001,49 +962,7 @@ const team = [
     color: var(--color-text);
   }
 
-  /* Team bios: centred round avatar above name, role and short bio. */
-  .team {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: var(--space-6);
-  }
-  @media (min-width: 40rem) {
-    .team {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 60rem) {
-    .team {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-  .team__member {
-    text-align: center;
-  }
-  .team__photo {
-    display: block;
-    width: 96px;
-    height: 96px;
-    margin: 0 auto var(--space-3);
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .team__name {
-    font-weight: 600;
-    color: var(--color-text);
-  }
-  .team__role {
-    font-size: var(--text-sm);
-    color: var(--color-accent);
-  }
-  .team__bio {
-    margin-top: var(--space-2);
-    font-size: var(--text-sm);
-    line-height: var(--leading-normal);
-    color: var(--color-text-muted);
-  }
+  /* "Learn more about IDEMS" CTA below the <Team /> roster. */
   .team__more {
     margin-top: var(--space-8);
     text-align: center;

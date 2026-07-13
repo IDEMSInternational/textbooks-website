@@ -1,0 +1,102 @@
+---
+/**
+ * Team — the IDEMS team roster: a responsive grid of members, each a centred
+ * round avatar above their name, role and short bio. Self-contained: it owns
+ * the roster data and photo assets, so a page just drops in `<Team />`.
+ */
+import { Image } from 'astro:assets';
+import davidStern from '../assets/team/david-stern.jpg';
+import jamesMusyoka from '../assets/team/james-musyoka.jpeg';
+import lily from '../assets/team/lily.jpeg';
+import roger from '../assets/team/roger.png';
+
+const team = [
+  {
+    name: 'Dr David Stern',
+    role: 'Head of Textbooks Technology',
+    photo: davidStern,
+    bio: 'More than a decade of experience conceiving and developing community-centred technology innovation and building international capacity. Served as Director of Project Development for AIMS-NEI, Vice President of the International Association for Statistical Education (IASE), and contributes to international initiatives including ISI, ISLP, and STACK.',
+  },
+  {
+    name: 'Dr James Musyoka',
+    role: 'Textbooks Application & Adaptation',
+    photo: jamesMusyoka,
+    bio: 'Leads textbook statistics & data science adaptation trials, with a focus on professional development. Co-founder of the African Maths Initiative, and former lecturer at Maseno University. He is an active member of the international statistics education community and previously served as Vice President of the International Association for Statistical Education (IASE).',
+  },
+  {
+    name: 'Dr Lily Clements',
+    role: 'Data Scientist & Educator',
+    photo: lily,
+    bio: ' Leads Resource Library development. Works at the intersection of statistics, open-source software, and data education, developing open educational resources, tools, and courses. She contributes to the international statistics education community and is a member of ISI and IASE',
+  },
+  {
+    name: 'Professor Roger Stern',
+    role: 'Statistics Education & Training',
+    photo: roger,
+    bio: 'Leads the development of effective methods for teaching and training in applied statistical methods, with a particular focus on statistical climatology, and analysis of historical climatic data. Has worked globally, including years in Niger, Sri Lanka and Nigeria. Former statistics Lecturer at the University of Reading.',
+  },
+];
+---
+
+<ul class="team" role="list">
+  {
+    team.map((member) => (
+      <li class="team__member">
+        <Image class="team__photo" src={member.photo} alt={member.name} width={256} />
+        <p class="team__name">{member.name}</p>
+        <p class="team__role">{member.role}</p>
+        <p class="team__bio">{member.bio}</p>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  /* Team bios: centred round avatar above name, role and short bio. */
+  .team {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-6);
+  }
+  @media (min-width: 40rem) {
+    .team {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 60rem) {
+    .team {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .team__member {
+    text-align: center;
+  }
+  .team__photo {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto var(--space-3);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .team__name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .team__role {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+  }
+  .team__bio {
+    /* Left-aligned even though the member cell is otherwise centred: the bio
+       is a multi-line paragraph, and centred running text reads as ragged and
+       awkward. The short name/role and the avatar stay centred. */
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+    text-align: left;
+  }
+</style>
