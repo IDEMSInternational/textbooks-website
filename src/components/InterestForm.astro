@@ -56,6 +56,7 @@
       id="role"
       name="entry.101676569"
       autocomplete="organization-title"
+      required
     />
   </div>
   <div class="form__field">
@@ -65,9 +66,10 @@
       id="organisation"
       name="entry.646749844"
       autocomplete="organization"
+      required
     />
   </div>
-  <fieldset class="form__fieldset">
+  <fieldset class="form__fieldset" data-require-one>
     <legend>I am… (select all that apply)</legend>
     <label class="form__check"
       ><input type="checkbox" name="entry.2111608256" value="An author" /> An
@@ -102,7 +104,7 @@
       placeholder="Please specify"
     />
   </fieldset>
-  <fieldset class="form__fieldset">
+  <fieldset class="form__fieldset" data-require-one>
     <legend>I'm interested in… (select all that apply)</legend>
     <label class="form__check"
       ><input
@@ -153,6 +155,10 @@
       placeholder="Please specify"
     />
   </fieldset>
+  <div class="form__field">
+    <label for="message">Message <span class="form__optional">(optional)</span></label>
+    <textarea id="message" name="entry.1310602972" rows="4"></textarea>
+  </div>
   <button type="submit" class="btn btn--primary">Submit</button>
 </form>
 <p class="form__status" id="join-form-status" role="status" tabindex="-1" hidden>
@@ -174,9 +180,43 @@
       const otherInput = fieldset.querySelector<HTMLInputElement>(
         '[data-other-input]',
       );
+
+      // Require at least one box in groups marked `data-require-one`. Native
+      // checkbox `required` is per-box (it would force *every* box), so emulate
+      // "pick at least one" by keeping `required` on a single representative box
+      // only while nothing in the group is checked. Enforced via JS so no-JS
+      // visitors aren't blocked — Google applies the same rule server-side.
+      const boxes = Array.from(
+        fieldset.querySelectorAll<HTMLInputElement>('input[type="checkbox"]'),
+      );
+      const requireOne = fieldset.hasAttribute('data-require-one')
+        ? () => {
+            const anyChecked = boxes.some((box) => box.checked);
+            const [first] = boxes;
+            if (first) {
+              first.required = !anyChecked;
+              // Replace the browser's default single-checkbox wording ("Please
+              // tick this box if you want to proceed") with a group-appropriate
+              // message; cleared once something is selected so the form validates.
+              first.setCustomValidity(
+                anyChecked ? '' : 'Please select at least one',
+              );
+            }
+          }
+        : null;
+      if (requireOne) {
+        boxes.forEach((box) => box.addEventListener('change', requireOne));
+        requireOne();
+      }
+
       if (otherCheck && otherInput) {
         otherInput.addEventListener('input', () => {
-          if (otherInput.value.trim() !== '') otherCheck.checked = true;
+          if (otherInput.value.trim() !== '') {
+            otherCheck.checked = true;
+            // Setting `.checked` in code doesn't fire `change`, so dispatch one
+            // to re-run the "Other" sync and the require-one check above.
+            otherCheck.dispatchEvent(new Event('change'));
+          }
         });
         otherCheck.addEventListener('change', () => {
           if (!otherCheck.checked) otherInput.value = '';
