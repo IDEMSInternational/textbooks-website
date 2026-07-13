@@ -21,10 +21,10 @@
  * (e.g. a "solution" following a "problem" section) — centers the title,
  * bumps it a step larger, and colours it with the accent.
  *
- * `eyebrowBadge` renders the eyebrow as a status pill — the accent label in a
- * small accent-tinted, dot-prefixed capsule — instead of plain uppercase text,
- * for a stage/status flag (e.g. "Now in early prototype") that should read as
- * its own contained badge rather than a normal section eyebrow.
+ * `eyebrowBadge` renders the eyebrow as a status pill (the shared
+ * <StatusBadge> — an accent-tinted, dot-prefixed capsule) instead of plain
+ * uppercase text, for a stage/status flag (e.g. "Now in early prototype") that
+ * should read as its own contained badge rather than a normal section eyebrow.
  *
  * `centeredHead` is the light-touch version of `titleEmphasis`: just centers
  * the eyebrow/title/subtitle, with no size or colour change, for a section
@@ -42,6 +42,8 @@
  * slots (e.g. on .astro pages), whose own JSX-formatting whitespace/newlines
  * would otherwise start rendering as unwanted extra line breaks too.
  */
+import StatusBadge from './StatusBadge.astro';
+
 interface Props {
   title?: string;
   eyebrow?: string;
@@ -89,19 +91,19 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
           },
         ]}
       >
-        {eyebrow && (
-          <p
-            class:list={[
-              'section__eyebrow',
-              {
-                'section__eyebrow--badge': eyebrowBadge,
-                'section__eyebrow--accent2': eyebrowAccent2,
-              },
-            ]}
-          >
-            {eyebrow}
-          </p>
-        )}
+        {eyebrow &&
+          (eyebrowBadge ? (
+            <StatusBadge label={eyebrow} />
+          ) : (
+            <p
+              class:list={[
+                'section__eyebrow',
+                { 'section__eyebrow--accent2': eyebrowAccent2 },
+              ]}
+            >
+              {eyebrow}
+            </p>
+          ))}
         {hasTitle && (
           <h2
             class:list={[
@@ -189,33 +191,6 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     letter-spacing: 0.08em;
     color: var(--color-accent);
     margin-bottom: var(--space-3);
-  }
-  .section__eyebrow--badge {
-    /* A status flag, not a button. The base eyebrow's uppercase accent label
-       sits in a small accent-tinted capsule with a leading status dot — no
-       solid fill, white text or drop shadow, which were what made it read as
-       a primary button. Colours derive from --color-accent, so it still
-       adapts on tinted/dark sections; browsers without color-mix fall back to
-       a plain accent-outlined pill. */
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-1) var(--space-3);
-    border-radius: 999px;
-    border: 1px solid var(--color-accent);
-    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
-    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-    line-height: 1;
-    margin-bottom: var(--space-4);
-  }
-  .section__eyebrow--badge::before {
-    /* Small status dot — reinforces the "stage/status" reading. */
-    content: '';
-    width: 0.375rem;
-    height: 0.375rem;
-    border-radius: 50%;
-    background: currentColor;
-    flex-shrink: 0;
   }
   .section__eyebrow--accent2 {
     color: var(--color-accent-2);
