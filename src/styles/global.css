@@ -450,8 +450,15 @@ img {
   font-weight: 500;
   color: var(--color-text);
 }
+/* "(optional)" marker on the one non-required field, set lighter than the
+   label it trails so it reads as a hint rather than part of the field name. */
+.form__optional {
+  font-weight: 400;
+  color: var(--color-text-subtle);
+}
 .form input[type='text'],
-.form input[type='email'] {
+.form input[type='email'],
+.form textarea {
   width: 100%;
   font-family: inherit;
   font-size: var(--text-base);
@@ -462,10 +469,18 @@ img {
   background: var(--color-bg);
   transition: border-color 0.12s ease;
 }
-.form input::placeholder {
+.form input::placeholder,
+.form textarea::placeholder {
   color: var(--color-text-subtle);
 }
-.form input:focus {
+/* The message textarea shares the text-input styling above; only its height
+   and resize behaviour differ. */
+.form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+.form input:focus,
+.form textarea:focus {
   outline: none;
   border-color: var(--color-focus);
   box-shadow: 0 0 0 3px rgba(243, 112, 33, 0.15);
