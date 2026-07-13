@@ -10,6 +10,7 @@ import Card from '../components/Card.astro';
 import Team from '../components/Team.astro';
 import AccordionGroup from '../components/AccordionGroup.astro';
 import Accordion from '../components/Accordion.astro';
+import Steps from '../components/Steps.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -23,22 +24,22 @@ const audienceFeatures = [
     tagline: 'Adapt & Iterate',
     features: [
       {
-        title: 'Step 1: Find the right foundation',
+        title: 'Find the right foundation',
         body: 'Discover a growing library of free, open textbooks and resources ready to use and adapt.',
         note: 'Move beyond searching through scattered resources or relying on textbooks that are outdated, locked behind paywalls, or difficult to modify.',
       },
       {
-        title: 'Step 2: Adapt materials to your students',
+        title: 'Adapt materials to your students',
         body: 'Change examples, datasets, assessments, explanations, and activities to match your learners and your teaching goals.',
         note: 'Teach core concepts through content that feels relevant, meaningful, and accessible to your students.',
       },
       {
-        title: 'Step 3: Choose the variant that fits',
+        title: 'Choose the variant that fits',
         body: 'Choose or build on variants created for different audiences, tools, and disciplines.',
         note: 'Avoid one-size-fits-all textbooks and build learning experiences that reflect the diversity of your students.',
       },
       {
-        title: 'Step 4: Improve your course over time',
+        title: 'Improve your course over time',
         body: 'Continuously refine resources as your course and students evolve.',
         note: 'Keep your resources current while contributing to a community of educators who are continuously improving teaching and learning.',
       },
@@ -50,22 +51,22 @@ const audienceFeatures = [
     tagline: 'Adapt & Innovate',
     features: [
       {
-        title: 'Step 1: Start from “What Works”',
+        title: 'Start from “What Works”',
         body: 'Build on existing open textbooks and resources instead of starting from a blank page.',
         note: 'Remove the biggest barriers to textbook creation, time, cost, and expertise, so more educators can become authors.',
       },
       {
-        title: 'Step 2: Create your own variant',
+        title: 'Create your own variant',
         body: 'Add your examples, datasets, assessments, explanations, and activities to develop a textbook that fits your course.',
         note: 'Transform a good textbook into the right textbook for your students and your context.',
       },
       {
-        title: 'Step 3: Collaborate beyond the classroom',
+        title: 'Collaborate beyond the classroom',
         body: 'Share your adaptations and build on the work of other educators.',
         note: 'Move from isolated course materials to a community where teaching innovations can be reused and improved.',
       },
       {
-        title: 'Step 4: Get recognised for your contribution',
+        title: 'Get recognised for your contribution',
         body: 'Publish your adapted textbook variant and receive attribution as a contributor to the open library.',
         note: 'Your teaching expertise becomes a visible contribution that helps others while building your academic profile.',
       },
@@ -77,22 +78,22 @@ const audienceFeatures = [
     tagline: 'Create & Evolve',
     features: [
       {
-        title: 'Step 1: Make your work reusable',
+        title: 'Make your work reusable',
         body: 'Create resources that can be adapted across platforms, formats, and teaching contexts.',
         note: 'Keep your textbook accessible and valuable as technology, disciplines, and learner needs change.',
       },
       {
-        title: 'Step 2: Extend your textbook’s reach',
+        title: 'Extend your textbook’s reach',
         body: 'Enable educators to discover, adopt, and adapt your work for new audiences.',
         note: 'Help your ideas reach learners and communities beyond the original context you designed them for.',
       },
       {
-        title: 'Step 3: Understand your impact',
+        title: 'Understand your impact',
         body: 'Gain insight into how your resources are being used, adapted, and built upon.',
         note: 'See the real-world influence of your work and discover new opportunities for collaboration.',
       },
       {
-        title: 'Step 4: Evolve with the community',
+        title: 'Evolve with the community',
         body: 'Use feedback and contributions from educators to improve future versions of your textbook.',
         note: 'Keep your work alive, current, and continuously improving alongside your field.',
       },
@@ -330,23 +331,7 @@ const audienceFeatures = [
               <p class="audience-panel__tagline">
                 {audience.name} · <em>{audience.tagline}</em>
               </p>
-              <ol class="audience-panel__features">
-                {audience.features.map((feature, i) => (
-                  <li class="audience-panel__feature">
-                    <span class="audience-panel__feature-step" aria-hidden="true">
-                      {i + 1}
-                    </span>
-                    <div class="audience-panel__feature-content">
-                      <p class="audience-panel__feature-title">
-                        <span class="visually-hidden">Step {i + 1}: </span>
-                        {feature.title.replace(/^Step \d+:\s*/, '')}
-                      </p>
-                      <p>{feature.body}</p>
-                      <p class="audience-panel__feature-note">{feature.note}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+              <Steps steps={audience.features} />
             </div>
           ))
         }
@@ -742,77 +727,6 @@ const audienceFeatures = [
   }
   .audience-panel__tagline em {
     font-weight: 400;
-    color: var(--color-text-subtle);
-  }
-  /*
-   * EXPERIMENTAL — step-sequence visualization.
-   * Doc feedback: with "Step 1/2/3/4" as plain text, the four features don't
-   * read as an obvious sequence. This tries a numbered-circle stepper with a
-   * connecting line instead of the previous 2-column grid. It's likely to be
-   * rejected in favour of just the plain "Step N:" text — to roll back,
-   * revert this commit; the title strings themselves are untouched (the
-   * "Step N:" prefix is stripped at render time, not in the data), so
-   * reverting restores the prior plain-text rendering exactly.
-   */
-  .audience-panel__features {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-  }
-  .audience-panel__feature {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.75rem 1fr;
-    column-gap: var(--space-4);
-    padding-bottom: var(--space-5);
-  }
-  .audience-panel__feature:last-child {
-    padding-bottom: 0;
-  }
-  .audience-panel__feature-step {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: 50%;
-    background: var(--color-accent);
-    color: #ffffff;
-    font-size: var(--text-sm);
-    font-weight: 600;
-  }
-  /* Connecting line: spans from the bottom of this item's circle down to the
-     bottom of the `<li>` box (i.e. to where the next circle starts), so it
-     adapts to each feature's content height instead of assuming a fixed
-     distance between circles. */
-  .audience-panel__feature:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    top: 1.75rem;
-    bottom: 0;
-    left: calc(1.75rem / 2 - 1px);
-    width: 2px;
-    background: var(--color-border-strong);
-  }
-  .audience-panel__feature-title {
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-  .audience-panel__features p {
-    /* Same rationale as Card's body text: standard site size, not a step
-       smaller. */
-    font-size: var(--text-base);
-    line-height: var(--leading-normal);
-    color: var(--color-text-muted);
-  }
-  .audience-panel__feature-note {
-    margin-top: var(--space-2);
-    font-style: italic;
     color: var(--color-text-subtle);
   }
 

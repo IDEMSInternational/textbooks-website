@@ -31,6 +31,8 @@ import ButtonGroup from '../components/ButtonGroup.astro';
 import Rows from '../components/Rows.astro';
 import Row from '../components/Row.astro';
 import InterestForm from '../components/InterestForm.astro';
+import ArchitectureDiagram from '../components/ArchitectureDiagram.astro';
+import Steps from '../components/Steps.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -60,6 +62,8 @@ const contentComponents = {
   Rows,
   Row,
   InterestForm,
+  ArchitectureDiagram,
+  Steps,
 };
 ---
 
