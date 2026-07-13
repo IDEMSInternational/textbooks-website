@@ -18,8 +18,8 @@
  * keeps the default orange highlight.
  *
  * `titleEmphasis` is for the rare section that needs to outrank its neighbours
- * (e.g. a "solution" following a "problem" section) — centers the title,
- * bumps it a step larger, and colours it with the accent.
+ * (e.g. a "solution" following a "problem" section) — centers the title and
+ * colours it with the accent.
  *
  * `eyebrowBadge` renders the eyebrow as a status pill (the shared
  * <StatusBadge> — an accent-tinted, dot-prefixed capsule) instead of plain
@@ -41,6 +41,12 @@
  * opt into this to render it. Off by default so it doesn't affect `title`
  * slots (e.g. on .astro pages), whose own JSX-formatting whitespace/newlines
  * would otherwise start rendering as unwanted extra line breaks too.
+ *
+ * `titleHighlight` accent-colours a single phrase within a plain-string
+ * `title`, leaving the rest in the default text colour (e.g. "IDEMS
+ * Middleware: …" with only "IDEMS Middleware" orange). It's the partial
+ * counterpart to `titleEmphasis`, which accents the whole line — and works on
+ * MDX pages, where the string `title` prop is the only way to mark up a title.
  */
 import StatusBadge from './StatusBadge.astro';
 
@@ -55,6 +61,7 @@ interface Props {
   centeredHead?: boolean;
   eyebrowAccent2?: boolean;
   titleLineBreak?: boolean;
+  titleHighlight?: string;
 }
 
 const {
@@ -68,10 +75,25 @@ const {
   centeredHead = false,
   eyebrowAccent2 = false,
   titleLineBreak = false,
+  titleHighlight,
 } = Astro.props;
 const hasTitleSlot = Astro.slots.has('title');
 const hasTitle = hasTitleSlot || Boolean(title);
 const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
+
+// Split a plain-string `title` around `titleHighlight` so that phrase can be
+// accent-coloured while the rest stays the default text colour. Only applies
+// when the phrase is actually present; otherwise the title renders untouched.
+const highlightAt =
+  title && titleHighlight ? title.indexOf(titleHighlight) : -1;
+const titleParts =
+  highlightAt >= 0 && title && titleHighlight
+    ? {
+        before: title.slice(0, highlightAt),
+        highlight: titleHighlight,
+        after: title.slice(highlightAt + titleHighlight.length),
+      }
+    : null;
 ---
 
 <section
@@ -111,10 +133,19 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
               {
                 'section__title--emphasis': titleEmphasis,
                 'section__title--line-break': titleLineBreak,
+                'section__title--highlighted': titleParts,
               },
             ]}
           >
-            {hasTitleSlot ? <slot name="title" /> : title}
+            {
+              hasTitleSlot ? (
+                <slot name="title" />
+              ) : titleParts ? (
+                <Fragment>{titleParts.before}<span class="section__title-highlight">{titleParts.highlight}</span>{titleParts.after}</Fragment>
+              ) : (
+                title
+              )
+            }
           </h2>
         )}
         {subtitle && <p class="section__subtitle">{subtitle}</p>}
@@ -176,13 +207,13 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     background: #f2f7f9;
   }
 
-  /* Even vertical rhythm through the head and into the body: the eyebrow →
-     title → subtitle gaps, the head → body gap, and the body's own
-     paragraph gaps (see .section-lead) all use --space-4, so the whole
-     block reads as one consistent spacing scale rather than three. */
+  /* The head → body gap. Kept a step above the tighter within-head rhythm
+     (the eyebrow/title gaps use --space-3/--space-4) so a non-emphasis section
+     title gets a little breathing space before its content. Emphasis heads
+     override this with their own, larger gap below. */
   .section__head {
     max-width: var(--reading-width);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
   }
   .section__eyebrow {
     font-size: var(--text-sm);
@@ -224,9 +255,8 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
   }
 
   /* Emphasis variant: the title reads as the page's feature, not just
-     another section heading — centered, a step larger, accent-coloured, and
-     given extra breathing room above/below so it doesn't crowd its
-     neighbours. */
+     another section heading — centered, accent-coloured, and given extra
+     breathing room above/below so it doesn't crowd its neighbours. */
   .section__head--emphasis {
     max-width: none;
     margin-top: var(--space-4);
@@ -238,7 +268,19 @@ const hasHead = Boolean(eyebrow) || hasTitle || Boolean(subtitle);
     margin-inline: auto;
   }
   .section__title--emphasis {
-    font-size: var(--text-4xl);
+    /* No size bump — emphasis titles read at the base title size (text-3xl)
+       and are distinguished by centering and the accent colour alone. */
+    color: var(--color-accent);
+  }
+
+  /* Partial-accent title (`titleHighlight`): the line stays in the default
+     text colour — overriding the blanket accent `--emphasis` would otherwise
+     apply — and only the highlighted phrase carries the accent. Declared after
+     `--emphasis` so this wins the h2 base colour by source order. */
+  .section__title--highlighted {
+    color: var(--color-text);
+  }
+  .section__title-highlight {
     color: var(--color-accent);
   }
 

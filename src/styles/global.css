@@ -261,6 +261,14 @@ img {
   letter-spacing: -0.02em;
   margin-top: 0;
 }
+/* Space after the page h1 matches a Section title's head→body gap (--space-5),
+   a step more than the default prose rhythm. Higher specificity than
+   `.prose > * + *` so it wins for the element that follows; kept above the
+   heading rules below so an h2/h3 straight after an h1 keeps its larger top
+   margin (equal specificity, later source wins). */
+.prose h1 + * {
+  margin-top: var(--space-5);
+}
 .prose h2 {
   font-size: var(--text-xl);
   margin-top: var(--space-8);
@@ -585,6 +593,12 @@ img {
 .content-sections .section__body :where(a:not(.btn)) {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+/* Spotlight an inline run in the accent colour (e.g. a layer/product name a
+   section wants to single out). Scoped under the body so it out-specifies the
+   default `strong` colour above, and so it works on a `strong` or a `span`. */
+.content-sections .section__body .accent {
+  color: var(--color-accent);
 }
 /* Lists authored inside a Card: tighter than the browser default. */
 .content-sections .card__body :where(ul, ol) {
