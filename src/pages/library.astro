@@ -13,6 +13,7 @@
  * until the client has applied the filters, so shared links don't flash.
  */
 import Layout from '../components/Layout.astro';
+import StatusBadge from '../components/StatusBadge.astro';
 import FilterPanel from '../components/FilterPanel.astro';
 import SearchBar from '../components/SearchBar.astro';
 import TextbookCard from '../components/TextbookCard.astro';
@@ -39,6 +40,7 @@ const initialState = stateFromParams(Astro.url.searchParams);
 
   <div class="container library" data-library>
     <header class="library__intro">
+      <StatusBadge label="Early prototype" />
       <h1>Library</h1>
       <p class="library__lede">
         Browse <span data-total-count>{books.length}</span> openly hosted

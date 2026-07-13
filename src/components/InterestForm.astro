@@ -8,8 +8,9 @@
 ---
 
 {/* Submits to a Google Form. `name` attributes are the Google Form `entry.*`
-    field ids (from its pre-filled link); the "I am" checkboxes share one id and
-    use Google's `__other_option__` convention for the free-text "Other". */}
+    field ids (from its pre-filled link); each checkbox group shares one id
+    across its options and uses Google's `__other_option__` convention for the
+    free-text "Other". */}
 <form
   class="form"
   data-gform
@@ -101,7 +102,58 @@
       placeholder="Please specify"
     />
   </fieldset>
-  <button type="submit" class="btn btn--primary">Register interest</button>
+  <fieldset class="form__fieldset">
+    <legend>I'm interested in… (select all that apply)</legend>
+    <label class="form__check"
+      ><input
+        type="checkbox"
+        name="entry.1266014435"
+        value="Contributing Resources"
+      /> Contributing Resources</label
+    >
+    <label class="form__check"
+      ><input
+        type="checkbox"
+        name="entry.1266014435"
+        value="Research and Impact"
+      /> Research and Impact</label
+    >
+    <label class="form__check"
+      ><input
+        type="checkbox"
+        name="entry.1266014435"
+        value="Open Software Development"
+      /> Open Software Development</label
+    >
+    <label class="form__check"
+      ><input type="checkbox" name="entry.1266014435" value="Testing" />
+      Testing</label
+    >
+    <label class="form__check"
+      ><input
+        type="checkbox"
+        name="entry.1266014435"
+        value="Staying up-to-date"
+      /> Staying up-to-date</label
+    >
+    <label class="form__check"
+      ><input
+        type="checkbox"
+        name="entry.1266014435"
+        value="__other_option__"
+        data-other-checkbox
+      /> Other</label
+    >
+    <input
+      type="text"
+      class="form__other"
+      name="entry.1266014435.other_option_response"
+      data-other-input
+      aria-label="Other — please specify"
+      placeholder="Please specify"
+    />
+  </fieldset>
+  <button type="submit" class="btn btn--primary">Submit</button>
 </form>
 <p class="form__status" id="join-form-status" role="status" tabindex="-1" hidden>
   Thanks — we've received your details and we'll be in touch.
@@ -111,21 +163,26 @@
   const form = document.querySelector('form[data-gform]');
   if (form instanceof HTMLFormElement) {
     const status = document.getElementById('join-form-status');
-    const otherCheck = form.querySelector<HTMLInputElement>(
-      '[data-other-checkbox]',
-    );
-    const otherInput = form.querySelector<HTMLInputElement>('[data-other-input]');
 
-    // Keep "Other" and its text field in sync: Google needs the
-    // __other_option__ value selected alongside the free-text answer.
-    if (otherCheck && otherInput) {
-      otherInput.addEventListener('input', () => {
-        if (otherInput.value.trim() !== '') otherCheck.checked = true;
-      });
-      otherCheck.addEventListener('change', () => {
-        if (!otherCheck.checked) otherInput.value = '';
-      });
-    }
+    // Keep each checkbox group's "Other" and its text field in sync: Google
+    // needs the __other_option__ value selected alongside the free-text answer.
+    // Scoped per fieldset so every group's pair is wired up independently.
+    form.querySelectorAll('fieldset').forEach((fieldset) => {
+      const otherCheck = fieldset.querySelector<HTMLInputElement>(
+        '[data-other-checkbox]',
+      );
+      const otherInput = fieldset.querySelector<HTMLInputElement>(
+        '[data-other-input]',
+      );
+      if (otherCheck && otherInput) {
+        otherInput.addEventListener('input', () => {
+          if (otherInput.value.trim() !== '') otherCheck.checked = true;
+        });
+        otherCheck.addEventListener('change', () => {
+          if (!otherCheck.checked) otherInput.value = '';
+        });
+      }
+    });
 
     // Progressive enhancement: post in the background (Google Forms doesn't send
     // CORS headers, so the response is opaque) and keep the visitor on the page.

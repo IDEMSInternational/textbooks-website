@@ -487,7 +487,13 @@ img {
   width: auto;
 }
 .form__other {
+  /* Indented (and narrowed to match, since box-sizing is border-box) so it
+     reads as belonging to the "Other" checkbox above it; the wider bottom
+     margin sets it apart from the next question. */
   margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+  margin-left: var(--space-5);
+  width: calc(100% - var(--space-5));
 }
 .form button[type='submit'] {
   align-self: flex-start;
