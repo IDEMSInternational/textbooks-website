@@ -1,0 +1,43 @@
+{
+  "id": "pretextbooks/south-sudan-secondary-mathematics-3-stack",
+  "title": "Secondary Mathematics 3 (with STACK)",
+  "description": "Secondary Mathematics 3 from the Republic of South Sudan's Ministry of General Education and Instruction, covering: Logarithms; measurement and geometry (accuracy, loci and the equation of a circle); algebra (quadratics, binomial expansion, sequences and series, matrices and transformations); and an introduction to calculus. This is a variant of the original textbook with interactive STACK examples embedded, so learners can practise with automatically marked questions.",
+  "authors": [
+    "The Republic of South Sudan, Ministry of General Education and Instruction"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/south-sudan-secondary-mathematics-3-stack",
+  "library": "mathematics",
+  "language": "en",
+  "software": [
+    "general",
+    "STACK"
+  ],
+  "subject": [
+    "math"
+  ],
+  "keywords": [
+    "mathematics",
+    "secondary mathematics",
+    "South Sudan",
+    "Africa",
+    "logarithms",
+    "accuracy and bounds",
+    "loci",
+    "equation of a circle",
+    "quadratic equations",
+    "binomial expansion",
+    "sequences and series",
+    "matrices",
+    "transformations",
+    "calculus",
+    "differentiation",
+    "integration",
+    "STACK questions",
+    "interactive questions"
+  ],
+  "meta": {
+    "difficulty": "secondary",
+    "variant": true,
+    "variantOf": "pretextbooks/south-sudan-secondary-mathematics-3"
+  }
+}

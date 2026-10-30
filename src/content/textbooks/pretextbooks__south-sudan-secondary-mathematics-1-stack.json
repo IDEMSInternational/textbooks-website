@@ -1,0 +1,46 @@
+{
+  "id": "pretextbooks/south-sudan-secondary-mathematics-1-stack",
+  "title": "Secondary Mathematics 1 (with STACK)",
+  "description": "Secondary Mathematics 1 from the Republic of South Sudan's Ministry of General Education and Instruction, covering: Natural numbers, factors and proportion; measurement; geometry and trigonometry; algebra; and statistics and probability. This is a variant of the original textbook with interactive STACK examples embedded, so learners can practise with automatically marked questions.",
+  "authors": [
+    "The Republic of South Sudan, Ministry of General Education and Instruction"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/south-sudan-secondary-mathematics-1-stack",
+  "library": "mathematics",
+  "language": "en",
+  "software": [
+    "general",
+    "STACK"
+  ],
+  "subject": [
+    "math"
+  ],
+  "keywords": [
+    "mathematics",
+    "secondary mathematics",
+    "South Sudan",
+    "Africa",
+    "natural numbers",
+    "factors",
+    "fractions",
+    "percentages",
+    "standard form",
+    "measurement",
+    "area and volume",
+    "geometry",
+    "trigonometry",
+    "bearings",
+    "algebra",
+    "equations",
+    "inequalities",
+    "statistics",
+    "probability",
+    "STACK questions",
+    "interactive questions"
+  ],
+  "meta": {
+    "difficulty": "secondary",
+    "variant": true,
+    "variantOf": "pretextbooks/south-sudan-secondary-mathematics-1"
+  }
+}

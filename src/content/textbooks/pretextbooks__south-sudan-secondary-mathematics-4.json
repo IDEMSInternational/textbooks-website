@@ -1,0 +1,39 @@
+{
+  "id": "pretextbooks/south-sudan-secondary-mathematics-4",
+  "title": "Secondary Mathematics 4",
+  "description": "Secondary Mathematics 4 from the Republic of South Sudan's Ministry of General Education and Instruction, covering: Complex numbers; measurement and trigonometry; inequalities and vectors (including linear programming, permutations and combinations); and calculus (differentiation, kinematics and integration).",
+  "authors": [
+    "The Republic of South Sudan, Ministry of General Education and Instruction"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/south-sudan-secondary-mathematics-4-svc/secondary-mathematics-4-2.html",
+  "library": "mathematics",
+  "language": "en",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "math"
+  ],
+  "keywords": [
+    "mathematics",
+    "secondary mathematics",
+    "South Sudan",
+    "Africa",
+    "complex numbers",
+    "Argand diagram",
+    "area estimation",
+    "trapezium rule",
+    "trigonometric functions",
+    "linear inequalities",
+    "linear programming",
+    "permutations and combinations",
+    "vectors",
+    "calculus",
+    "differentiation",
+    "kinematics",
+    "integration"
+  ],
+  "meta": {
+    "difficulty": "secondary"
+  }
+}
