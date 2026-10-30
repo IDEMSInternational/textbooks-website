@@ -29,7 +29,10 @@ npm run test         # both of the above
 ## What it does
 
 - **Home** (`/`) — short description + a live textbook count.
-- **Library** (`/library`) — the primary feature:
+- **Library** (`/library`) — a landing page linking to the **Statistics**
+  (`/library/statistics`) and **Mathematics** (`/library/mathematics`) libraries.
+  A book joins a library via its optional `library` field (default `statistics`).
+  Each library page offers:
   - Multi-select filters for **language**, **software**, **subject**, derived
     dynamically from the data (never hardcoded).
   - Case-insensitive **search** across title, description, keywords and authors.
@@ -67,7 +70,7 @@ src/
 ├─ styles/global.css          # design tokens + base + prose styles
 └─ pages/
    ├─ index.astro
-   ├─ library.astro
+   ├─ library/ (index, statistics, mathematics)
    └─ [slug].astro            # generic route for every markdown page
 ```
 

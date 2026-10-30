@@ -41,7 +41,7 @@
     "library": {
       "type": "string",
       "enum": ["statistics", "mathematics"],
-      "description": "Which library page the book is listed on. Defaults to statistics when omitted."
+      "description": "Which library the book is listed in. Defaults to \"statistics\" when omitted."
     },
     "language": {
       "type": "string",
