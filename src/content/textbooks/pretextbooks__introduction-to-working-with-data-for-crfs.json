@@ -1,7 +1,7 @@
 {
   "id": "pretextbooks/introduction-to-working-with-data-for-crfs",
   "title": "Introduction to Working with Data for CRFS",
-  "description": "A practical, data-first introduction to working with real data in R, set in a Kenyan context. Each chapter opens with a real case study and an interactive STACK question, then works through the skills that come before any trustworthy result: understanding how data is structured, exploring and cleaning it, reshaping it, handling factors and missing values, and measuring and accounting for variability. No prior R experience is needed, and no mathematics beyond arithmetic. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "description": "A practical, data-first introduction to working with real data in R, set in a Sahel context. Each chapter opens with a real case study and an interactive STACK question, then works through the skills that come before any trustworthy result: understanding how data is structured, exploring and cleaning it, reshaping it, handling factors and missing values, and measuring and accounting for variability. No prior R experience is needed, and no mathematics beyond arithmetic. This variant is adapted for CRFS, with the Kenyan context replaced by the Sahel.",
   "authors": [
     "Lily Clements"
   ],
