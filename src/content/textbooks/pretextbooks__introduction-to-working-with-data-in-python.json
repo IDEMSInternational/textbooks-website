@@ -1,7 +1,7 @@
 {
   "id": "pretextbooks/introduction-to-working-with-data-in-python",
   "title": "Introduction to Working with Data in Python",
-  "description": "A practical, data-first introduction to working with real data in R, set in a Kenyan context. Each chapter opens with a real case study and an interactive STACK question, then works through the skills that come before any trustworthy result: understanding how data is structured, exploring and cleaning it, reshaping it, handling factors and missing values, and measuring and accounting for variability. No prior R experience is needed, and no mathematics beyond arithmetic. This variant teaches the same material in Python instead of R, keeping the Kenyan context.",
+  "description": "A practical, data-first introduction to working with real data in Python, set in a Kenyan context. Each chapter opens with a real case study and an interactive STACK question, then works through the skills that come before any trustworthy result: understanding how data is structured, exploring and cleaning it, reshaping it, handling factors and missing values, and measuring and accounting for variability. No prior Python experience is needed, and no mathematics beyond arithmetic. This variant is the Python version of the book, keeping the Kenyan context.",
   "authors": [
     "Lily Clements"
   ],
