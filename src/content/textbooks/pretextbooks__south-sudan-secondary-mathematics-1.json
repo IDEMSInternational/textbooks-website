@@ -1,0 +1,41 @@
+{
+  "id": "pretextbooks/south-sudan-secondary-mathematics-1",
+  "title": "Secondary Mathematics 1",
+  "description": "Secondary Mathematics 1 from the Republic of South Sudan's Ministry of General Education and Instruction, covering: Natural numbers, factors and proportion; measurement; geometry and trigonometry; algebra; and statistics and probability.",
+  "authors": [
+    "The Republic of South Sudan, Ministry of General Education and Instruction"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/south-sudan-secondary-mathematics-1-svc/secondary-mathematics-1-2.html",
+  "library": "mathematics",
+  "language": "en",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "math"
+  ],
+  "keywords": [
+    "mathematics",
+    "secondary mathematics",
+    "South Sudan",
+    "Africa",
+    "natural numbers",
+    "factors",
+    "fractions",
+    "percentages",
+    "standard form",
+    "measurement",
+    "area and volume",
+    "geometry",
+    "trigonometry",
+    "bearings",
+    "algebra",
+    "equations",
+    "inequalities",
+    "statistics",
+    "probability"
+  ],
+  "meta": {
+    "difficulty": "secondary"
+  }
+}

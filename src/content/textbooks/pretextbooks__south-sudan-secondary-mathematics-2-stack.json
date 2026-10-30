@@ -1,0 +1,44 @@
+{
+  "id": "pretextbooks/south-sudan-secondary-mathematics-2-stack",
+  "title": "Secondary Mathematics 2 (with STACK)",
+  "description": "Secondary Mathematics 2 from the Republic of South Sudan's Ministry of General Education and Instruction, covering: Numerical concepts (indices, surds and commercial arithmetic), geometric figures and Pythagoras' theorem, algebra (quadratics, vectors, sets, matrices and functions), and statistics. This is a variant of the original textbook with interactive STACK examples embedded, so learners can practise with automatically marked questions.",
+  "authors": [
+    "The Republic of South Sudan, Ministry of General Education and Instruction"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/south-sudan-secondary-mathematics-2-stack",
+  "library": "mathematics",
+  "language": "en",
+  "software": [
+    "general",
+    "STACK"
+  ],
+  "subject": [
+    "math"
+  ],
+  "keywords": [
+    "mathematics",
+    "secondary mathematics",
+    "South Sudan",
+    "Africa",
+    "indices",
+    "surds",
+    "simple and compound interest",
+    "coordinate geometry",
+    "Pythagoras' theorem",
+    "quadratic equations",
+    "vectors",
+    "sets",
+    "Venn diagrams",
+    "matrices",
+    "functions",
+    "statistics",
+    "cumulative frequency",
+    "STACK questions",
+    "interactive questions"
+  ],
+  "meta": {
+    "difficulty": "secondary",
+    "variant": true,
+    "variantOf": "pretextbooks/south-sudan-secondary-mathematics-2"
+  }
+}
