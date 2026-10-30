@@ -1,0 +1,36 @@
+{
+  "id": "pretextbooks/lies-damned-lies-or-statistics-for-crfs",
+  "title": "Lies, Damned Lies, or Statistics for CRFS",
+  "description": "An introductory statistics textbook covering descriptive statistics, bivariate analysis, linear regression, probability, and basic inference. Written for a one-semester undergraduate course and first used at Colorado State University–Pueblo. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Jonathan A. Poritz; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/lies-damned-statistics-svc-crfs/",
+  "language": "en",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory statistics",
+    "descriptive statistics",
+    "bivariate statistics",
+    "linear regression",
+    "probability theory",
+    "statistical inference",
+    "undergraduate statistics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/lies-damned-lies-or-statistics"
+  }
+}

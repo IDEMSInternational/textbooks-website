@@ -1,0 +1,45 @@
+{
+  "id": "pretextbooks/introduction-to-data-science-statistics-and-prediction-algorithms-through-case-studies-for-crfs",
+  "title": "Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies for CRFS",
+  "description": "The second book of the Introduction to Data Science series, covering probability, statistical inference, regression, and machine learning through real-world case studies in R. Teaches students to think statistically — reasoning about uncertainty, model assumptions, and prediction — rather than just applying computational tools. Suitable for an advanced one-semester data science course. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Rafael A. Irizarry; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/dataskills-part-2-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "probability",
+    "statistical inference",
+    "regression",
+    "machine learning",
+    "high-dimensional data analysis",
+    "prediction algorithms",
+    "uncertainty quantification",
+    "tidyverse",
+    "data.table",
+    "base R",
+    "reproducible research",
+    "polling",
+    "genomics",
+    "recommendation systems",
+    "advanced data science",
+    "case studies",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "CC BY-NC-SA 4.0",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-data-science-statistics-and-prediction-algorithms-through-case-studies"
+  }
+}

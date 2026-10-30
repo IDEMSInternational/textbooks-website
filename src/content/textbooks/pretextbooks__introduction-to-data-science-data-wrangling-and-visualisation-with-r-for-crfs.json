@@ -1,0 +1,43 @@
+{
+  "id": "pretextbooks/introduction-to-data-science-data-wrangling-and-visualisation-with-r-for-crfs",
+  "title": "Introduction to Data Science: Data Wrangling and Visualisation with R for CRFS",
+  "description": "The first book of the second edition of Introduction to Data Science, covering R programming, data wrangling, visualization, and productivity tools through real-world case studies. No prior R experience required - ideal as a first course in data science. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Rafael A. Irizarry; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/dataskills-part-1-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "R programming",
+    "data wrangling",
+    "data visualization",
+    "ggplot2",
+    "dplyr",
+    "UNIX",
+    "Git",
+    "GitHub",
+    "Quarto",
+    "knitr",
+    "data.table",
+    "reproducible research",
+    "introductory data science",
+    "case studies",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "CC BY-NC-SA 4.0",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-data-science-data-wrangling-and-visualisation-with-r"
+  }
+}

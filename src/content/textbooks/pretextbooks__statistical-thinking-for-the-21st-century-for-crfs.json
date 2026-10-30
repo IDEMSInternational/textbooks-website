@@ -1,0 +1,46 @@
+{
+  "id": "pretextbooks/statistical-thinking-for-the-21st-century-for-crfs",
+  "title": "Statistical Thinking for the 21st Century for CRFS",
+  "description": "A comprehensive introduction to statistical thinking that is grounded in mathematics and statistics but draws on computer science and psychology. The book treats statistics as a way of understanding a complex world - not just a set of computational procedures. Covers both classical and modern approaches including resampling, simulation, and the general linear model. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Russell A. Poldrack; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/statsthinking21-core-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "statistical thinking",
+    "probability",
+    "data visualisation",
+    "hypothesis testing",
+    "Bayesian statistics",
+    "confidence intervals",
+    "effect sizes",
+    "statistical power",
+    "regression",
+    "general linear model",
+    "categorical modelling",
+    "resampling",
+    "simulation",
+    "reproducible research",
+    "introductory statistics",
+    "R programming",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY-NC",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/statistical-thinking-for-the-21st-century"
+  }
+}

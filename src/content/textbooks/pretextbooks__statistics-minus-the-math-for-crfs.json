@@ -1,0 +1,49 @@
+{
+  "id": "pretextbooks/statistics-minus-the-math-for-crfs",
+  "title": "Statistics Minus The Math for CRFS",
+  "description": "An accessible introduction to statistics minimising mathematical formalism in favour of conceptual understanding and interpretation. Adapted largely from the open resource Online Statistics Education (Lane, Rice University). This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Nathan Favero; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/minus-the-math-svc-crfs/",
+  "language": "en",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "general",
+    "social science",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory statistics",
+    "social sciences",
+    "applied statistics",
+    "regression",
+    "qualitative independent variables",
+    "qualitative dependent variables",
+    "hypothesis testing",
+    "confidence intervals",
+    "ANOVA",
+    "probability distributions",
+    "sampling distributions",
+    "experimental design",
+    "causality",
+    "contingency tables",
+    "conceptual statistics",
+    "minimal math",
+    "undergraduate statistics",
+    "open educational resource",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/statistics-minus-the-math"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "pretextbooks/modern-dive-for-crfs",
+  "title": "Modern Dive for CRFS",
+  "description": "A gentle, computation-first introduction to statistical inference and data science using R and the Tidyverse, requiring no prior algebra, calculus, or programming experience. Covers data visualisation, wrangling, and importing with tidyverse, regression modelling with moderndive, and statistical inference via simulation-based methods using the infer package. Emphasises reproducibility and conceptual understanding over mathematical formulas throughout. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Chester Ismay, Albert Y. Kim, Arturo Valdivia; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/ModernDive_book-svc-crfs/meta-front.html",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "statistical inference",
+    "data science",
+    "R programming",
+    "tidyverse",
+    "ggplot2",
+    "dplyr",
+    "tidyr",
+    "linear regression",
+    "multiple regression",
+    "bootstrapping",
+    "hypothesis testing",
+    "confidence intervals",
+    "simulation-based inference",
+    "reproducible research",
+    "introductory statistics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC-NC-SA",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/modern-dive"
+  }
+}

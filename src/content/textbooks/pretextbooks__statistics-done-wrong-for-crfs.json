@@ -1,0 +1,42 @@
+{
+  "id": "pretextbooks/statistics-done-wrong-for-crfs",
+  "title": "Statistics done Wrong for CRFS",
+  "description": "A concise, accessible guide to the most common statistical errors made by scientists, covering p-values, statistical power, pseudoreplication, multiple comparisons, base rate fallacies, researcher degrees of freedom, and publication bias. Requires no prior statistical knowledge and is equally relevant for beginners and experienced researchers. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Alex Reinhart; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/statisticsdonewrong-svc-crfs/frontmatter.html",
+  "language": "en",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "statistical errors",
+    "p-values",
+    "statistical power",
+    "multiple comparisons",
+    "pseudoreplication",
+    "false discovery rate",
+    "publication bias",
+    "base rate fallacy",
+    "regression to the mean",
+    "researcher degrees of freedom",
+    "replication crisis",
+    "scientific methodology",
+    "critical statistics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "Creative Commons Attribution 3.0 Unported License",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/statistics-done-wrong"
+  }
+}

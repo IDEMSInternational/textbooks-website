@@ -1,0 +1,45 @@
+{
+  "id": "pretextbooks/data-science-a-first-introduction-for-crfs",
+  "title": "Data Science: A First Introduction for CRFS",
+  "description": "A comprehensive first introduction to data science using R and the Tidyverse, covering data wrangling, visualisation, classification, regression, clustering, and statistical inference. Also includes practical chapters on reproducible workflows with Jupyter, version control with Git and GitHub, and setting up a computing environment. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Tiffany Timbers, Trevor Campbell, Melissa Lee; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/introduction-to-datascience-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "data science",
+    "R programming",
+    "tidyverse",
+    "data wrangling",
+    "data visualisation",
+    "ggplot2",
+    "K-nearest neighbours",
+    "classification",
+    "linear regression",
+    "clustering",
+    "K-means",
+    "statistical inference",
+    "bootstrapping",
+    "Jupyter",
+    "version control",
+    "GitHub",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "CC-BY-SA",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/data-science-a-first-introduction"
+  }
+}
