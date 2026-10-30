@@ -11,6 +11,9 @@
  * license, prerequisites, ...) can be added WITHOUT changing this interface or
  * migrating existing data. Unknown fields are ignored safely by the UI.
  */
+export const LIBRARY_IDS = ['statistics', 'mathematics'] as const;
+export type LibraryId = (typeof LIBRARY_IDS)[number];
+
 export interface Textbook {
   /**
    * The textbook's own GitHub repository as `<owner>/<repo>` (e.g.
@@ -22,6 +25,9 @@ export interface Textbook {
   description: string;
   authors: string[];
   url: string; // external textbook site (e.g. GitHub Pages)
+
+  /** Which library the book is listed in. Defaults to "statistics". */
+  library?: LibraryId;
 
   language?: string;
   software?: string[]; // e.g. ["Python"], ["R"], ["general", "R"]

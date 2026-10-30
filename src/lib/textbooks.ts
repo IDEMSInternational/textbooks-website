@@ -16,8 +16,8 @@
  * Keep this layer thin and explicit: load, normalise, derive facets. No
  * rendering concerns, no filtering concerns (those live in `filtering.ts`).
  */
-import type { Textbook, Facet, FacetKey } from './types';
-import { FACET_KEYS, facetValues } from './types';
+import type { Textbook, Facet, FacetKey, LibraryId } from './types';
+import { FACET_KEYS, LIBRARY_IDS, facetValues } from './types';
 
 /**
  * Eagerly load every per-textbook JSON document. The glob is resolved by Vite at
@@ -60,6 +60,10 @@ function normalise(raw: unknown): Textbook | null {
       ? r.authors.filter((a): a is string => typeof a === 'string')
       : [],
     url: r.url,
+    // Books without an explicit library belong to Statistics.
+    library: LIBRARY_IDS.includes(r.library as LibraryId)
+      ? (r.library as LibraryId)
+      : 'statistics',
   };
 
   // Optional facets — `language` is single-valued, `software`/`subject` are
@@ -98,13 +102,14 @@ let cache: Textbook[] | null = null;
  * sorted by title so the library order is deterministic regardless of the
  * filesystem/glob order.
  */
-export async function getTextbooks(): Promise<Textbook[]> {
-  if (cache) return cache;
-  cache = Object.values(textbookModules)
-    .map((mod) => normalise(mod.default))
-    .filter((b): b is Textbook => b !== null)
-    .sort((a, b) => a.title.localeCompare(b.title));
-  return cache;
+export async function getTextbooks(library?: LibraryId): Promise<Textbook[]> {
+  if (!cache) {
+    cache = Object.values(textbookModules)
+      .map((mod) => normalise(mod.default))
+      .filter((b): b is Textbook => b !== null)
+      .sort((a, b) => a.title.localeCompare(b.title));
+  }
+  return library ? cache.filter((b) => b.library === library) : cache;
 }
 
 /** Convenience: total count, for the home-page stat. */
@@ -118,8 +123,8 @@ export async function getTextbookCount(): Promise<number> {
  * alphabetically (locale-aware). Facets with no values are omitted so the UI
  * doesn't render empty filter groups.
  */
-export async function getFacets(): Promise<Facet[]> {
-  const books = await getTextbooks();
+export async function getFacets(library?: LibraryId): Promise<Facet[]> {
+  const books = await getTextbooks(library);
   const facets: Facet[] = [];
 
   for (const key of FACET_KEYS) {
