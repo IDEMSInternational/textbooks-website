@@ -38,6 +38,11 @@
       "minLength": 1,
       "description": "Absolute URL of the externally hosted textbook site."
     },
+    "library": {
+      "type": "string",
+      "enum": ["statistics", "mathematics"],
+      "description": "Which library the book is listed in. Defaults to \"statistics\" when omitted."
+    },
     "language": {
       "type": "string",
       "minLength": 1,

@@ -1,0 +1,118 @@
+---
+/**
+ * Library landing — chooses between the subject libraries. Each library is its
+ * own page (`/library/statistics`, `/library/mathematics`) rendered by
+ * `LibraryView`; book counts are derived from the data, not hardcoded.
+ */
+import Layout from '../../components/Layout.astro';
+import { getTextbooks } from '../../lib/textbooks';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const libraries = await Promise.all(
+  [
+    {
+      id: 'statistics',
+      name: 'Statistics Library',
+      blurb: 'Openly hosted textbooks on statistics, data analysis and data science.',
+    },
+    {
+      id: 'mathematics',
+      name: 'Mathematics Library',
+      blurb: 'Openly hosted mathematics textbooks.',
+    },
+  ].map(async (lib) => ({
+    ...lib,
+    href: `${base}/library/${lib.id}`,
+    count: (await getTextbooks(lib.id as 'statistics' | 'mathematics')).length,
+  })),
+);
+---
+
+<Layout
+  title="Library"
+  description="Browse the statistics and mathematics libraries of openly hosted digital textbooks."
+>
+  <div class="container">
+    <header class="intro">
+      <h1>Library</h1>
+      <p>Choose a library to browse.</p>
+    </header>
+
+    <ul class="choices" role="list">
+      {
+        libraries.map((lib) => (
+          <li>
+            <a class="choice" href={lib.href}>
+              <h2>{lib.name}</h2>
+              <p>{lib.blurb}</p>
+              <p class="choice__count">
+                {lib.count > 0
+                  ? `${lib.count} ${lib.count === 1 ? 'textbook' : 'textbooks'}`
+                  : 'Coming soon'}
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    margin-bottom: var(--space-6);
+  }
+  .intro h1 {
+    font-size: var(--text-3xl);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-3);
+  }
+  .intro p {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+  .choices {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+  }
+  .choice {
+    display: block;
+    height: 100%;
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    padding: var(--space-5);
+    color: inherit;
+    transition:
+      border-color 0.12s ease,
+      box-shadow 0.12s ease;
+  }
+  .choice:hover {
+    text-decoration: none;
+    border-color: var(--color-border-strong);
+    box-shadow: 0 1px 3px rgba(24, 24, 27, 0.06);
+  }
+  .choice h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+  .choice p {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+  .choice__count {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  @media (min-width: 48rem) {
+    .choices {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
