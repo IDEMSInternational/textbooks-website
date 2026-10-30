@@ -34,7 +34,7 @@ const { library, name } = Astro.props;
 const books = await getTextbooks(library);
 const facets = await getFacets(library);
 const initialState = stateFromParams(Astro.url.searchParams);
-const base = import.meta.env.BASE_URL.replace(//$/, '');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout
