@@ -1,0 +1,42 @@
+{
+  "id": "pretextbooks/tidyverse-skills-for-data-science-in-r-for-crfs",
+  "title": "Tidyverse Skills for Data Science in R for CRFS",
+  "description": "A practical guide to data science using the Tidyverse ecosystem in R, covering the full project lifecycle from data import and wrangling through visualisation and modelling using the Tidymodels framework. Aimed at R users looking to adopt a consistent, scalable tidy approach to data science. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Carrie Wright, Shannon E. Ellis, Stephanie C. Hicks, Roger D. Peng; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/tidyversecourse-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "Tidyverse",
+    "R programming",
+    "data science",
+    "data wrangling",
+    "data visualisation",
+    "Tidymodels",
+    "machine learning",
+    "data import",
+    "ggplot2",
+    "dplyr",
+    "tidyr",
+    "modelling",
+    "reproducible workflows",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "CC-BY-NC 4.0",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/tidyverse-skills-for-data-science-in-r"
+  }
+}

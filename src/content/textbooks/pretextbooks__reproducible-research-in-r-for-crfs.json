@@ -1,0 +1,44 @@
+{
+  "id": "pretextbooks/reproducible-research-in-r-for-crfs",
+  "title": "Reproducible Research in R for CRFS",
+  "description": "A practical, workflow-focused introduction to R for researchers and students who want to conduct and communicate reproducible research, treating reproducibility as a default practice rather than an advanced topic. Requires no prior programming experience. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Christian Martinez; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/Reproducible-Research-Using-R-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "reproducible research",
+    "R programming",
+    "RStudio",
+    "tidyverse",
+    "ggplot2",
+    "R Markdown",
+    "data visualisation",
+    "data wrangling",
+    "t-tests",
+    "ANOVA",
+    "correlation",
+    "linear regression",
+    "logistic regression",
+    "categorical data analysis",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/reproducible-research-in-r"
+  }
+}

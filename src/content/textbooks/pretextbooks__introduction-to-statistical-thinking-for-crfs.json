@@ -1,0 +1,42 @@
+{
+  "id": "pretextbooks/introduction-to-statistical-thinking-for-crfs",
+  "title": "Introduction to Statistical Thinking for CRFS",
+  "description": "An introductory statistics textbook for college students with little mathematical background, integrating R through a deliberately limited set of commands to support rather than distract from statistical learning. Covers core topics from descriptive statistics and probability through inference, regression, and logistic modelling, with a focus on understanding over computation. This variant is adapted for CRFS: the examples and context have been changed to fit CRFS work in Africa and the Sahel.",
+  "authors": [
+    "Original by Benjamin Yakir; this variant is for CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/statthink-svc-crfs/",
+  "language": "en",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory statistics",
+    "R programming",
+    "statistical inference",
+    "descriptive statistics",
+    "probability",
+    "confidence intervals",
+    "hypothesis testing",
+    "linear regression",
+    "logistic regression",
+    "sampling",
+    "normal distribution",
+    "random variables",
+    "undergraduate course",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel"
+  ],
+  "meta": {
+    "license": "CC-BY",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-statistical-thinking"
+  }
+}
