@@ -16,11 +16,9 @@ const libraries = await Promise.all(
       name: 'Statistics Library',
       blurb: 'Openly hosted textbooks on statistics, data analysis and data science.',
     },
-    {
-      id: 'mathematics',
-      name: 'Mathematics Library',
-      blurb: 'Openly hosted mathematics textbooks.',
-    },
+    // Mathematics library temporarily hidden (not yet public). To restore:
+    // rename `_mathematics.astro` back to `mathematics.astro` and re-add:
+    // { id: 'mathematics', name: 'Mathematics Library', blurb: 'Openly hosted mathematics textbooks.' },
   ].map(async (lib) => ({
     ...lib,
     href: `${base}/library/${lib.id}`,
@@ -31,7 +29,7 @@ const libraries = await Promise.all(
 
 <Layout
   title="Library"
-  description="Browse the statistics and mathematics libraries of openly hosted digital textbooks."
+  description="Browse the statistics library of openly hosted digital textbooks."
 >
   <div class="container">
     <header class="intro">
