@@ -1,9 +1,13 @@
 {
   "id": "pretextbooks/mixed-research-methods-for-agroecology",
-  "title": "Mixed Research Methods for Agroecology",
+  "title": "Research Judgement in Practice: Lessons from Twenty Years of Supporting Agricultural Research",
   "description": "Good research in agroecology depends on a long run of judgements that rarely appear in methods textbooks: what question is worth asking, how to design a study that can answer it, what to compare against, what to measure, and at what level to draw conclusions. This book follows those judgements through accounts of real research conversations and projects, mainly in West African crop and farming-systems work. The book is for researchers, students, trainers and development practitioners who want to strengthen their statistical and mixed-methods thinking, and it presents design as a series of reasoned choices rather than a set of fixed rules.",
   "authors": [
-    "Rachel Kirk-Gushowaty"
+    "Rachel Kirk-Gushowaty",
+    "Roger Stern",
+    "David Stern",
+    "Lucie Hazelgrove-Planel",
+    "Lily Clements"
   ],
   "url": "https://pretextbooks.github.io/Mixed-Research-Methods-for-Agroecology/",
   "language": "en",
