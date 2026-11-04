@@ -1,0 +1,38 @@
+{
+  "id": "pretextbooks/r-instat-book",
+  "title": "Learning Statistics with R-Instat",
+  "description": "A book in progress on R-Instat, a free point-and-click statistics package built on R. The first three chapters are available so far. Chapter 1 introduces R-Instat and its dialogs by importing and exploring a cassava dataset, with factors (categorical columns) as a key idea. Chapter 2 practises working with real experimental and survey data: inspecting, checking, correcting, reshaping, labelling and transforming it, then exploring with pivot tables and graphs. Chapter 3 bridges from menus to code, moving from the calculator and other halfway dialogs to viewing, running and adapting R scripts from the R-Instat script library.",
+  "authors": [
+    "Roger Stern"
+  ],
+  "url": "https://pretextbooks.github.io/r-instat-book/",
+  "language": "en",
+  "software": [
+    "R-Instat",
+    "R"
+  ],
+  "subject": [
+    "stats"
+  ],
+  "keywords": [
+    "R",
+    "R-Instat",
+    "data",
+    "data wrangling",
+    "data cleaning",
+    "data management",
+    "data import",
+    "factors",
+    "exploratory data analysis",
+    "pivot tables",
+    "graphs",
+    "data visualisation",
+    "R scripts",
+    "point-and-click",
+    "real data",
+    "introductory statistics"
+  ],
+  "meta": {
+    "status": "in development"
+  }
+}
