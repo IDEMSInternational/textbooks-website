@@ -12,15 +12,15 @@ export const installSteps = [
     body: 'Save statistical-analysis.zip from the button above. Keep it as a single .zip file; do not unzip it yet.',
   },
   {
-    title: 'Open Claude settings',
-    body: 'In Claude (claude.ai or the desktop app), go to Settings → Capabilities and make sure Skills is switched on.',
+    title: 'Open Skills in Claude',
+    body: 'In Claude (claude.ai or the desktop app), go to Customise and choose Skills.',
   },
   {
     title: 'Upload the skill',
-    body: 'Under Skills, choose Upload skill and select the zip file.',
+    body: 'Click + Add, choose Upload skill, and select the zip file.',
   },
   {
-    title: 'Switch them on and try one',
+    title: 'Switch it on and try it',
     body: 'Make sure the skill is toggled on. Start a new chat and ask Claude to do something the skill covers; Claude will use it automatically when it is relevant.',
     note: 'Using Claude Code instead? Unzip the download into your skills folder: ~/.claude/skills/ for all projects, or .claude/skills/ inside a single project. Each skill is a folder containing a SKILL.md file. Restart Claude Code afterwards.',
   },
@@ -28,7 +28,7 @@ export const installSteps = [
 
 <Section
   eyebrow="Downloads"
-  title="WayPoint, R-Instat and Claude skills"
+  title="WayPoint, Claude skills, and R-Instat"
 >
 
 Tools you can download and use today.
@@ -43,18 +43,6 @@ WayPoint is a tool we have created for analysing your data.
 
 </Section>
 
-<Section title="R-Instat">
-
-R-Instat is a free, open-source statistical software built on R, with a menu-driven interface so you can analyse data without writing code.
-
-<ButtonGroup>
-<Button href="https://downloads.r-instat.org/R-Instat_0.8.19.136_Installer_64.exe">Download R-Instat (Windows, 64-bit)</Button>
-<Button href="https://github.com/IDEMSInternational/R-Instat/releases/tag/v0.8.15" variant="secondary">Release notes</Button>
-<Button href="https://r-instat.org/" variant="secondary">R-Instat website</Button>
-</ButtonGroup>
-
-</Section>
-
 <Section title="Claude skills">
 
 A skill that helps Claude analyse your data with you, step by step: it plans the analysis, runs it, then interprets the results, with you reviewing at each stage. It works in English or French, using Python or R. Download the zip, then follow the steps below to add the skill to Claude.
@@ -66,5 +54,17 @@ A skill that helps Claude analyse your data with you, step by step: it plans the
 ### How to add the skill to Claude
 
 <Steps steps={installSteps} />
+
+</Section>
+
+<Section title="R-Instat">
+
+R-Instat is a free, open-source statistical software built on R, with a menu-driven interface so you can analyse data without writing code.
+
+<ButtonGroup>
+<Button href="https://downloads.r-instat.org/R-Instat_0.8.19.136_Installer_64.exe">Download R-Instat (Windows, 64-bit)</Button>
+<Button href="https://github.com/IDEMSInternational/R-Instat/releases/tag/v0.8.15" variant="secondary">Release notes</Button>
+<Button href="https://r-instat.org/" variant="secondary">R-Instat website</Button>
+</ButtonGroup>
 
 </Section>
