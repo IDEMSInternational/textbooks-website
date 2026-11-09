@@ -1,0 +1,47 @@
+{
+  "id": "pretextbooks/reproducible-research-in-r-for-crfs-fr",
+  "title": "Recherche reproductible avec R pour le CRFS",
+  "description": "Une introduction pratique à R, centrée sur le flux de travail, pour les chercheurs et les étudiants qui souhaitent mener et communiquer une recherche reproductible, en traitant la reproductibilité comme une pratique par défaut plutôt que comme un sujet avancé. Aucune expérience préalable de programmation n'est requise. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Christian Martinez ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/rrr-crfs-fr/",
+  "language": "fr",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "reproducible research",
+    "R programming",
+    "RStudio",
+    "tidyverse",
+    "ggplot2",
+    "R Markdown",
+    "data visualisation",
+    "data wrangling",
+    "t-tests",
+    "ANOVA",
+    "correlation",
+    "linear regression",
+    "logistic regression",
+    "categorical data analysis",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "edition": "first",
+    "license": "CC-BY",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/reproducible-research-in-r",
+    "translationOf": "pretextbooks/reproducible-research-in-r-for-crfs"
+  }
+}
