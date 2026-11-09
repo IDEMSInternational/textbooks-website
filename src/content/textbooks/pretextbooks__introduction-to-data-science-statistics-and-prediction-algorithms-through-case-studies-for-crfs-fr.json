@@ -1,0 +1,48 @@
+{
+  "id": "pretextbooks/introduction-to-data-science-statistics-and-prediction-algorithms-through-case-studies-for-crfs-fr",
+  "title": "Introduction à la science des données : statistiques et algorithmes de prédiction par des études de cas pour le CRFS",
+  "description": "Le deuxième livre de la série Introduction to Data Science, qui couvre les probabilités, l'inférence statistique, la régression et l'apprentissage automatique à travers des études de cas réelles en R. Il apprend à penser de façon statistique, en raisonnant sur l'incertitude, les hypothèses des modèles et la prédiction, plutôt qu'en appliquant simplement des outils de calcul. Convient à un cours avancé de science des données d'un semestre. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Rafael A. Irizarry ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/dataskills-part-2-crfs-fr/",
+  "language": "fr",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "probability",
+    "statistical inference",
+    "regression",
+    "machine learning",
+    "high-dimensional data analysis",
+    "prediction algorithms",
+    "uncertainty quantification",
+    "tidyverse",
+    "data.table",
+    "base R",
+    "reproducible research",
+    "polling",
+    "genomics",
+    "recommendation systems",
+    "advanced data science",
+    "case studies",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "license": "CC BY-NC-SA 4.0",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-data-science-statistics-and-prediction-algorithms-through-case-studies",
+    "translationOf": "pretextbooks/introduction-to-data-science-statistics-and-prediction-algorithms-through-case-studies-for-crfs"
+  }
+}

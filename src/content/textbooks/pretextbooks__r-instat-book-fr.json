@@ -1,0 +1,41 @@
+{
+  "id": "pretextbooks/r-instat-book-fr",
+  "title": "Apprendre les statistiques avec R-Instat",
+  "description": "Un livre en cours de rédaction sur R-Instat, un logiciel de statistiques gratuit à interface pointer-cliquer construit sur R. Les trois premiers chapitres sont disponibles à ce jour. Le chapitre 1 présente R-Instat et ses boîtes de dialogue en important et en explorant un jeu de données sur le manioc, avec les facteurs (colonnes catégorielles) comme idée clé. Le chapitre 2 s'exerce au travail sur des données réelles d'expériences et d'enquêtes : les inspecter, les vérifier, les corriger, les restructurer, les étiqueter et les transformer, puis les explorer avec des tableaux croisés dynamiques et des graphiques. Le chapitre 3 fait le pont entre les menus et le code, en passant de la calculatrice et d'autres boîtes de dialogue intermédiaires à la consultation, l'exécution et l'adaptation de scripts R de la bibliothèque de scripts de R-Instat.",
+  "authors": [
+    "Roger Stern"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/r-instat-book-fr/",
+  "language": "fr",
+  "software": [
+    "R-Instat",
+    "R"
+  ],
+  "subject": [
+    "stats"
+  ],
+  "keywords": [
+    "R",
+    "R-Instat",
+    "data",
+    "data wrangling",
+    "data cleaning",
+    "data management",
+    "data import",
+    "factors",
+    "exploratory data analysis",
+    "pivot tables",
+    "graphs",
+    "data visualisation",
+    "R scripts",
+    "point-and-click",
+    "real data",
+    "introductory statistics",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "status": "in development",
+    "translationOf": "pretextbooks/r-instat-book"
+  }
+}

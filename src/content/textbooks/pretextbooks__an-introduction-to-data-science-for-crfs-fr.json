@@ -1,0 +1,42 @@
+{
+  "id": "pretextbooks/an-introduction-to-data-science-for-crfs-fr",
+  "title": "Une introduction à la science des données pour le CRFS",
+  "description": "Une introduction en douceur à la science des données pour les lecteurs techniques comme non techniques, utilisant R pour des exemples pratiques de manipulation de données, de visualisation, de statistiques et de fouille de données. Convient comme manuel d'un cours introductif autonome ou comme complément d'un cours d'analyse avancée, et librement adaptable à des usages non commerciaux. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Jeffrey Stanton ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/data-science-in-r-crfs-fr/",
+  "language": "fr",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory data science",
+    "R programming",
+    "data manipulation",
+    "data visualisation",
+    "statistical computing",
+    "data mining",
+    "support vector machines",
+    "non-technical introduction",
+    "analytics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "edition": "third",
+    "license": "CC BY-NC-SA",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/an-introduction-to-data-science",
+    "translationOf": "pretextbooks/an-introduction-to-data-science-for-crfs"
+  }
+}

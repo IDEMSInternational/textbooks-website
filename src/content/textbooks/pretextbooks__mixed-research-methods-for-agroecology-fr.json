@@ -1,0 +1,43 @@
+{
+  "id": "pretextbooks/mixed-research-methods-for-agroecology-fr",
+  "title": "Le jugement en recherche en pratique : leçons de vingt ans de soutien à la recherche agricole",
+  "description": "Une bonne recherche en agroécologie repose sur une longue suite de jugements qui apparaissent rarement dans les manuels de méthodes : quelle question mérite d'être posée, comment concevoir une étude capable d'y répondre, avec quoi comparer, que mesurer et à quel niveau tirer des conclusions. Ce livre suit ces jugements à travers des récits de conversations et de projets de recherche réels, principalement dans des travaux sur les cultures et les systèmes agricoles en Afrique de l'Ouest. Il s'adresse aux chercheurs, étudiants, formateurs et praticiens du développement qui souhaitent renforcer leur raisonnement statistique et leurs méthodes mixtes, et présente la conception d'étude comme une série de choix raisonnés plutôt que comme un ensemble de règles figées.",
+  "authors": [
+    "Rachel Kirk-Gushowaty",
+    "Roger Stern",
+    "David Stern",
+    "Lucie Hazelgrove-Planel",
+    "Lily Clements"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/mixed-methods-agroecology-fr/meta-front.html",
+  "language": "fr",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "agriculture"
+  ],
+  "keywords": [
+    "mixed methods",
+    "agroecology",
+    "research design",
+    "experimental design",
+    "on-farm research",
+    "participatory research",
+    "research questions",
+    "controls and comparisons",
+    "measurement",
+    "experimental unit and replication",
+    "crop simulation",
+    "statistical reasoning",
+    "research capacity strengthening",
+    "West Africa",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "license": "CC-NC-SA",
+    "difficulty": "introductory",
+    "translationOf": "pretextbooks/mixed-research-methods-for-agroecology"
+  }
+}
