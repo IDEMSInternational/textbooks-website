@@ -1,0 +1,45 @@
+{
+  "id": "pretextbooks/introduction-to-statistical-thinking-for-crfs-fr",
+  "title": "Introduction à la pensée statistique pour le CRFS",
+  "description": "Un manuel d'introduction aux statistiques pour des étudiants ayant peu de bases mathématiques, qui intègre R à travers un ensemble volontairement limité de commandes afin de soutenir l'apprentissage des statistiques plutôt que de le distraire. Couvre les thèmes essentiels, des statistiques descriptives et des probabilités à l'inférence, à la régression et à la modélisation logistique, en privilégiant la compréhension plutôt que le calcul. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Benjamin Yakir ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/statthink-crfs-fr/",
+  "language": "fr",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory statistics",
+    "R programming",
+    "statistical inference",
+    "descriptive statistics",
+    "probability",
+    "confidence intervals",
+    "hypothesis testing",
+    "linear regression",
+    "logistic regression",
+    "sampling",
+    "normal distribution",
+    "random variables",
+    "undergraduate course",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "license": "CC-BY",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-statistical-thinking",
+    "translationOf": "pretextbooks/introduction-to-statistical-thinking-for-crfs"
+  }
+}
