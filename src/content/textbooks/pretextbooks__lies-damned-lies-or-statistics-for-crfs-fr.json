@@ -1,0 +1,39 @@
+{
+  "id": "pretextbooks/lies-damned-lies-or-statistics-for-crfs-fr",
+  "title": "Mensonges, sacrés mensonges et statistiques pour le CRFS",
+  "description": "Un manuel d'introduction aux statistiques couvrant les statistiques descriptives, l'analyse bivariée, la régression linéaire, les probabilités et l'inférence de base. Rédigé pour un cours de licence d'un semestre, il a d'abord été utilisé à la Colorado State University–Pueblo. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Jonathan A. Poritz ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/lies-damned-stats-crfs-fr",
+  "language": "fr",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory statistics",
+    "descriptive statistics",
+    "bivariate statistics",
+    "linear regression",
+    "probability theory",
+    "statistical inference",
+    "undergraduate statistics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "license": "CC-BY-SA",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/lies-damned-lies-or-statistics",
+    "translationOf": "pretextbooks/lies-damned-lies-or-statistics-for-crfs"
+  }
+}

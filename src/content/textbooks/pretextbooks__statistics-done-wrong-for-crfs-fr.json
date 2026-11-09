@@ -1,0 +1,45 @@
+{
+  "id": "pretextbooks/statistics-done-wrong-for-crfs-fr",
+  "title": "Les statistiques mal faites pour le CRFS",
+  "description": "Un guide concis et accessible des erreurs statistiques les plus courantes commises par les scientifiques : valeurs p, puissance statistique, pseudo-réplication, comparaisons multiples, erreur du taux de base, degrés de liberté du chercheur et biais de publication. Aucune connaissance statistique préalable n'est requise ; il est aussi utile aux débutants qu'aux chercheurs expérimentés. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Alex Reinhart ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/stats-done-wrong-crfs-fr/",
+  "language": "fr",
+  "software": [
+    "general"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "statistical errors",
+    "p-values",
+    "statistical power",
+    "multiple comparisons",
+    "pseudoreplication",
+    "false discovery rate",
+    "publication bias",
+    "base rate fallacy",
+    "regression to the mean",
+    "researcher degrees of freedom",
+    "replication crisis",
+    "scientific methodology",
+    "critical statistics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "license": "Creative Commons Attribution 3.0 Unported License",
+    "difficulty": "intermediate",
+    "variant": true,
+    "variantOf": "pretextbooks/statistics-done-wrong",
+    "translationOf": "pretextbooks/statistics-done-wrong-for-crfs"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "pretextbooks/introduction-to-working-with-data-for-crfs-fr",
+  "title": "Introduction au travail avec les données pour le CRFS",
+  "description": "Une introduction pratique, centrée sur les données, au travail avec des données réelles dans R, située dans le contexte du Sahel. Chaque chapitre s'ouvre sur une étude de cas réelle et une question STACK interactive, puis développe les compétences qui précèdent tout résultat fiable : comprendre la structure des données, les explorer et les nettoyer, les restructurer, gérer les facteurs et les valeurs manquantes, et mesurer et prendre en compte la variabilité. Aucune expérience préalable de R n'est requise, ni aucune mathématique au-delà de l'arithmétique. Cette variante est adaptée pour le CRFS, le contexte kényan étant remplacé par celui du Sahel.",
+  "authors": [
+    "Lily Clements"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/iwd-crfs-fr/meta-front.html",
+  "language": "fr",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "agriculture"
+  ],
+  "keywords": [
+    "R programming",
+    "working with data",
+    "data wrangling",
+    "data cleaning",
+    "data visualisation",
+    "exploratory data analysis",
+    "multilevel data",
+    "Simpson's paradox",
+    "data reshaping",
+    "factors",
+    "missing data",
+    "variability",
+    "ANOVA",
+    "ggplot2",
+    "dplyr",
+    "tidyr",
+    "introductory statistics",
+    "introductory data science",
+    "case studies",
+    "STACK questions",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "license": "CC-NC-SA",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-working-with-data",
+    "translationOf": "pretextbooks/introduction-to-working-with-data-for-crfs"
+  }
+}
