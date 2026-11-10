@@ -1,0 +1,43 @@
+{
+  "id": "pretextbooks/introduction-to-modern-statistics-2e-for-crfs-fr",
+  "title": "Introduction aux statistiques modernes (2e) pour le CRFS",
+  "description": "Une introduction moderne aux statistiques mettant l'accent sur l'analyse exploratoire des données, les relations multivariées et l'inférence par simulation. Couvre la modélisation par régression, le bootstrap, la randomisation et l'inférence classique via le théorème central limite, avec des jeux de données et des exercices actualisés. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de Mine Çetinkaya-Rundel, Johanna Hardin ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/ims-crfs-fr/",
+  "language": "fr",
+  "software": [
+    "general",
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "exploratory data analysis",
+    "simulation-based inference",
+    "bootstrapping",
+    "randomization",
+    "regression modelling",
+    "Central Limit Theorem",
+    "statistical inference",
+    "multivariate analysis",
+    "introductory statistics",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "edition": "second",
+    "license": "CC-SA",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introduction-to-modern-statistics-2e",
+    "translationOf": "pretextbooks/introduction-to-modern-statistics-2e-for-crfs"
+  }
+}
