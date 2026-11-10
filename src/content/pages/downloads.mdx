@@ -32,8 +32,12 @@ export const chatgptSteps = [
     body: 'Save statistical-analysis.zip from the button above. Keep it as a single .zip file; do not unzip it yet.',
   },
   {
+    title: 'Open the ChatGPT desktop app',
+    body: 'You need the downloaded ChatGPT desktop app for this. If you do not have it, we recommend downloading it from openai.com/chatgpt/download. If you cannot, use the "ChatGPT (plugin)" instructions instead.',
+  },
+  {
     title: 'Open Skills in ChatGPT',
-    body: 'In ChatGPT, go to Skills and choose Create.',
+    body: 'In the ChatGPT desktop app, go to Skills and choose Create.',
   },
   {
     title: 'Upload the skill',
@@ -42,7 +46,7 @@ export const chatgptSteps = [
   {
     title: 'Try it',
     body: 'Start a new chat and ask ChatGPT to do something the skill covers.',
-    note: 'Skills in ChatGPT are available on some plans only (for example Business, Enterprise, and Edu), and workspace admins can switch uploading off. If you cannot see the option, ask your workspace admin.',
+    note: 'Skills are only available in the downloaded ChatGPT app, not in the browser version. If you cannot see the option, workspace admins can switch uploading off, so ask your workspace admin, or use the plugin instructions below.',
   },
 ];
 
@@ -103,10 +107,12 @@ A skill that helps Claude analyse your data with you, step by step: it plans the
 <Accordion title="How to add the skill to Claude">
 <Steps steps={claudeSteps} />
 </Accordion>
-<Accordion title="How to add the skill to ChatGPT (subscription)">
+<Accordion title="How to add the skill to ChatGPT">
 <Steps steps={chatgptSteps} />
 </Accordion>
-<Accordion title="How to add the skill to ChatGPT (free)">
+<Accordion title="How to add the skill to ChatGPT (plugin)">
+For skills, we recommend using the downloaded ChatGPT desktop app and following the "How to add the skill to ChatGPT" instructions above. If you cannot use the desktop app (for example, you only use ChatGPT in a browser), use this plugin instead.
+
 <Steps steps={chatgptPluginSteps} />
 
 Prompt to paste into the chat:
