@@ -48,21 +48,21 @@ export const chatgptSteps = [
 
 export const chatgptPluginSteps = [
   {
+    title: 'Download the plugin zip',
+    body: 'Save statistical-analysis-chatgpt-plugin.zip from the button below. Keep it as a single .zip file; do not unzip it.',
+  },
+  {
     title: 'Open Plugins in ChatGPT',
-    body: 'Sign in to ChatGPT online (chatgpt.com) or in the desktop app; a free account is fine to try. In the left-hand menu, click Plugins.',
+    body: 'Sign in to ChatGPT online (chatgpt.com) or in the desktop app. In the left-hand menu, click Plugins.',
   },
   {
-    title: 'Create a plugin',
-    body: 'At the top right, click Add, then Create plugin.',
-  },
-  {
-    title: 'Ask it to create the plugin',
-    body: 'Attach the zip you downloaded above (keep it zipped) and paste the prompt below.',
+    title: 'Upload the plugin archive',
+    body: 'At the top right, click Add, then Upload plugin archive. Drag in the zip file (or click to upload), then click Add plugin.',
   },
   {
     title: 'Try it',
-    body: 'If it returns a plugin link, start a fresh chat, select @WayPoint, attach a small sample CSV, and ask it to start with an analysis brief in Python or R and wait for your approval.',
-    note: 'Plugin availability varies by account and plan, and we have not yet confirmed that a free account can save a private plugin. If it cannot, use the local install below.',
+    body: 'Start a fresh chat, select the plugin, attach a small sample CSV, and ask it to start with an analysis brief in Python or R and wait for your approval.',
+    note: 'Plugin availability varies by account and plan, and we have not yet confirmed this on every free account.',
   },
 ];
 
@@ -107,15 +107,11 @@ A skill that helps Claude analyse your data with you, step by step: it plans the
 <Steps steps={chatgptSteps} />
 </Accordion>
 <Accordion title="How to add the skill to ChatGPT (free)">
+<ButtonGroup>
+<Button href="/downloads/statistical-analysis-chatgpt-plugin.zip">Download the ChatGPT plugin (.zip)</Button>
+</ButtonGroup>
+
 <Steps steps={chatgptPluginSteps} />
-
-Prompt to paste into the chat:
-
-```text
-Create a private plugin called WayPoint in my personal account using the attached ZIP. Use the existing skill, scripts, and English and French playbooks from the ZIP. Save the plugin to my account and give me the link.
-```
-
-**If your account can't save a private plugin:** use Codex in the ChatGPT desktop app to install a copy on that computer. Unzip the downloaded zip, open its parent folder in Codex, and ask it to add the unzipped skill folder to a local plugin marketplace. Restart the desktop app, open Plugins, select that local source, and install WayPoint.
 </Accordion>
 </AccordionGroup>
 
