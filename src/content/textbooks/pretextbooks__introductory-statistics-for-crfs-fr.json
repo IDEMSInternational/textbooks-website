@@ -1,0 +1,43 @@
+{
+  "id": "pretextbooks/introductory-statistics-for-crfs-fr",
+  "title": "Statistiques d'introduction pour le CRFS",
+  "description": "Une introduction rigoureuse mais accessible aux statistiques appliquées, de niveau licence et au-delà, mettant l'accent sur les applications pratiques et les données réelles. Conçue pour développer la pensée statistique sans exiger de mathématiques avancées. Cette variante est adaptée pour le CRFS : les exemples et le contexte ont été modifiés pour correspondre au travail du CRFS en Afrique et au Sahel.",
+  "authors": [
+    "Original de David M. Diez, Christopher D. Barr, Mine Cetinkaya-Rundel ; cette variante est destinée au CRFS"
+  ],
+  "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/introductory-stats-crfs-fr",
+  "language": "fr",
+  "software": [
+    "R"
+  ],
+  "subject": [
+    "general",
+    "agriculture"
+  ],
+  "keywords": [
+    "introductory statistics",
+    "applied statistics",
+    "statistical thinking",
+    "undergraduate statistics",
+    "hypothesis testing",
+    "data analysis",
+    "accessible statistics",
+    "probability",
+    "statistical inference",
+    "regression",
+    "CRFS",
+    "agriculture",
+    "Africa",
+    "Sahel",
+    "français",
+    "French"
+  ],
+  "meta": {
+    "edition": "fourth",
+    "license": "CC-BY-SA",
+    "difficulty": "introductory",
+    "variant": true,
+    "variantOf": "pretextbooks/introductory-statistics",
+    "translationOf": "pretextbooks/introductory-statistics-for-crfs"
+  }
+}
