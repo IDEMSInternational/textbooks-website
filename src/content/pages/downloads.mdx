@@ -46,6 +46,22 @@ export const chatgptSteps = [
   },
 ];
 
+export const chatgptFreeSteps = [
+  {
+    title: 'Open Custom Instructions',
+    body: 'In ChatGPT, click your profile icon, choose Settings, then Custom Instructions.',
+  },
+  {
+    title: 'Paste the instructions',
+    body: 'Paste your rules, tone of voice, or persistent instructions into the response field. It holds up to 1,500 characters, so use a short version of a skill (an example is below the steps).',
+  },
+  {
+    title: 'Save and try it',
+    body: 'Save, then start a new chat. The instructions apply to every new chat, so ask ChatGPT to analyse some data.',
+    note: 'This is a much lighter version than uploading a skill: it gives ChatGPT the three-phase approach, but not the detailed guidance in the full skill. Remove or edit the instructions in Settings whenever you want to stop using them.',
+  },
+];
+
 <Section
   eyebrow="Download"
   title="Data Analysis Tools"
@@ -85,6 +101,19 @@ A skill that helps Claude analyse your data with you, step by step: it plans the
 </Accordion>
 <Accordion title="How to add the skill to ChatGPT">
 <Steps steps={chatgptSteps} />
+</Accordion>
+<Accordion title="How to add a short version to the free tier of ChatGPT">
+<Steps steps={chatgptFreeSteps} />
+
+Example text to paste (under 1,500 characters):
+
+```text
+When I share data and ask a question, work in three separate phases and stop for my approval after each.
+1) PLAN: check data quality (missing values, duplicates, odd values, variable types), restate my question, and propose the analysis steps and methods with reasons. Do not run anything yet.
+2) EXECUTE: once I approve, clean the data and run the analysis, showing what you did and which assumptions you checked.
+3) INTERPRET: once I approve, explain the results in plain language, covering effect sizes, uncertainty and limitations. Do not overclaim.
+Use Python. Reply in the language I write in (English or French).
+```
 </Accordion>
 </AccordionGroup>
 
