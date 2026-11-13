@@ -8,6 +8,7 @@
     "Arturo Valdivia"
   ],
   "url": "https://pretextbooks.github.io/ModernDive_book/meta-front.html",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/ModernDive_book-svc/releases/download/latest/book.pdf",
   "language": "en",
   "software": [
     "R"

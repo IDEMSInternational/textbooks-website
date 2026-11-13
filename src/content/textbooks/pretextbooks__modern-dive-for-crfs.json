@@ -6,6 +6,7 @@
     "Original by Chester Ismay, Albert Y. Kim, Arturo Valdivia; this variant is for CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/ModernDive_book-svc-crfs/meta-front.html",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/ModernDive_book-svc-crfs/releases/download/latest/book.pdf",
   "language": "en",
   "software": [
     "R"
