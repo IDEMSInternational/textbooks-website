@@ -48,7 +48,10 @@ export interface Textbook {
  * an optional `string` field on `Textbook` — the facet derivation and filter
  * panel pick it up automatically.
  */
-export const FACET_KEYS = ['language', 'software', 'subject'] as const;
+/** Value of the virtual "Availability" facet for books with a download link. */
+export const DOWNLOADABLE = 'Downloadable';
+
+export const FACET_KEYS = ['language', 'software', 'subject', 'availability'] as const;
 export type FacetKey = (typeof FACET_KEYS)[number];
 
 /** A facet plus the distinct values present in the dataset, used by the UI. */
@@ -82,6 +85,8 @@ export interface LibraryState {
  * filtering logic and the UI all treat multi-valued facets the same way.
  */
 export function facetValues(book: Textbook, key: FacetKey): string[] {
+  // Virtual facet derived from `downloadUrl` rather than a stored field.
+  if (key === 'availability') return book.downloadUrl ? [DOWNLOADABLE] : [];
   const value = book[key];
   if (typeof value === 'string') return value.length > 0 ? [value] : [];
   if (Array.isArray(value)) {
