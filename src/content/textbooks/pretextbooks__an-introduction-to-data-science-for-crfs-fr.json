@@ -6,6 +6,7 @@
     "Original de Jeffrey Stanton ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/data-science-in-r-crfs-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/data-science-in-r-crfs-v1.0/data-science-in-r-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
