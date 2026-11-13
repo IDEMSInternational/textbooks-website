@@ -6,13 +6,15 @@
     "Original de Russell A. Poldrack ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/statsthinking21-crfs-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/statsthinking21-crfs-v1.0/statsthinking21-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
   ],
   "subject": [
     "general",
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "statistical thinking",

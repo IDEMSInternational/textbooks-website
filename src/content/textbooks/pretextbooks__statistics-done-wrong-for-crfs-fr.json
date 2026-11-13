@@ -6,13 +6,15 @@
     "Original de Alex Reinhart ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/stats-done-wrong-crfs-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/stats-done-wrong-crfs-v1.0/stats-done-wrong-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "general"
   ],
   "subject": [
     "general",
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "statistical errors",

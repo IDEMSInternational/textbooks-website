@@ -6,13 +6,15 @@
     "Original de Jonathan A. Poritz ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/lies-damned-stats-crfs-fr",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/lies-damned-stats-crfs-v1.0/lies-damned-stats-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "general"
   ],
   "subject": [
     "general",
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "introductory statistics",

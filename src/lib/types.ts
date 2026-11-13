@@ -25,6 +25,8 @@ export interface Textbook {
   description: string;
   authors: string[];
   url: string; // external textbook site (e.g. GitHub Pages)
+  /** Optional link to a downloadable copy (e.g. PDF); shows a Download button. */
+  downloadUrl?: string;
 
   /** Which library the book is listed in. Defaults to "statistics". */
   library?: LibraryId;

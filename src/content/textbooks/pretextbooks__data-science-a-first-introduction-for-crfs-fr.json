@@ -6,13 +6,15 @@
     "Original de Tiffany Timbers, Trevor Campbell, Melissa Lee ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/intro-datascience-crfs-fr/meta-front.html",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/intro-datascience-crfs-v1.0/intro-datascience-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
   ],
   "subject": [
     "general",
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "data science",
