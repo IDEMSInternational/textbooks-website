@@ -6,6 +6,7 @@
     "Original by Carrie Wright, Shannon E. Ellis, Stephanie C. Hicks, Roger D. Peng; this variant is for CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/tidyversecourse-svc-crfs/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/tidyversecourse-svc-crfs/releases/download/latest/book.pdf",
   "language": "en",
   "software": [
     "R"

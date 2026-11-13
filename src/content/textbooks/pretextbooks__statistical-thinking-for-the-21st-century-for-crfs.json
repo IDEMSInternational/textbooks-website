@@ -6,6 +6,7 @@
     "Original by Russell A. Poldrack; this variant is for CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/statsthinking21-core-svc-crfs/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/statsthinking21-core-svc-crfs/releases/download/latest/book.pdf",
   "language": "en",
   "software": [
     "R"

@@ -6,6 +6,7 @@
     "Original by Rafael A. Irizarry; this variant is for CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/dataskills-part-1-svc-crfs/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/dataskills-part-1-svc-crfs/releases/download/latest/book.pdf",
   "language": "en",
   "software": [
     "R"
