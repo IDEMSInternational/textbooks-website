@@ -24,7 +24,7 @@ import { FACET_KEYS, facetValues } from './types';
 /** A blank state: nothing selected, no query. */
 export function emptyState(): LibraryState {
   return {
-    facets: { language: [], software: [], subject: [] },
+    facets: { language: [], software: [], subject: [], availability: [] },
     search: '',
   };
 }

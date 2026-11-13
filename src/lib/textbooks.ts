@@ -35,6 +35,7 @@ const FACET_LABELS: Record<FacetKey, string> = {
   language: 'Language',
   software: 'Software',
   subject: 'Subject',
+  availability: 'Availability',
 };
 
 /**
