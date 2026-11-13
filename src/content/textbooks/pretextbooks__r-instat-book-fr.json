@@ -6,13 +6,15 @@
     "Roger Stern"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/r-instat-book-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/r-instat-book-v1.0/r-instat-book-fr.pdf",
   "language": "fr",
   "software": [
     "R-Instat",
     "R"
   ],
   "subject": [
-    "stats"
+    "stats",
+    "CRFS"
   ],
   "keywords": [
     "R",

@@ -69,6 +69,9 @@ function normalise(raw: unknown): Textbook | null {
   // Optional facets — `language` is single-valued, `software`/`subject` are
   // lists (a book can be taught with more than one piece of software, or span
   // more than one subject area).
+  if (typeof r.downloadUrl === 'string' && r.downloadUrl.length > 0) {
+    book.downloadUrl = r.downloadUrl;
+  }
   if (typeof r.language === 'string') book.language = r.language;
   if (Array.isArray(r.software)) {
     book.software = r.software.filter((s): s is string => typeof s === 'string');

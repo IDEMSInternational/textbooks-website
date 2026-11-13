@@ -6,13 +6,15 @@
     "Original de Rafael A. Irizarry ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/dataskills-part-2-crfs-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/dataskills-part-2-crfs-v1.0/dataskills-part-2-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
   ],
   "subject": [
     "general",
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "probability",

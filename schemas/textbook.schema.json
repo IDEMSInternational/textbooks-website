@@ -38,6 +38,12 @@
       "minLength": 1,
       "description": "Absolute URL of the externally hosted textbook site."
     },
+    "downloadUrl": {
+      "type": "string",
+      "format": "uri",
+      "minLength": 1,
+      "description": "Optional absolute URL of a downloadable copy of the textbook (e.g. a PDF). When present, the card shows a \"Download textbook\" button."
+    },
     "library": {
       "type": "string",
       "enum": ["statistics", "mathematics"],

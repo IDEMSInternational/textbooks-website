@@ -6,13 +6,15 @@
     "Original de David M. Diez, Christopher D. Barr, Mine Cetinkaya-Rundel ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/introductory-stats-crfs-fr",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/introductory-stats-crfs-v1.0/introductory-stats-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
   ],
   "subject": [
     "general",
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "introductory statistics",

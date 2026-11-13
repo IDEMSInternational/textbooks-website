@@ -6,12 +6,14 @@
     "Lily Clements"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/iwd-crfs-fr/meta-front.html",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/iwd-crfs-v1.0/iwd-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
   ],
   "subject": [
-    "agriculture"
+    "agriculture",
+    "CRFS"
   ],
   "keywords": [
     "R programming",
