@@ -6,6 +6,7 @@
     "Original de Chester Ismay, Albert Y. Kim, Arturo Valdivia ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/moderndive-crfs-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/moderndive-crfs-v1.0/moderndive-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"

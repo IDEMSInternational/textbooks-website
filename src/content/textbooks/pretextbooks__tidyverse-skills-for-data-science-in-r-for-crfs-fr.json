@@ -6,6 +6,7 @@
     "Original de Carrie Wright, Shannon E. Ellis, Stephanie C. Hicks, Roger D. Peng ; cette variante est destinée au CRFS"
   ],
   "url": "https://idemsinternational.pages.idems.international/pretext-textbooks-stats-waf-fr/tidyversecourse-crfs-fr/",
+  "downloadUrl": "https://git.idems.international/IDEMSInternational/pretext-textbooks-stats-waf-fr/releases/download/tidyversecourse-crfs-v1.0/tidyversecourse-crfs-fr.pdf",
   "language": "fr",
   "software": [
     "R"
